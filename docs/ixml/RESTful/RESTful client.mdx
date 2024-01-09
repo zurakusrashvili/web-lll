@@ -1,0 +1,80 @@
+# RESTful client
+
+### Anatomy
+
+```xml
+<rest:client timeout="int" url="string" validate="bool">
+    ixml
+    <rest:header>string</rest:header>
+</rest:client>
+```
+
+ **Description**:
+ REST:CLIENT defines a set of dynamically bound RESTful resources based on HTTP/1.1.
+
+### Content: ixml
+
+```xml
+<content type="ixml"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| timeout | int | Timeout in seconds | rest:client |
+| url | string | URL | rest:client |
+| validate | bool | Validate SSL | rest:client |
+
+
+## Children
+
+<details>
+<summary>REST header</summary>
+
+### Anatomy
+```xml
+<rest:header>string</rest:header>
+```
+
+**Request header: Code (string)**
+
+```xml
+<content type="string"/>
+```
+
+</details>
+
+## Examples
+
+### Example: Example
+
+```xml
+<rest:client url="https://api.predic8.de/shop">
+<rest:header>
+Content-Type: application/json
+</rest:header>
+<rest:bind var="createProduct" method="POST">/products/</rest:bind>
+<rest:bind var="updateProduct" method="PATCH">/products/:id</rest:bind>
+<rest:bind var="getProduct" method="GET">/products/:id</rest:bind>
+</rest:client>
+<decode:json var="data">
+<call func="createProduct">
+<param>{"name": "Some Fruit", "price": 4.99}</param>
+</call>
+</decode:json>
+<match var_matches="matches" pattern="/\d+/">$data.product_url</match>
+<set var="id">$matches[0][0]</set>
+<call func="updateProduct">
+<param var="id"/>
+<param>{"name": "Wildberries"}</param>
+</call>
+<decode:json var="data">
+<call func="getProduct">
+<param var="id"/>
+</call>
+</decode:json>
+<output>$data.name</output>
+<!-- Wildberries -->
+```
+

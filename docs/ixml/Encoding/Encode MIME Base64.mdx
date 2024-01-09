@@ -1,0 +1,48 @@
+# Encode MIME Base64
+
+### Anatomy
+
+```xml
+<encode:base64 var="var">
+    string
+</encode:base64>
+```
+
+ **Description**:
+ ENCODE:BASE64 encodes a value according to RFC 2045 using a 65-character printable subset of US-ASCII to represent arbitrary byte sequences.
+
+MIME Base64 is designed to make binary data survive transport through transport layers that are not 8-bit clean. MIME Base64-encoded data is about 33 percent larger than the unencoded data.
+
+ENCODE:BASE64 is the complement of the DECODE:BASE64 operation.
+
+### Content: string
+
+```xml
+<content type="string"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | encode:base64 |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | string | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<output>
+<encode:base64>My name is iXML!</encode:base64>
+</output>
+<!-- TXkgbmFtZSBpcyBpWE1MIQ== -->
+```
+

@@ -1,0 +1,42 @@
+{
+  "title": {
+    "message": "ZeyOS Developer Center",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "My Site Logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Products": {
+    "message": "Products",
+    "description": "Navbar item with label Products"
+  },
+  "item.label.Solutions": {
+    "message": "Solutions",
+    "description": "Navbar item with label Solutions"
+  },
+  "item.label.Developers": {
+    "message": "Developers",
+    "description": "Navbar item with label Developers"
+  },
+  "item.label.Resourses": {
+    "message": "Resourses",
+    "description": "Navbar item with label Resourses"
+  },
+  "item.label.Product 1": {
+    "message": "Product 1 de ",
+    "description": "Navbar item with label Product 1 de"
+  },
+  "item.label.Product 2": {
+    "message": "Product 2 de",
+    "description": "Navbar item with label Product 2 de"
+  },
+  "item.label.Product 3": {
+    "message": "Product 3 de",
+    "description": "Navbar item with label Product 3 de"
+  },
+  "item.label.Product 4": {
+    "message": "Product 4 de",
+    "description": "Navbar item with label Product 4 de"
+  }
+}

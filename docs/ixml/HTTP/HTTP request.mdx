@@ -1,0 +1,107 @@
+# HTTP request
+
+### Anatomy
+
+```xml
+<http:request var="var" var_info="var" timeout="int" url="string" validate="bool" method="string">
+    <http:header>string</http:header>
+    <http:body>string</http:body>
+</http:request>
+```
+
+ **Description**:
+ HTTP:REQUEST sends a HTTP/1.1 request and receives a HTTP response according to RFC 2616.
+
+
+				HTTP:REQUEST returns an array in 'var_info' comprised of the following items:
+
+				Key    Description
+				----------------------------
+				status response status code
+				type   response content type
+				header response header
+				body   response body
+			
+
+
+> **Attention:**
+>
+> The Content-Length header field defaults to the size of the HTTP body. The Content-Type header field defaults to application/x-www-form-urlencoded only for method POST.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name for response body | http:request |
+| var_info | var | Result variable name for detailed response information | http:request |
+| timeout | int | Timeout in seconds | http:request |
+| url | string | URL | http:request |
+| validate | bool | Validate SSL | http:request |
+| method | string | Method | http:request |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | string | N/A |
+| var_info | array | no-result-propagation |
+
+
+## Children
+
+<details>
+<summary>HTTP header</summary>
+
+### Anatomy
+```xml
+<http:header>string</http:header>
+```
+
+**Request header: Code (string)**
+
+```xml
+<content type="string"/>
+```
+
+</details>
+
+<details>
+<summary>HTTP body</summary>
+
+### Anatomy
+```xml
+<http:body>string</http:body>
+```
+
+**Request body: Code (string)**
+
+```xml
+<content type="string"/>
+```
+
+</details>
+
+## Examples
+
+### Example: Example
+
+```xml
+<decode:json var="data">
+<http:request url="https://api.predic8.de/shop/products/" method="POST">
+<http:header>
+Content-Type: application/json
+</http:header>
+<http:body>
+{"name": "Wildberries", "price": 4.99}
+</http:body>
+</http:request>
+</decode:json>
+<set var="route">$data.product_url</set>
+<decode:json var="data">
+<http:request url="https://api.predic8.de$route" method="GET"/>
+</decode:json>
+<output>$data.name</output>
+<!-- Wildberries -->
+```
+

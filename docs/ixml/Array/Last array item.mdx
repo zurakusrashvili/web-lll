@@ -1,0 +1,43 @@
+# Last array item
+
+### Anatomy
+
+```xml
+<array:last var="var" var_key="var" var_value="var"/>
+```
+
+ **Description**:
+ ARRAY:LAST returns the last item of an array.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Variable name | array:last |
+| var_key | var | Result variable name for key | array:last |
+| var_value | var | Result variable name for value | array:last |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var_key |  | no-result-propagation |
+| var_value |  | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<array var="names">
+<item key="bg">Bill Gates</item>
+<item key="js">Steve Jobs</item>
+</array>
+<output>
+<array:last var="names"/>
+</output>
+<!-- Steve Jobs -->
+```
+

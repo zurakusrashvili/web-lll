@@ -1,0 +1,104 @@
+# Error handling
+
+ **Description**:
+ The TRY construct is a control flow structure that handles the occurrence of errors, warnings, exceptions and other special conditions that change the normal control flow.
+
+An error can be thrown and caught. Code may be surrounded by a TRY statement, to facilitate the catching of potential errors. If an error is thrown or otherwise triggered within a TRY statement, the control flow continues with the execution of the embedded CATCH statement with the error message assigned to 'var'. In case no error occurs, the control flow continues with the execution of the embedded ELSE statement instead. Eventually the control flow always continues with the execution of the embedded FINALLY statement wheter an error occurred or not.
+
+### Content: ixml
+
+```xml
+<content type="ixml"/>
+```
+
+## Children
+
+<details>
+<summary>Error triggered execution</summary>
+
+### Anatomy
+```xml
+<catch var="var">ixml</catch>
+```
+
+**Attributes**:
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| var | var | Variable name for error message |
+
+**Content: Code (ixml)**
+
+```xml
+<content type="ixml"/>
+```
+
+</details>
+
+<details>
+<summary>Elsewise execution</summary>
+
+### Anatomy
+```xml
+<else>ixml</else>
+```
+
+**Content: Code (ixml)**
+
+```xml
+<content type="ixml"/>
+```
+
+</details>
+
+<details>
+<summary>Final execution</summary>
+
+### Anatomy
+```xml
+<finally>ixml</finally>
+```
+
+**Content: Code (ixml)**
+
+```xml
+<content type="ixml"/>
+```
+
+</details>
+
+## Examples
+
+### Example: Basic error handling
+
+```xml
+<try>
+<set var="name">iXML</set>
+<if value1="$name" func="=" value2="iXML">
+<error>An error has occured!</error>
+</if>
+<catch var="error">
+<output>$error</output>
+</catch>
+</try>
+<!-- An error has occured! -->
+```
+
+### Example: Extended error handling
+
+```xml
+<try>
+<set var="name">iXML</set>
+<catch>
+<set var="output">My name is unknown!</set>
+</catch>
+<else>
+<set var="output">My name is $name!</set>
+</else>
+<finally>
+<output>$output</output>
+</finally>
+</try>
+<!-- My name is iXML! -->
+```
+

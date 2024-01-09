@@ -1,0 +1,44 @@
+# Extract sign
+
+### Anatomy
+
+```xml
+<math:sign var="var">
+    float
+</math:sign>
+```
+
+ **Description**:
+ MATH:SIGN extracts the sign of a value.
+
+### Content: float
+
+```xml
+<content type="float"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | math:sign |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | int | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<output>
+<math:sign>-13.74</math:sign>
+</output>
+<!-- -1 -->
+```
+

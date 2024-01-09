@@ -1,0 +1,32 @@
+# Chunk-split array
+
+### Anatomy
+
+```xml
+<array:chunk var="var" var_result="var" length="int"/>
+```
+
+ **Description**:
+ ARRAY:CHUNK splits an array into chunks of a given length.
+
+
+> **Attention:**
+>
+> ARRAY:CHUNK is destructive, in the sense that it modifies the array in-place, unless 'var_result' is specified in which case a copy of the resulting array will be stored in 'var_result' instead. It preserves the key and value associations of the array.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Variable name | array:chunk |
+| var_result | var | Result variable name | array:chunk |
+| length | int | Length | array:chunk |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var|var_result | array | no-result-propagation |
+
+

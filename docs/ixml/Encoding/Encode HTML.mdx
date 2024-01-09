@@ -1,0 +1,51 @@
+# Encode HTML
+
+### Anatomy
+
+```xml
+<encode:html var="var">
+    string
+</encode:html>
+```
+
+ **Description**:
+ ENCODE:HTML encodes a value by converting special reserved characters to their applicable HTML entites and whitespace characters to a meaningful HTML representation.
+
+ENCODE:HTML is compatible to the DECODE:HTML operation, but not the complement thereof.
+
+
+> **Attention:**
+>
+> The characters mentioned above have special significance in HTML, and should be represented by HTML entities if they are to preserve their meanings.
+
+### Content: string
+
+```xml
+<content type="string"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | encode:html |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | string | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<output>
+<encode:html>Hello World!&n;My name is "iXML" &amp; I am a XML derivative!</encode:html>
+</output>
+<!-- Hello World!<br />My name is &quot;iXML&quot; &amp; I am a XML derivative! -->
+```
+

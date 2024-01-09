@@ -1,0 +1,40 @@
+# Parameter
+
+### Anatomy
+
+```xml
+<param name="string" var="var">
+    string
+</param>
+```
+
+**Parents**: include, call, new, zymba:run
+
+### Content: string
+
+```xml
+<content type="string"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| name | string | Name | param |
+| var | var | Variable name | param |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<function var="outputName">
+<output>$name</output>
+</function>
+<call func="outputName">
+<param name="name">iXML</param>
+</call>
+<!-- iXML -->
+```
+

@@ -1,0 +1,107 @@
+# Conditional type execution
+
+### Anatomy
+
+```xml
+<is var="var" type="type">
+    <elseif value1="string" value2="string|regexp" func="string">ixml</elseif>
+    <elseis var="var" type="type">ixml</elseis>
+    <else>ixml</else>
+</is>
+```
+
+ **Description**:
+ The IS construct is a control flow structure that allows for conditional execution of code dependent on the data type of a variable.
+
+If the condition is true, the embedded code is executed. Otherwise, a series of embedded ELSEIF and ELSEIS statements is tested one by one. Only the first ELSEIF or ELSEIS statement that is found to be true will be executed. If none of the conditions are true, the embedded ELSE statement will be executed instead.
+
+
+> **Attention:**
+>
+> IS will propagate results into the context of its paternal statement.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Variable name | is |
+| type | type | Type | is |
+
+
+## Children
+
+<details>
+<summary>Elsewise conditional value execution</summary>
+
+### Anatomy
+```xml
+<elseif value1="string" value2="string|regexp" func="string">ixml</elseif>
+```
+
+**Attributes**:
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value1 | string | Value to compare from |
+| value2 | string|regexp | Value to compare to |
+| func | string | Comparison function |
+
+**Content: Code (ixml)**
+
+```xml
+<content type="ixml"/>
+```
+
+</details>
+
+<details>
+<summary>Elsewise conditional type execution</summary>
+
+### Anatomy
+```xml
+<elseis var="var" type="type">ixml</elseis>
+```
+
+**Attributes**:
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| var | var | Variable name |
+| type | type | Type |
+
+**Content: Code (ixml)**
+
+```xml
+<content type="ixml"/>
+```
+
+</details>
+
+<details>
+<summary>Elsewise execution</summary>
+
+### Anatomy
+```xml
+<else>ixml</else>
+```
+
+**Content: Code (ixml)**
+
+```xml
+<content type="ixml"/>
+```
+
+</details>
+
+## Examples
+
+### Example: Example
+
+```xml
+<set var="name">iXML</set>
+<is var="name" type="string">
+<output>My name is a string!</output>
+</is>
+<!-- My name is a string! -->
+```
+

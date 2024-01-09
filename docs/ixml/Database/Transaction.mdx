@@ -1,0 +1,37 @@
+# Transaction
+
+**Parents**: db:connection
+
+ **Description**:
+ DB:TRANSACTION specifies a transaction block for database and binary data store operations, ensuring that such processes leave the database and the binary data store in a consistent state even if an error occures within the transaction.
+
+Transactions provide an all-or-nothing proposition, stating that each work-unit performed within a transaction must either complete in its entirety or have no effect whatsoever.
+
+### Content: ixml
+
+```xml
+<content type="ixml"/>
+```
+
+## Examples
+
+### Example: Database
+
+```xml
+<db:set entity="contacts" id="123" var_data="obj"/>
+<try>
+<db:transaction>
+<db:set entity="contacts" id="123">
+<db:data field="lastname">New</db:data>
+</db:set>
+<error/>
+</db:transaction>
+<catch/>
+</try>
+<db:get var="obj" entity="contacts" id="123">
+<db:field>lastname</db:field>
+</db:get>
+<output>$obj.lastname</output>
+<!-- Old -->
+```
+

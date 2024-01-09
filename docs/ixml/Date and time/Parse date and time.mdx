@@ -1,0 +1,47 @@
+# Parse date and time
+
+### Anatomy
+
+```xml
+<date:parse var="var" timezone="string">
+    string
+</date:parse>
+```
+
+ **Description**:
+ DATE:PARSE returns the timestamp for a date by parsing a textual date and time value.
+
+Timestamps are based on Unix time, defined as the number of seconds elapsed since midnight proleptic Coordinated Universal Time (UTC) of January 1, 1970, not counting leap seconds.
+
+### Content: string
+
+```xml
+<content type="string"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | date:parse |
+| timezone | string | Time zone | date:parse |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var |  | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<output>
+<date:parse>2000-01-01</date:parse>
+</output>
+<!-- 946684800 -->
+```
+

@@ -1,0 +1,29 @@
+# Pack binary data
+
+### Anatomy
+
+```xml
+<encode:binary var="var" var_result="var" format="string"/>
+```
+
+ **Description**:
+ ENCODE:BINARY packs the values of an array into binary data according to a given Perl/PHP-compatible format.
+
+ENCODE:BINARY is the complement of the DECODE:BINARY operation.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Variable name | encode:binary |
+| var_result | var | Result variable name | encode:binary |
+| format | string | Format | encode:binary |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var_result | string | N/A |
+
+

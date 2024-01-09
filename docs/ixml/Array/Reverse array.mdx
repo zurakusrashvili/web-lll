@@ -1,0 +1,50 @@
+# Reverse array
+
+### Anatomy
+
+```xml
+<array:reverse var="var" var_result="var"/>
+```
+
+ **Description**:
+ ARRAY:REVERSE reverses the item order of an array.
+
+
+> **Attention:**
+>
+> ARRAY:REVERSE is destructive, in the sense that it modifies the array in-place, unless 'var_result' is specified in which case a copy of the resulting array will be stored in 'var_result' instead. It preserves the key and value associations of the array.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Variable name | array:reverse |
+| var_result | var | Result variable name | array:reverse |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var|var_result | array | no-result-propagation |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<array var="names">
+<item>Bill Gates</item>
+<item>Steve Jobs</item>
+</array>
+<array:reverse var="names"/>
+<foreach var="names" var_value="name">
+<output>$name&n;</output>
+</foreach>
+<!--
+Steve Jobs
+Bill Gates
+-->
+```
+

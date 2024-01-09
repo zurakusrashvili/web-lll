@@ -1,0 +1,39 @@
+# Type of variable
+
+### Anatomy
+
+```xml
+<typeof var="var" var_result="var"/>
+```
+
+ **Description**:
+ TYPEOF returns the intrinsic data type of a variable.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Variable name | typeof |
+| var_result | var | Result variable name | typeof |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var_result | string | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<set var="name">iXML</set>
+<typeof var="name" var_result="type"/>
+<if value1="$type" func="=" value2="string">
+<output>My name is a string!</output>
+</if>
+<!-- My name is a string! -->
+```
+

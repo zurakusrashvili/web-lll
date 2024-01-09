@@ -1,0 +1,46 @@
+# Include code source
+
+### Anatomy
+
+```xml
+<include var="var" var_params="var" once="bool">
+    ixml
+</include>
+```
+
+ **Description**:
+ INCLUDE parses and executes an external code source, specified by a filename/URL. Arguments may be passed to local variables as parameters on switch of context.
+
+
+> **Attention:**
+>
+> The code source incorporates a local context when being included. Therefore local variables may be declared within the code source.
+> 
+> The special local variable 'return' is a reference to the return value that is passed back as the result of INCLUDE.
+> 
+> The special local variable 'arguments' is a reference to all arguments that have been passed to local variables on switch of context.
+> 
+> The RETURN, BREAK and NEXT operations may be used to break-off the execution of the current code source, thereby implicitly returning to the original control flow of the invoking control statement.
+
+### Content: ixml
+
+```xml
+<content type="ixml"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | include |
+| var_params | var | Variable name for associated parameter name and value pairs | include |
+| once | bool | Include just once | include |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var |  | N/A |
+
+

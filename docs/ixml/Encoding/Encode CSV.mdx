@@ -1,0 +1,59 @@
+# Encode CSV
+
+### Anatomy
+
+```xml
+<encode:csv var="var" var_result="var" delimiter="string" enclose="bool"/>
+```
+
+ **Description**:
+ ENCODE:CSV joins the items of a multidimensional array to comma-separated values.
+
+Comma-separated values represent tabular data. Each line corresponds to a row in the table. Within a line, fields are separated by a delimiter, each field belonging to one table column.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Variable name | encode:csv |
+| var_result | var | Result variable name | encode:csv |
+| delimiter | string | Delimiter | encode:csv |
+| enclose | bool | Enclose values | encode:csv |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var_result | string | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<array var="names">
+<array>
+<item>First Name</item>
+<item>Last Name</item>
+</array>
+<array>
+<item>Bill</item>
+<item>Gates</item>
+</array>
+<array>
+<item>Steve</item>
+<item>Jobs</item>
+</array>
+</array>
+<output>
+<encode:csv var="names" delimiter=";"/>
+</output>
+<!--
+"First Name";"Last Name"
+Bill;Gates
+Steve;Jobs
+-->
+```
+

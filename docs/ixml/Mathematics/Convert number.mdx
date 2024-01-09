@@ -1,0 +1,40 @@
+# Convert number
+
+### Anatomy
+
+```xml
+<math:convert var="var" from="type" to="type">
+    undefined
+</math:convert>
+```
+
+ **Description**:
+ MATH:CONVERT converts the number representation of a value from a source representation to a target representation.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | math:convert |
+| from | type | Source representation | math:convert |
+| to | type | Target representation | math:convert |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | int|float|string | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<output>
+<math:convert from="hex" to="bin">7cd5a72c</math:convert>
+</output>
+<!-- 1111100110101011010011100101100 -->
+```
+

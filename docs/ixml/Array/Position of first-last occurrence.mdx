@@ -1,0 +1,53 @@
+# Position of first/last occurrence
+
+### Anatomy
+
+```xml
+<array:pos var="var" var_result="var" offset="int" type="type">
+    string
+</array:pos>
+```
+
+ **Description**:
+ ARRAY:POS finds the position of first or last occurrence of a value within an array and returns the key of the corresponding array item if applicable.
+
+If the offset is negative it will start that many items from the end of the array.
+
+### Content: string
+
+```xml
+<content type="string"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Variable name | array:pos |
+| var_result | var | Result variable name | array:pos |
+| offset | int | Search offset | array:pos |
+| type | type | Measurement type | array:pos |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var_result |  | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<array var="names">
+<item>Bill Gates</item>
+<item>Steve Jobs</item>
+</array>
+<output>
+<array:pos var="names">Steve Jobs</array:pos>
+</output>
+<!-- 1 -->
+```
+

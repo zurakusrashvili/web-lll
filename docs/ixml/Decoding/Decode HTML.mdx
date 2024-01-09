@@ -1,0 +1,49 @@
+# Decode HTML
+
+### Anatomy
+
+```xml
+<decode:html var="var">
+    string
+</decode:html>
+```
+
+ **Description**:
+ DECODE:HTML decodes a value by stripping HTML tags and converting all HTML entites back to their applicable characters.
+
+DECODE:HTML is compatible to the ENCODE:HTML operation, but it is not the complement thereof.
+
+### Content: string
+
+```xml
+<content type="string"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | decode:html |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | string | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<output>
+<decode:html>Hello World!&lt;br /&gt;My name is &quot;iXML&quot; &amp;amp; I am a XML derivative!</decode:html>
+</output>
+<!--
+Hello World!
+My name is "iXML" & I am a XML derivative!
+-->
+```
+

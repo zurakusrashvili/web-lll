@@ -1,0 +1,45 @@
+# Raise to power
+
+### Anatomy
+
+```xml
+<math:pow var="var" exponent="int">
+    float
+</math:pow>
+```
+
+ **Description**:
+ MATH:POW raises a value to the power of an exponent.
+
+### Content: float
+
+```xml
+<content type="float"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | math:pow |
+| exponent | int | Exponent | math:pow |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | float | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<output>
+<math:pow exponent="10">2</math:pow>
+</output>
+<!-- 1024 -->
+```
+

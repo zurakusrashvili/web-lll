@@ -1,0 +1,82 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.xmlSidebar.category.Array": {
+    "message": "Array",
+    "description": "The label for category Array in sidebar xmlSidebar"
+  },
+  "sidebar.xmlSidebar.category.Control constructs": {
+    "message": "Control constructs",
+    "description": "The label for category Control constructs in sidebar xmlSidebar"
+  },
+  "sidebar.xmlSidebar.category.Database": {
+    "message": "Database",
+    "description": "The label for category Database in sidebar xmlSidebar"
+  },
+  "sidebar.xmlSidebar.category.Date and time": {
+    "message": "Date and time",
+    "description": "The label for category Date and time in sidebar xmlSidebar"
+  },
+  "sidebar.xmlSidebar.category.Debug": {
+    "message": "Debug",
+    "description": "The label for category Debug in sidebar xmlSidebar"
+  },
+  "sidebar.xmlSidebar.category.Decoding": {
+    "message": "Decoding",
+    "description": "The label for category Decoding in sidebar xmlSidebar"
+  },
+  "sidebar.xmlSidebar.category.Encoding": {
+    "message": "Encoding",
+    "description": "The label for category Encoding in sidebar xmlSidebar"
+  },
+  "sidebar.xmlSidebar.category.Excel": {
+    "message": "Excel",
+    "description": "The label for category Excel in sidebar xmlSidebar"
+  },
+  "sidebar.xmlSidebar.category.File system": {
+    "message": "File system",
+    "description": "The label for category File system in sidebar xmlSidebar"
+  },
+  "sidebar.xmlSidebar.category.HTTP": {
+    "message": "HTTP",
+    "description": "The label for category HTTP in sidebar xmlSidebar"
+  },
+  "sidebar.xmlSidebar.category.Mathematics": {
+    "message": "Mathematics",
+    "description": "The label for category Mathematics in sidebar xmlSidebar"
+  },
+  "sidebar.xmlSidebar.category.PDF": {
+    "message": "PDF",
+    "description": "The label for category PDF in sidebar xmlSidebar"
+  },
+  "sidebar.xmlSidebar.category.RESTful": {
+    "message": "RESTful",
+    "description": "The label for category RESTful in sidebar xmlSidebar"
+  },
+  "sidebar.xmlSidebar.category.SOAP": {
+    "message": "SOAP",
+    "description": "The label for category SOAP in sidebar xmlSidebar"
+  },
+  "sidebar.xmlSidebar.category.Standard": {
+    "message": "Standard",
+    "description": "The label for category Standard in sidebar xmlSidebar"
+  },
+  "sidebar.xmlSidebar.category.XML": {
+    "message": "XML",
+    "description": "The label for category XML in sidebar xmlSidebar"
+  },
+  "sidebar.xmlSidebar.category.ZIP": {
+    "message": "ZIP",
+    "description": "The label for category ZIP in sidebar xmlSidebar"
+  },
+  "sidebar.sdkSideBar.category.Usage": {
+    "message": "Usage",
+    "description": "The label for category Usage in sidebar sdkSideBar"
+  },
+  "sidebar.sdkSideBar.category.Config_files": {
+    "message": "Config_files",
+    "description": "The label for category Config_files in sidebar sdkSideBar"
+  }
+}

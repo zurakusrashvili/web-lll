@@ -1,0 +1,49 @@
+# Replace array items
+
+### Anatomy
+
+```xml
+<array:replace var="var" var_replacement="var" var_result="var"/>
+```
+
+ **Description**:
+ ARRAY:REPLACE replaces the values of an array with the values of a replacement array based on their common keys.
+
+
+> **Attention:**
+>
+> ARRAY:REPLACE is destructive, in the sense that it modifies the array in-place, unless 'var_result' is specified in which case a copy of the resulting array will be stored in 'var_result' instead. It preserves the key and value associations of the array.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Variable name | array:replace |
+| var_replacement | var | Replacement variable name | array:replace |
+| var_result | var | Result variable name | array:replace |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var|var_result | array | no-result-propagation |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<array var="names">
+<item key="bg">Bill Gates</item>
+<item key="sj">Steve Jobs</item>
+</array>
+<array var="replacement">
+<item key="bg">William Henry Gates III</item>
+</array>
+<array:replace var="names" var_replacement="replacement"/>
+<output>$names.bg and $names.sj are competitors!</output>
+<!-- William Henry Gates III and Steve Jobs are competitors! -->
+```
+

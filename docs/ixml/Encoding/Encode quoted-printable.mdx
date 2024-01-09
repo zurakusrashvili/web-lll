@@ -1,0 +1,46 @@
+# Encode quoted-printable
+
+### Anatomy
+
+```xml
+<encode:quotedprint var="var">
+    string
+</encode:quotedprint>
+```
+
+ **Description**:
+ ENCODE:QUOTEDPRINT encodes a value according to RFC 2045 by replacing unprintable characters with an equal sign ('=') followed by a 2-character hexadecimal number.
+
+ENCODE:QUOTEDPRINT is the complement of the DECODE:QUOTEDPRINT operation.
+
+### Content: string
+
+```xml
+<content type="string"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | encode:quotedprint |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | string | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<output>
+<encode:quotedprint>Hello World!&n;My name is iXML!</encode:quotedprint>
+</output>
+<!-- Hello World!=0AMy name is iXML! -->
+```
+

@@ -1,0 +1,39 @@
+# Filter array items
+
+### Anatomy
+
+```xml
+<array:filter var="var" var_result="var" value="string|regexp" func="string"/>
+```
+
+ **Description**:
+ ARRAY:FILTER filters an array by extracting those items of an array whose values meet the given condition.
+
+A given key may specify the column of a multidimensional array to filter by. If however, the key is omitted, then the array is treated as an unidimensional list.
+
+Comparison of numeric values is always performed numerically regardless of the intrinsic data types.
+
+
+> **Attention:**
+>
+> If a key is specified and that key does not exist within the inner array, the corresponding item of the outer array will be discarded.
+> 
+> ARRAY:FILTER is destructive, in the sense that it modifies the array in-place, unless 'var_result' is specified in which case a copy of the resulting array will be stored in 'var_result' instead. It preserves the key and value associations of the array.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Variable name | array:filter |
+| var_result | var | Result variable name | array:filter |
+| value | string|regexp | Value to compare to | array:filter |
+| func | string | Comparison function | array:filter |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var|var_result | array | no-result-propagation |
+
+

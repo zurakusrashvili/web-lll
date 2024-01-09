@@ -1,0 +1,45 @@
+# Decode JSON
+
+### Anatomy
+
+```xml
+<decode:json var="var">
+    string
+</decode:json>
+```
+
+ **Description**:
+ DECODE:JSON generates a structural value from a JavaScript Object Notation (JSON) representation according to RFC 4627.
+
+DECODE:JSON is the complement of the ENCODE:JSON operation.
+
+### Content: string
+
+```xml
+<content type="string"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | decode:json |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var |  | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<decode:json var="names">{"bg":"Bill Gates","sj":"Steve Jobs"}</decode:json>
+<output>$names.bg</output>
+<!-- Bill Gates -->
+```
+

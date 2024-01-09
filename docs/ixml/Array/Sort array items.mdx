@@ -1,0 +1,53 @@
+# Sort array items
+
+### Anatomy
+
+```xml
+<array:sort var="var" var_result="var" type="type"/>
+```
+
+ **Description**:
+ ARRAY:SORT sorts the items of an array in a particular order, specified by a given sorting type.
+
+A given key may specify the column of a multidimensional array to sort by. If however, the key is omitted, then the array is treated as an unidimensional list.
+
+
+> **Attention:**
+>
+> If a key is specified and that key does not exist within the inner array, the corresponding item of the outer array will be treated as NULL for the purpose of sorting.
+> 
+> ARRAY:SORT is destructive, in the sense that it modifies the array in-place, unless 'var_result' is specified in which case a copy of the resulting array will be stored in 'var_result' instead. It preserves the key and value associations of the array.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Variable name | array:sort |
+| var_result | var | Result variable name | array:sort |
+| type | type | Sorting type | array:sort |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var|var_result | array | no-result-propagation |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<array var="names">
+<item>Bill Gates</item>
+<item>Steve Jobs</item>
+<item>Larry Ellison</item>
+</array>
+<array:sort var="names" type="desc"/>
+<output>
+<array:join var="names" delimiter=", "/>
+</output>
+<!-- Steve Jobs, Larry Ellison, Bill Gates -->
+```
+

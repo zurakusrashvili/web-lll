@@ -1,0 +1,38 @@
+# Symmetric-key encryption
+
+### Anatomy
+
+```xml
+<encode:crypt var="var" var_iv="var" cipher="string" key="string">
+    string
+</encode:crypt>
+```
+
+ **Description**:
+ ENCODE:CRYPT encryptes plaintext with a key according to a given cipher.
+
+ENCODE:CRYPT is the complement of the DECODE:CRYPT operation.
+
+### Content: string
+
+```xml
+<content type="string"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name for ciphertext | encode:crypt |
+| var_iv | var | Result variable name for initialization vector | encode:crypt |
+| cipher | string | Cipher | encode:crypt |
+| key | string | Cryptographic key | encode:crypt |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | string | N/A |
+
+

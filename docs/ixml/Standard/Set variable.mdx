@@ -1,0 +1,78 @@
+# Set variable
+
+### Anatomy
+
+```xml
+<set var="var" key="string">
+    string
+</set>
+```
+
+ **Description**:
+ SET sets the value of a variable.
+
+
+				
+					These three statements are semantically equivalent:
+
+					<set var="var[key]">value</set>
+					<set var="var.key">value</set>
+					<set var="var" key="key">value</set>
+
+					These two statements are semantically equivalent:
+
+					<set var="var[]">value</set>
+					<array:push var="var">value</array:push>
+				
+			
+
+### Content: string
+
+```xml
+<content type="string"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Variable name | set |
+| key | string | Key | set |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | string | N/A |
+
+
+## Examples
+
+### Example: Setting regular variables
+
+```xml
+<set var="firstname">Bill</set>
+<set var="lastname">Gates</set>
+<output>$firstname $lastname</output>
+<!-- Bill Gates -->
+```
+
+### Example: Setting array items implicitly
+
+```xml
+<set var="names[bg]">Bill Gates</set>
+<set var="names.sj">Steve Jobs</set>
+<output>$names.bg and $names[sj] are competitors!</output>
+<!-- Bill Gates and Steve Jobs are competitors! -->
+```
+
+### Example: Setting array items explicitly
+
+```xml
+<set var="names" key="bg">Bill Gates</set>
+<set var="names" key="sj">Steve Jobs</set>
+<output>$names.bg and $names[sj] are competitors!</output>
+<!-- Bill Gates and Steve Jobs are competitors! -->
+```
+

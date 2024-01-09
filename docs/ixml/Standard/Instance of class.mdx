@@ -1,0 +1,79 @@
+# Instance of class
+
+### Anatomy
+
+```xml
+<instanceof class="var" var="var" var_result="var"/>
+```
+
+ **Description**:
+ INSTANCEOF checks whether a variable is an object of a given class.
+
+
+> **Attention:**
+>
+> INSTANCEOF will throw an error for an undefined or invalid class.
+> 
+> The class variable 'class' may alternatively be an object in which case it's derived class is used instead.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| class | var | Class variable name | instanceof |
+| var | var | Variable name | instanceof |
+| var_result | var | Result variable name | instanceof |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var_result | bool | N/A |
+
+
+## Examples
+
+### Example: Class related
+
+```xml
+<class var="Human"/>
+<class var="Person">
+<extends class="Human"/>
+<property name="name"/>
+<constructor>
+<set var="this.name">$name</set>
+</constructor>
+</class>
+<new class="Person" var="obj">
+<param name="name">Bill Gates</param>
+</new>
+<instanceof class="Human" var="obj" var_result="instanceof"/>
+<is var="instanceof" type="true">
+<output>$obj.name is a human!</output>
+</is>
+<!-- Bill Gates is a human! -->
+```
+
+### Example: Object related
+
+```xml
+<class var="Person">
+<property name="name"/>
+<constructor>
+<set var="this.name">$name</set>
+</constructor>
+</class>
+<new class="Person" var="obj1">
+<param name="name">Bill Gates</param>
+</new>
+<new class="Person" var="obj2">
+<param name="name">Steve Jobs</param>
+</new>
+<instanceof class="obj1" var="obj2" var_result="instanceof"/>
+<is var="instanceof" type="true">
+<output>$obj1.name is of the same class as $obj2.name!</output>
+</is>
+<!-- Bill Gates is of the same class as Steve Jobs! -->
+```
+

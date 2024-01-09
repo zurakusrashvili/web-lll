@@ -1,0 +1,45 @@
+# Logarithm
+
+### Anatomy
+
+```xml
+<math:log var="var" base="int">
+    float
+</math:log>
+```
+
+ **Description**:
+ MATH:LOG calculates the logarithm of a value using a given logarithmic base.
+
+### Content: float
+
+```xml
+<content type="float"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | math:log |
+| base | int | Logarithmic base | math:log |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | float | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<output>
+<math:log base="2">1024</math:log>
+</output>
+<!-- 10 -->
+```
+

@@ -1,0 +1,47 @@
+# Shift off array
+
+### Anatomy
+
+```xml
+<array:shift var="var" var_result="var"/>
+```
+
+ **Description**:
+ ARRAY:SHIFT shifts an item off the beginning of an array and returns its value.
+
+
+> **Attention:**
+>
+> ARRAY:SHIFT is destructive, in the sense that it modifies the array in-place. It will re-index all numeric keys in the array.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Variable name | array:shift |
+| var_result | var | Result variable name | array:shift |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | array | no-result-propagation |
+| var_result |  | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<array var="names">
+<item>Bill Gates</item>
+<item>Steve Jobs</item>
+</array>
+<output>
+<array:shift var="names"/>
+</output>
+<!-- Bill Gates -->
+```
+

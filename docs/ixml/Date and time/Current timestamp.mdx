@@ -1,0 +1,38 @@
+# Current timestamp
+
+### Anatomy
+
+```xml
+<date:now var="var" micro="bool"/>
+```
+
+ **Description**:
+ DATE:NOW returns the timestamp for the current date and time. The timestamp may optionally include micro seconds in the fractional part.
+
+Timestamps are based on Unix time, defined as the number of seconds elapsed since midnight proleptic Coordinated Universal Time (UTC) of January 1, 1970, not counting leap seconds.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | date:now |
+| micro | bool | Include micro seconds | date:now |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | int|float | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<output>
+<date:now/>
+</output>
+```
+

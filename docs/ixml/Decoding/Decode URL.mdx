@@ -1,0 +1,46 @@
+# Decode URL
+
+### Anatomy
+
+```xml
+<decode:url var="var">
+    string
+</decode:url>
+```
+
+ **Description**:
+ DECODE:URL decodes a value according to RFC 3986 by replacing sequences incipient with a percent sign ('%') followed by a 2-character hexadecimal number with their applicable characters.
+
+DECODE:URL is the complement of the ENCODE:URL operation.
+
+### Content: string
+
+```xml
+<content type="string"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | decode:url |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | string | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<output>
+<decode:url>My%20name%20is%20iXML%21</decode:url>
+</output>
+<!-- My name is iXML! -->
+```
+

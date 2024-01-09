@@ -1,0 +1,58 @@
+# Create XML
+
+### Anatomy
+
+```xml
+<xml:create var="var" var_result="var"/>
+```
+
+ **Description**:
+ XML:CREATE generates a XML document according to the XML 1.0 Specification.
+
+
+				The given variable references the root element and must be an array comprised of the following items:
+
+				Key   Description
+				--------------------------------------------------------------
+				name  tag name
+				attr  array of attributes with associated name and value pairs
+				nodes array of child nodes including cdata parts
+				cdata cdata value (optionally instead of 'nodes')
+			
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Variable name | xml:create |
+| var_result | var | Result variable name | xml:create |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var_result | string | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<array var="root">
+<item key="name">html</item>
+<array key="attr">
+<item key="xmlns">http://www.w3.org/1999/xhtml</item>
+<item key="xml:lang">en</item>
+</array>
+</array>
+<output>
+<xml:create var="root"/>
+</output>
+<!--
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"/>
+-->
+```
+

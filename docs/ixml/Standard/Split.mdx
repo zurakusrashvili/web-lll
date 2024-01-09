@@ -1,0 +1,52 @@
+# Split
+
+### Anatomy
+
+```xml
+<split var="var" limit="int">
+    string
+</split>
+```
+
+ **Description**:
+ SPLIT splits a subject along boundaries formed by a given delimiter or matched by a given pattern.
+
+### Content: string
+
+```xml
+<content type="string"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | split |
+| limit | int | Limit | split |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | array | no-result-propagation |
+
+
+## Examples
+
+### Example: Basic split
+
+```xml
+<split var="names" delimiter=", ">Bill Gates, Steve Jobs</split>
+<output>$names[0]</output>
+<!-- Bill Gates -->
+```
+
+### Example: Regular expression split
+
+```xml
+<split var="names" pattern="/,\s?/">Bill Gates, Steve Jobs</split>
+<output>$names[1]</output>
+<!-- Steve Jobs -->
+```
+

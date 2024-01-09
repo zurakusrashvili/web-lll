@@ -1,0 +1,50 @@
+# RESTful binding
+
+### Anatomy
+
+```xml
+<rest:bind var="var" method="string" type="type">
+    string
+</rest:bind>
+```
+
+**Parents**: rest:client
+
+ **Description**:
+ REST:BIND defines a RESTful resource as a function that can be invoked with subsequent CALL statements.
+
+Resource route arguments of the form ':name' are substituted with the actual corresponding parameter values when being called. All remaining parameters are treated as query arguments according to RFC 3986 and are generally passed via the URL query component except for method POST in which case they are transported as the HTTP body.
+
+
+				Invoked resources return an array comprised of the following items if type is specified as 'raw':
+
+				Key    Description
+				----------------------------
+				status response status code
+				type   response content type
+				header response header
+				body   response body
+			
+
+### Content: string
+
+```xml
+<content type="string"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Function variable name | rest:bind |
+| method | string | Method | rest:bind |
+| type | type | Processing type | rest:bind |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | function | no-result-propagation |
+
+

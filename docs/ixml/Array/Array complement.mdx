@@ -1,0 +1,67 @@
+# Array complement
+
+### Anatomy
+
+```xml
+<array:complement var="var" var_set="var" var_result="var" type="type"/>
+```
+
+ **Description**:
+ ARRAY:COMPLEMENT generates the relative complement of two arrays by extracting those items of an array that do not exist within the set array.
+
+
+> **Attention:**
+>
+> ARRAY:COMPLEMENT is destructive, in the sense that it modifies the array in-place, unless 'var_result' is specified in which case a copy of the resulting array will be stored in 'var_result' instead. It preserves the key and value associations of the array.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Variable name | array:complement |
+| var_set | var | Set variable name | array:complement |
+| var_result | var | Result variable name | array:complement |
+| type | type | Complement type | array:complement |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var|var_result | array | no-result-propagation |
+
+
+## Examples
+
+### Example: Complement by keys
+
+```xml
+<array var="names">
+<item key="bg">Bill Gates</item>
+<item key="sj">Steve Jobs</item>
+<item key="le">Larry Ellison</item>
+</array>
+<array var="complement">
+<item key="bg">Bill Gates</item>
+</array>
+<array:complement var="names" var_set="complement" type="keys"/>
+<output>$names.sj and $names.le are friends!</output>
+<!-- Steve Jobs and Larry Ellison are friends! -->
+```
+
+### Example: Complement by values
+
+```xml
+<array var="names">
+<item>Bill Gates</item>
+<item>Steve Jobs</item>
+<item>Larry Ellison</item>
+</array>
+<array var="complement">
+<item>Bill Gates</item>
+</array>
+<array:complement var="names" var_set="complement" type="values"/>
+<output>$names[1] and $names[2] are friends!</output>
+<!-- Steve Jobs and Larry Ellison are friends! -->
+```
+

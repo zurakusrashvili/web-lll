@@ -1,0 +1,39 @@
+# Cast variable
+
+### Anatomy
+
+```xml
+<cast var="var" type="type"/>
+```
+
+ **Description**:
+ CAST casts a variable to a given data type.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Variable name | cast |
+| type | type | Data type | cast |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | bool|int|float|string | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<set var="number">123</set>
+<cast var="number" type="int"/>
+<is var="number" type="int">
+<output>$number is now an integer number!</output>
+</is>
+<!-- 123 is now an integer number! -->
+```
+

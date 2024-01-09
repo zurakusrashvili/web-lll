@@ -1,0 +1,101 @@
+# While loop
+
+### Anatomy
+
+```xml
+<while value1="string" value2="string|regexp" func="string">
+    ixml
+    <else>ixml</else>
+</while>
+```
+
+ **Description**:
+ The WHILE construct is a control flow structure that allows code to be executed repeatedly based on a condition. It can be thought of as a repeating IF construct that is being re-evaluated before each loop iteration.
+
+While the condition is true, the embedded code is executed. Otherwise, the execution continues outside the loop.
+
+
+> **Attention:**
+>
+> Comparison of numeric values is always performed numerically regardless of the intrinsic data types.
+> 
+> Regular expression matches regard 'value1' as the subject and 'value2' as the pattern.
+> 
+> It is possible, and in some cases desirable, for the condition to always evaluate to true, thereby creating an infinite loop. When such a loop is created intentionally, there is the BREAK operation that controls termination of the loop.
+> 
+> The BREAK operation may be used to break-off the execution of the current loop iteration, thereby implicitly terminating the loop. Also, the NEXT operation may be used to skip the rest of the current loop iteration and continue with the condition evaluation at the beginning of the next loop iteration.
+
+### Content: ixml
+
+```xml
+<content type="ixml"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| value1 | string | Value to compare from | while |
+| value2 | string|regexp | Value to compare to | while |
+| func | string | Comparison function | while |
+
+
+## Children
+
+<details>
+<summary>Elsewise execution</summary>
+
+### Anatomy
+```xml
+<else>ixml</else>
+```
+
+**Content: Code (ixml)**
+
+```xml
+<content type="ixml"/>
+```
+
+</details>
+
+## Examples
+
+### Example: Basic comparison
+
+```xml
+<set var="count">0</set>
+<while value1="$count" func="&lt;" value2="10">
+<output>$count</output>
+<math:inc var="count"/>
+</while>
+<!-- 0123456789 -->
+```
+
+### Example: Indirect loop termination
+
+```xml
+<set var="count">0</set>
+<while>
+<output>$count</output>
+<math:inc var="count"/>
+<if value1="$count" func="=" value2="10">
+<break/>
+</if>
+</while>
+<!-- 0123456789 -->
+```
+
+### Example: Continuation with next iteration
+
+```xml
+<set var="count">0</set>
+<while value1="$count" func="&lt;" value2="9">
+<math:inc var="count"/>
+<if value1="$count" func="=" value2="5">
+<next/>
+</if>
+<output>$count</output>
+</while>
+<!-- 12346789 -->
+```
+

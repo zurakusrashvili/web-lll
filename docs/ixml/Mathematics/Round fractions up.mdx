@@ -1,0 +1,44 @@
+# Round fractions up
+
+### Anatomy
+
+```xml
+<math:ceil var="var">
+    float
+</math:ceil>
+```
+
+ **Description**:
+ MATH:CEIL rounds a value up to the next highest integer number.
+
+### Content: float
+
+```xml
+<content type="float"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | math:ceil |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | float | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<output>
+<math:ceil>17.213482971852</math:ceil>
+</output>
+<!-- 18 -->
+```
+

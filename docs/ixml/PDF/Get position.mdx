@@ -1,0 +1,33 @@
+# Get position
+
+### Anatomy
+
+```xml
+<pdf:getpos var_page="var" var_subpage="var" var_x="var" var_y="var"/>
+```
+
+**Parents**: pdf:header, pdf:footer, pdf:body
+
+ **Description**:
+ PDF:GETPOS gets the current position.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var_page | var | Result variable name for page number | pdf:getpos |
+| var_subpage | var | Result variable name for section page number | pdf:getpos |
+| var_x | var | Result variable name for abscissa | pdf:getpos |
+| var_y | var | Result variable name for ordinate | pdf:getpos |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var_page | int | no-result-propagation |
+| var_subpage | int | no-result-propagation |
+| var_x | float | no-result-propagation |
+| var_y | float | no-result-propagation |
+
+

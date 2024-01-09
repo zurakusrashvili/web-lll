@@ -1,0 +1,55 @@
+# Break-off
+
+### Anatomy
+
+```xml
+<break leap="int"/>
+```
+
+ **Description**:
+ BREAK breaks out of the current control flow and continues with the execution outside the paternal control statement, though leaping over arbitrary levels of nested control statements.
+
+
+> **Attention:**
+>
+> If BREAK is executed within the most upper control flow or the control flow of an included code source or a subroutine, it behaves like RETURN.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| leap | int | Leap | break |
+
+
+## Examples
+
+### Example: Indirect loop termination (WHILE)
+
+```xml
+<set var="count">0</set>
+<while>
+<output>$count</output>
+<math:inc var="count"/>
+<if value1="$count" func="=" value2="10">
+<break/>
+</if>
+</while>
+<!-- 0123456789 -->
+```
+
+### Example: Indirect loop termination (FOREACH)
+
+```xml
+<array var="names">
+<item>Bill Gates</item>
+<item>Steve Jobs</item>
+</array>
+<foreach var="names" var_value="name">
+<output>$name</output>
+<if value1="$name" func="=" value2="Bill Gates">
+<break/>
+</if>
+</foreach>
+<!-- Bill Gates -->
+```
+

@@ -1,0 +1,35 @@
+# ZLIB decompression
+
+### Anatomy
+
+```xml
+<decode:zlib var="var">
+    string
+</decode:zlib>
+```
+
+ **Description**:
+ DECODE:ZLIB decompresses a value from ZLIB data format according to RFC 1950.
+
+DECODE:ZLIB is the complement of the ENCODE:ZLIB operation.
+
+### Content: string
+
+```xml
+<content type="string"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | decode:zlib |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | string | N/A |
+
+

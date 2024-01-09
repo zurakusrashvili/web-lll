@@ -1,0 +1,45 @@
+# SOAP client
+
+### Anatomy
+
+```xml
+<soap:client wsdl="string">
+    ixml
+</soap:client>
+```
+
+ **Description**:
+ SOAP:CLIENT defines a set of dynamically bound SOAP operations based on SOAP 1.1 according to a given WSDL model.
+
+### Content: ixml
+
+```xml
+<content type="ixml"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| wsdl | string | WSDL filename/URL | soap:client |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<soap:client wsdl="http://www.dneonline.com/calculator.asmx?WSDL">
+<soap:bind var="add">add</soap:bind>
+</soap:client>
+<array var="parameters">
+<item key="intA">2</item>
+<item key="intB">5</item>
+</array>
+<call func="add" var="result">
+<param var="parameters"/>
+</call>
+<output>$result.AddResult</output>
+<!-- 7 -->
+```
+

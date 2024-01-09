@@ -1,0 +1,46 @@
+# Parse XML
+
+### Anatomy
+
+```xml
+<xml:parse var="var">
+    string
+</xml:parse>
+```
+
+ **Description**:
+ XML:PARSE parses a XML document.
+
+
+				XML:PARSE returns the root element as an array comprised of the following items:
+
+				Key   Description
+				---------------------------------------------------------------------------
+				name  tag name (upper case)
+				attr  array of attributes with associated name (upper case) and value pairs
+				nodes array of child nodes including cdata parts
+				child array of child elements
+				elems array of child elements grouped by tag name (upper case)
+				cdata concatenated cdata value
+			
+
+### Content: string
+
+```xml
+<content type="string"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | xml:parse |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | array | no-result-propagation |
+
+

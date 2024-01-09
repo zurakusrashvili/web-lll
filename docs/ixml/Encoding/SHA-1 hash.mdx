@@ -1,0 +1,44 @@
+# SHA-1 hash
+
+### Anatomy
+
+```xml
+<encode:sha1 var="var">
+    string
+</encode:sha1>
+```
+
+ **Description**:
+ ENCODE:SHA1 generates the SHA-1 hash of a value as a 40-character hexadecimal number using the US Secure Hash Algorithm 1.
+
+### Content: string
+
+```xml
+<content type="string"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | encode:sha1 |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | string | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<output>
+<encode:sha1>My name is iXML!</encode:sha1>
+</output>
+<!-- bb9b1ff0d612972f6a48652caf6de4201c07c9f6 -->
+```
+

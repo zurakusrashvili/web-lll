@@ -1,0 +1,66 @@
+# For loop
+
+### Anatomy
+
+```xml
+<for var="var" from="int" to="int" step="int">
+    ixml
+</for>
+```
+
+ **Description**:
+ The FOR construct is a control flow structure for arithmetic progression, enumerating values of a given numeric range.
+
+On each loop iteration, the embedded code is executed with the loop counter assigned to 'var'.
+
+
+> **Attention:**
+>
+> If the step is less than one, the loop will not start at all.
+> 
+> The BREAK operation may be used to break-off the execution of the current loop iteration, thereby implicitly terminating the loop. Also, the NEXT operation may be used to skip the rest of the current loop iteration and continue with the execution of the next loop iteration.
+
+### Content: ixml
+
+```xml
+<content type="ixml"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Variable name for loop counter | for |
+| from | int | From | for |
+| to | int | To | for |
+| step | int | Step | for |
+
+
+## Examples
+
+### Example: Incremental enumeration
+
+```xml
+<for var="count" from="6" to="10" step="2">
+<output>$count&n;</output>
+</for>
+<!--
+6
+8
+10
+-->
+```
+
+### Example: Decremental enumeration
+
+```xml
+<for var="count" from="10" to="6" step="2">
+<output>$count&n;</output>
+</for>
+<!--
+10
+8
+6
+-->
+```
+

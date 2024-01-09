@@ -1,0 +1,30 @@
+# Read entry
+
+### Anatomy
+
+```xml
+<zip:read var="var" filename="string"/>
+```
+
+**Parents**: zip:archive
+
+ **Description**:
+ ZIP:READ reads the entire content of an entry within an archive.
+
+ZIP:READ is the complement of the ZIP:WRITE operation.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | zip:read |
+| filename | string | Filename | zip:read |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | string | N/A |
+
+

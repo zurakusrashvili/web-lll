@@ -1,0 +1,44 @@
+# Concatenate
+
+### Anatomy
+
+```xml
+<concat var="var">
+    string
+</concat>
+```
+
+ **Description**:
+ CONCAT concatenates a value to a variable.
+
+### Content: string
+
+```xml
+<content type="string"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Variable name | concat |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | string | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<set var="name">i</set>
+<concat var="name">XML</concat>
+<output>$name</output>
+<!-- iXML -->
+```
+

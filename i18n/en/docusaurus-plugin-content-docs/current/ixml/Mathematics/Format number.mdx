@@ -1,0 +1,47 @@
+# Format number
+
+### Anatomy
+
+```xml
+<math:format var="var" countdec="int" decpoint="string" separator="string">
+    float
+</math:format>
+```
+
+ **Description**:
+ MATH:FORMAT returns the formatted representation of a value with a fixed number of decimal digits and grouped thousands.
+
+### Content: float
+
+```xml
+<content type="float"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | math:format |
+| countdec | int | Number of decimal digits | math:format |
+| decpoint | string | Decimal point | math:format |
+| separator | string | Thousands separator | math:format |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | string | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<output>
+<math:format countdec="2">1792702.213482971852</math:format>
+</output>
+<!-- 1,792,702.21 -->
+```
+

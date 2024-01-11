@@ -1,0 +1,171 @@
+# Select records
+
+### Anatomy
+
+```xml
+<db:select var="var" var_count="var" var_result="var" type="type" distinct="bool" limit="int" offset="int">
+    ixml
+    <db:fields var="var">ixml</db:fields>
+    <db:table alias="string">string</db:table>
+    <db:join>ixml</db:join>
+    <db:groupby var="var">ixml</db:groupby>
+    <db:having>ixml</db:having>
+    <db:orderby var="var">ixml</db:orderby>
+</db:select>
+```
+
+**Parents**: db:connection
+
+ **Description**:
+ DB:SELECT generates and executes a SQL select statement and retrieves the accordant result set of records from the database.
+
+### Content: ixml
+
+```xml
+<content type="ixml"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name for generated SQL statement | db:select |
+| var_count | var | Result variable name for number of potential records | db:select |
+| var_result | var | Result variable name for retrieved result set | db:select |
+| type | type | Result set type | db:select |
+| distinct | bool | Distinct result set | db:select |
+| limit | int | Limit | db:select |
+| offset | int | Offset | db:select |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | string | N/A |
+| var_count | int | no-result-propagation |
+| var_result | array | no-result-propagation |
+
+
+## Children
+
+<details>
+<summary>Fields</summary>
+
+### Anatomy
+```xml
+<db:fields var="var">ixml</db:fields>
+```
+
+**Attributes**:
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| var | var | Variable name for field list |
+
+**Content: Code (ixml)**
+
+```xml
+<content type="ixml"/>
+```
+
+</details>
+
+<details>
+<summary>Table</summary>
+
+### Anatomy
+```xml
+<db:table alias="string">string</db:table>
+```
+
+**Attributes**:
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| alias | string | Alias name |
+
+**Table name: Code (string)**
+
+```xml
+<content type="string"/>
+```
+
+</details>
+
+<details>
+<summary>Join clause</summary>
+
+### Anatomy
+```xml
+<db:join>ixml</db:join>
+```
+
+**Content: Code (ixml)**
+
+```xml
+<content type="ixml"/>
+```
+
+</details>
+
+<details>
+<summary>Group by clause</summary>
+
+### Anatomy
+```xml
+<db:groupby var="var">ixml</db:groupby>
+```
+
+**Attributes**:
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| var | var | Variable name for group by field list |
+
+**Content: Code (ixml)**
+
+```xml
+<content type="ixml"/>
+```
+
+</details>
+
+<details>
+<summary>Having condition</summary>
+
+### Anatomy
+```xml
+<db:having>ixml</db:having>
+```
+
+**Content: Code (ixml)**
+
+```xml
+<content type="ixml"/>
+```
+
+</details>
+
+<details>
+<summary>Order by clause</summary>
+
+### Anatomy
+```xml
+<db:orderby var="var">ixml</db:orderby>
+```
+
+**Attributes**:
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| var | var | Variable name for associated order by field name and type pairs |
+
+**Content: Code (ixml)**
+
+```xml
+<content type="ixml"/>
+```
+
+</details>
+

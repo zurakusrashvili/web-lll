@@ -1,0 +1,62 @@
+# Push onto array
+
+### Anatomy
+
+```xml
+<array:push var="var">
+    string
+</array:push>
+```
+
+ **Description**:
+ ARRAY:PUSH pushes a value onto the end of an array.
+
+ARRAY:PUSH will implicitly generate a consecutive numeric key.
+
+
+				
+					These three statements are semantically equivalent:
+
+					<array:push var="var">value</array:push>
+					<set var="var[]">value</set>
+				
+			
+
+
+> **Attention:**
+>
+> ARRAY:PUSH is destructive, in the sense that it modifies the array in-place. It preserves the key and value associations of the array.
+
+### Content: string
+
+```xml
+<content type="string"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Variable name | array:push |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | array | no-result-propagation |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<array var="names">
+<item>Bill Gates</item>
+</array>
+<array:push var="names">Steve Jobs</array:push>
+<output>$names[0] and $names[1] are competitors!</output>
+<!-- Bill Gates and Steve Jobs are competitors! -->
+```
+

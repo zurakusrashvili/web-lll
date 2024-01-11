@@ -1,0 +1,36 @@
+# Unpack binary data
+
+### Anatomy
+
+```xml
+<decode:binary var="var" format="string">
+    string
+</decode:binary>
+```
+
+ **Description**:
+ DECODE:BINARY unpacks binary data into an array according to a given Perl/PHP-compatible format.
+
+DECODE:BINARY is the complement of the ENCODE:BINARY operation.
+
+### Content: string
+
+```xml
+<content type="string"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | decode:binary |
+| format | string | Format | decode:binary |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | array | no-result-propagation |
+
+

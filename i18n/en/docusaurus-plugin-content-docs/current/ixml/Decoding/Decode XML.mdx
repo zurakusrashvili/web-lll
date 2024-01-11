@@ -1,0 +1,46 @@
+# Decode XML
+
+### Anatomy
+
+```xml
+<decode:xml var="var">
+    string
+</decode:xml>
+```
+
+ **Description**:
+ DECODE:XML decodes a value by converting special XML entites back to their applicable characters.
+
+DECODE:XML is the complement of the ENCODE:XML operation.
+
+### Content: string
+
+```xml
+<content type="string"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | decode:xml |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | string | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<output>
+<decode:xml>My name is &quot;iXML&quot; &amp;amp; I am a XML derivative!</decode:xml>
+</output>
+<!-- My name is "iXML" & I am a XML derivative! -->
+```
+

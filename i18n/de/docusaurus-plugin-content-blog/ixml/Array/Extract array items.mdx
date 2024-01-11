@@ -1,0 +1,67 @@
+# Extract array items
+
+### Anatomy
+
+```xml
+<array:extract var="var" var_replacement="var" var_result="var" offset="int" length="int"/>
+```
+
+ **Description**:
+ ARRAY:EXTRACT extracts and replaces part of an array, isolated by an offset and a length.
+
+If the offset is negative it will start that many items from the end of the array. If the length is omitted, every item from the offset until the end of the array will be returned. If the length is negative then it will stop that many items from the end of the array.
+
+
+> **Attention:**
+>
+> ARRAY:EXTRACT is destructive, in the sense that it modifies the array in-place. It will re-index all keys in the array numerically.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Variable name | array:extract |
+| var_replacement | var | Replacement variable name | array:extract |
+| var_result | var | Result variable name | array:extract |
+| offset | int | Offset | array:extract |
+| length | int | Length | array:extract |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | array | no-result-propagation |
+| var_result | array | no-result-propagation |
+
+
+## Examples
+
+### Example: Extraction
+
+```xml
+<array var="names">
+<item>Bill Gates</item>
+<item>Steve Jobs</item>
+<item>Larry Ellison</item>
+</array>
+<array:extract var="names" var_result="extract" offset="1" length="2"/>
+<output>$extract[0] and $extract[1] are friends!</output>
+<!-- Steve Jobs and Larry Ellison are friends! -->
+```
+
+### Example: Replacement
+
+```xml
+<array var="names">
+<item>Bill Gates</item>
+<item>Larry Ellison</item>
+</array>
+<array var="replacement">
+<item>Steve Jobs</item>
+</array>
+<array:extract var="names" var_replacement="replacement" length="1"/>
+<output>$names[0] and $names[1] are friends!</output>
+<!-- Steve Jobs and Larry Ellison are friends! -->
+```
+

@@ -1,0 +1,310 @@
+# Aggregate array items
+
+### Anatomy
+
+```xml
+<array:aggregate var="var" var_result="var" type="type"/>
+```
+
+ **Description**:
+ ARRAY:AGGREGATE calculates an aggregated value of the values of an array based on a given aggregation type.
+
+A given key may specify the column of a multidimensional array to aggregate by. If however, the key is omitted, then the array is treated as an unidimensional list.
+
+
+> **Attention:**
+>
+> If a key is specified and that key does not exist within the inner array, the corresponding item of the outer array will be skipped.
+> 
+> Array items with non-numeric values will be skipped.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Variable name | array:aggregate |
+| var_result | var | Result variable name | array:aggregate |
+| type | type | Aggregation type | array:aggregate |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var_result |  | N/A |
+
+
+## Examples
+
+### Example: Count
+
+```xml
+<array var="numbers">
+<item>16</item>
+<item>32</item>
+<item>19</item>
+<item>57</item>
+<item>62</item>
+<item>48</item>
+</array>
+<output>
+<array:aggregate var="numbers" type="count"/>
+</output>
+<!-- 6 -->
+```
+
+### Example: Summation
+
+```xml
+<array var="numbers">
+<item>16</item>
+<item>32</item>
+<item>19</item>
+<item>57</item>
+<item>62</item>
+<item>48</item>
+</array>
+<output>
+<array:aggregate var="numbers" type="sum"/>
+</output>
+<!-- 234 -->
+```
+
+### Example: Average
+
+```xml
+<array var="numbers">
+<item>16</item>
+<item>32</item>
+<item>19</item>
+<item>57</item>
+<item>62</item>
+<item>48</item>
+</array>
+<output>
+<array:aggregate var="numbers" type="avg"/>
+</output>
+<!-- 39 -->
+```
+
+### Example: Product
+
+```xml
+<array var="numbers">
+<item>16</item>
+<item>32</item>
+<item>19</item>
+<item>57</item>
+<item>62</item>
+<item>48</item>
+</array>
+<output>
+<array:aggregate var="numbers" type="product"/>
+</output>
+<!-- 1650180096 -->
+```
+
+### Example: Minimum
+
+```xml
+<array var="numbers">
+<item>16</item>
+<item>32</item>
+<item>19</item>
+<item>57</item>
+<item>62</item>
+<item>48</item>
+</array>
+<output>
+<array:aggregate var="numbers" type="min"/>
+</output>
+<!-- 16 -->
+```
+
+### Example: Maximum
+
+```xml
+<array var="numbers">
+<item>16</item>
+<item>32</item>
+<item>19</item>
+<item>57</item>
+<item>62</item>
+<item>48</item>
+</array>
+<output>
+<array:aggregate var="numbers" type="max"/>
+</output>
+<!-- 62 -->
+```
+
+### Example: Range
+
+```xml
+<array var="numbers">
+<item>16</item>
+<item>32</item>
+<item>19</item>
+<item>57</item>
+<item>62</item>
+<item>48</item>
+</array>
+<output>
+<array:aggregate var="numbers" type="range"/>
+</output>
+<!-- 46 -->
+```
+
+### Example: Median
+
+```xml
+<array var="numbers">
+<item>16</item>
+<item>32</item>
+<item>19</item>
+<item>57</item>
+<item>62</item>
+<item>48</item>
+</array>
+<output>
+<array:aggregate var="numbers" type="median"/>
+</output>
+<!-- 40 -->
+```
+
+### Example: Arithmetic mean
+
+```xml
+<array var="numbers">
+<item>16</item>
+<item>32</item>
+<item>19</item>
+<item>57</item>
+<item>62</item>
+<item>48</item>
+</array>
+<output>
+<array:aggregate var="numbers" type="mean-arith"/>
+</output>
+<!-- 39 -->
+```
+
+### Example: Geometric mean
+
+```xml
+<array var="numbers">
+<item>16</item>
+<item>32</item>
+<item>19</item>
+<item>57</item>
+<item>62</item>
+<item>48</item>
+</array>
+<output>
+<array:aggregate var="numbers" type="mean-geo"/>
+</output>
+<!-- 34.375990770947 -->
+```
+
+### Example: Harmonic mean
+
+```xml
+<array var="numbers">
+<item>16</item>
+<item>32</item>
+<item>19</item>
+<item>57</item>
+<item>62</item>
+<item>48</item>
+</array>
+<output>
+<array:aggregate var="numbers" type="mean-harm"/>
+</output>
+<!-- 29.867417906506 -->
+```
+
+### Example: Square mean
+
+```xml
+<array var="numbers">
+<item>16</item>
+<item>32</item>
+<item>19</item>
+<item>57</item>
+<item>62</item>
+<item>48</item>
+</array>
+<output>
+<array:aggregate var="numbers" type="mean-sqr"/>
+</output>
+<!-- 42.891335566367 -->
+```
+
+### Example: Population standard deviation
+
+```xml
+<array var="numbers">
+<item>16</item>
+<item>32</item>
+<item>19</item>
+<item>57</item>
+<item>62</item>
+<item>48</item>
+</array>
+<output>
+<array:aggregate var="numbers" type="stddev-pop"/>
+</output>
+<!-- 17.851237118661 -->
+```
+
+### Example: Sample standard deviation
+
+```xml
+<array var="numbers">
+<item>16</item>
+<item>32</item>
+<item>19</item>
+<item>57</item>
+<item>62</item>
+<item>48</item>
+</array>
+<output>
+<array:aggregate var="numbers" type="stddev-samp"/>
+</output>
+<!-- 19.555050498529 -->
+```
+
+### Example: Population variance
+
+```xml
+<array var="numbers">
+<item>16</item>
+<item>32</item>
+<item>19</item>
+<item>57</item>
+<item>62</item>
+<item>48</item>
+</array>
+<output>
+<array:aggregate var="numbers" type="var-pop"/>
+</output>
+<!-- 318.66666666667 -->
+```
+
+### Example: Sample variance
+
+```xml
+<array var="numbers">
+<item>16</item>
+<item>32</item>
+<item>19</item>
+<item>57</item>
+<item>62</item>
+<item>48</item>
+</array>
+<output>
+<array:aggregate var="numbers" type="var-samp"/>
+</output>
+<!-- 382.4 -->
+```
+

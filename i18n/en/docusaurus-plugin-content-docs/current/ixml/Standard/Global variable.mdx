@@ -1,0 +1,56 @@
+# Global variable
+
+### Anatomy
+
+```xml
+<global var="var"/>
+```
+
+ **Description**:
+ Global declares a variable as global.
+
+
+> **Attention:**
+>
+> Global variables have global scope.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Variable name | global |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var |  | no-result-propagation |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<global var="name"/>
+<function var="outputName">
+<output>$name</output>
+</function>
+<set var="name">iXML</set>
+<call func="outputName"/>
+<!-- iXML -->
+```
+
+### Example: Example
+
+```xml
+<global var="name"/>
+<function var="setName">
+<set var="name">iXML</set>
+</function>
+<call func="setName"/>
+<output>$name</output>
+<!-- iXML -->
+```
+

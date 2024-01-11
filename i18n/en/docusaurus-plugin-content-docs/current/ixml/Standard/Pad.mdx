@@ -1,0 +1,49 @@
+# Pad
+
+### Anatomy
+
+```xml
+<pad var="var" length="int" padding="string" type="type">
+    string
+</pad>
+```
+
+ **Description**:
+ PAD pads a value to a given length.
+
+If the length is positive then the value is padded on the right, if it is negative then on the left. If the padding value is empty or the absolute length is less than or equal to the actual length of the value then no padding takes place.
+
+### Content: string
+
+```xml
+<content type="string"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | pad |
+| length | int | Length | pad |
+| padding | string | Padding value | pad |
+| type | type | Measurement type | pad |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | string | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<output>
+<pad length="-10" padding="0">123</pad>
+</output>
+<!-- 0000000123 -->
+```
+

@@ -1,0 +1,47 @@
+# Pop off array
+
+### Anatomy
+
+```xml
+<array:pop var="var" var_result="var"/>
+```
+
+ **Description**:
+ ARRAY:POP pops an item off the end of an array and returns its value.
+
+
+> **Attention:**
+>
+> ARRAY:POP is destructive, in the sense that it modifies the array in-place. It preserves the key and value associations of the array.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Variable name | array:pop |
+| var_result | var | Result variable name | array:pop |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | array | no-result-propagation |
+| var_result |  | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<array var="names">
+<item>Bill Gates</item>
+<item>Steve Jobs</item>
+</array>
+<output>
+<array:pop var="names"/>
+</output>
+<!-- Steve Jobs -->
+```
+

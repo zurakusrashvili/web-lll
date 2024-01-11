@@ -1,0 +1,44 @@
+# Encode JSON
+
+### Anatomy
+
+```xml
+<encode:json var="var" var_result="var" pretty="bool"/>
+```
+
+ **Description**:
+ ENCODE:JSON generates the JavaScript Object Notation (JSON) representation of the structural value of a variable according to RFC 4627.
+
+ENCODE:JSON is the complement of the DECODE:JSON operation.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Variable name | encode:json |
+| var_result | var | Result variable name | encode:json |
+| pretty | bool | Pretty print | encode:json |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var_result | string | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<array var="names">
+<item key="bg">Bill Gates</item>
+<item key="sj">Steve Jobs</item>
+</array>
+<output>
+<encode:json var="names"/>
+</output>
+<!-- {"bg":"Bill Gates","sj":"Steve Jobs"} -->
+```
+

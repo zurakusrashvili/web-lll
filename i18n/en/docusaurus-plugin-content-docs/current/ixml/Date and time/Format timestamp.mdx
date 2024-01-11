@@ -1,0 +1,48 @@
+# Format timestamp
+
+### Anatomy
+
+```xml
+<date:format var="var" format="string" timezone="string">
+    date
+</date:format>
+```
+
+ **Description**:
+ DATE:FORMAT returns the formatted representation of a timestamp according to a given PHP-compatible format.
+
+Timestamps are based on Unix time, defined as the number of seconds elapsed since midnight proleptic Coordinated Universal Time (UTC) of January 1, 1970, not counting leap seconds.
+
+### Content: date
+
+```xml
+<content type="date"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | date:format |
+| format | string | Format | date:format |
+| timezone | string | Time zone | date:format |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | string | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<output>
+<date:format format="Y-m-d">946684800</date:format>
+</output>
+<!-- 2000-01-01 -->
+```
+

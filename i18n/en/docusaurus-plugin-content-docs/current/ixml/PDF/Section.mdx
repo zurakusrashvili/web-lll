@@ -1,0 +1,104 @@
+# Section
+
+### Anatomy
+
+```xml
+<pdf:section orientation="string" format="string" height="float" width="float" leftmargin="float" rightmargin="float" topmargin="float" bottommargin="float">
+    <pdf:templates filename="string">ixml</pdf:templates>
+    <pdf:header>ixml</pdf:header>
+    <pdf:footer>ixml</pdf:footer>
+    <pdf:body>ixml</pdf:body>
+</pdf:section>
+```
+
+**Parents**: pdf:document
+
+ **Description**:
+ PDF:SECTION represents a thematic grouping of content, with a header, a footer and a body.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| orientation | string | Orientation | pdf:section |
+| format | string | Format | pdf:section |
+| height | float | Page height | pdf:section |
+| width | float | Page width | pdf:section |
+| leftmargin | float | Left margin | pdf:section |
+| rightmargin | float | Right margin | pdf:section |
+| topmargin | float | Top margin | pdf:section |
+| bottommargin | float | Bottom margin | pdf:section |
+
+
+## Children
+
+<details>
+<summary>Templates</summary>
+
+### Anatomy
+```xml
+<pdf:templates filename="string">ixml</pdf:templates>
+```
+
+**Attributes**:
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| filename | string | Filename/URL (local only) |
+
+**Content: Code (ixml)**
+
+```xml
+<content type="ixml"/>
+```
+
+</details>
+
+<details>
+<summary>Header</summary>
+
+### Anatomy
+```xml
+<pdf:header>ixml</pdf:header>
+```
+
+**Content: Code (ixml)**
+
+```xml
+<content type="ixml"/>
+```
+
+</details>
+
+<details>
+<summary>Footer</summary>
+
+### Anatomy
+```xml
+<pdf:footer>ixml</pdf:footer>
+```
+
+**Content: Code (ixml)**
+
+```xml
+<content type="ixml"/>
+```
+
+</details>
+
+<details>
+<summary>Body</summary>
+
+### Anatomy
+```xml
+<pdf:body>ixml</pdf:body>
+```
+
+**Content: Code (ixml)**
+
+```xml
+<content type="ixml"/>
+```
+
+</details>
+

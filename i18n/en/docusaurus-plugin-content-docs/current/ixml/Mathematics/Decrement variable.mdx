@@ -1,0 +1,44 @@
+# Decrement variable
+
+### Anatomy
+
+```xml
+<math:dec var="var">
+    int
+</math:dec>
+```
+
+ **Description**:
+ MATH:DEC decrements the value of a variable.
+
+### Content: int
+
+```xml
+<content type="int"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Variable name | math:dec |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | int | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<set var="number">2</set>
+<math:dec var="number"/>
+<output>$number</output>
+<!-- 1 -->
+```
+

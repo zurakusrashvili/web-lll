@@ -1,0 +1,51 @@
+# Lookup record (ZeyOS)
+
+### Anatomy
+
+```xml
+<db:lookup var="var" entity="string">
+    ixml
+</db:lookup>
+```
+
+**Parents**: db:connection
+
+ **Description**:
+ DB:LOOKUP looks up a database record and returns it's ID if applicable.
+
+### Content: ixml
+
+```xml
+<content type="ixml"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | db:lookup |
+| entity | string | Entity | db:lookup |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var |  | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<db:lookup entity="contacts" var="id">
+<db:is field="lastname">Gates</db:is>
+<db:is field="firstname">Bill</db:is>
+</db:lookup>
+<if value1="$id" func="=" value2="">
+<output>Contact not found!</output>
+</if>
+<!-- Contact not found! -->
+```
+

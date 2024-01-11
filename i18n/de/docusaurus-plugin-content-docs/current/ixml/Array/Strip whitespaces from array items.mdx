@@ -1,0 +1,50 @@
+# Strip whitespaces from array items
+
+### Anatomy
+
+```xml
+<array:trim var="var" var_result="var" type="type"/>
+```
+
+ **Description**:
+ ARRAY:TRIM strips whitespace characters from the beginning and/or end of the value of each item of an array.
+
+A given key may specify the column of a multidimensional array to trim. If however, the key is omitted, then the array is treated as an unidimensional list.
+
+
+> **Attention:**
+>
+> If a key is specified and that key does not exist within the inner array, the corresponding item of the outer array will be skipped.
+> 
+> ARRAY:TRIM is destructive, in the sense that it modifies the array in-place, unless 'var_result' is specified in which case a copy of the resulting array will be stored in 'var_result' instead. It preserves the key and value associations of the array.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Variable name | array:trim |
+| var_result | var | Result variable name | array:trim |
+| type | type | Direction type | array:trim |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var|var_result | array | no-result-propagation |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<array var="names">
+<item>     Bill Gates     </item>
+<item>     Steve Jobs     </item>
+</array>
+<array:trim var="names"/>
+<output>$names[0]</output>
+<!-- Bill Gates -->
+```
+

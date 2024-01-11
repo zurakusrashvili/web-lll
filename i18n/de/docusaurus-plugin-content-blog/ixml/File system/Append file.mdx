@@ -1,0 +1,41 @@
+# Append file
+
+### Anatomy
+
+```xml
+<file:append filename="string">
+    string
+</file:append>
+```
+
+ **Description**:
+ FILE:APPEND appends content to a file.
+
+If the file does not exist, it will implicitly be created.
+
+### Content: string
+
+```xml
+<content type="string"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| filename | string | Filename/URL | file:append |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<file:write filename="./test/ixml.inc">i</file:write>
+<file:append filename="./test/ixml.inc">XML</file:append>
+<output>
+<file:read filename="./test/ixml.inc"/>
+</output>
+<!-- iXML -->
+```
+

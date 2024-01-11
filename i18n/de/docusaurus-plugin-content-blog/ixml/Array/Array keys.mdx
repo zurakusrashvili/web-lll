@@ -1,0 +1,45 @@
+# Array keys
+
+### Anatomy
+
+```xml
+<array:keys var="var" var_result="var"/>
+```
+
+ **Description**:
+ ARRAY:KEYS extracts all keys of an array.
+
+
+> **Attention:**
+>
+> ARRAY:KEYS is destructive, in the sense that it modifies the array in-place, unless 'var_result' is specified in which case a copy of the resulting array will be stored in 'var_result' instead.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Variable name | array:keys |
+| var_result | var | Result variable name | array:keys |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var|var_result | array | no-result-propagation |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<array var="names">
+<item key="bg">Bill Gates</item>
+<item key="sj">Steve Jobs</item>
+</array>
+<array:keys var="names" var_result="keys"/>
+<output>$keys[0] and $keys[1] are competitors!</output>
+<!-- bg and sj are competitors! -->
+```
+

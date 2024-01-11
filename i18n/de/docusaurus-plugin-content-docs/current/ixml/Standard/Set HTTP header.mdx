@@ -1,0 +1,39 @@
+# Set HTTP header
+
+### Anatomy
+
+```xml
+<header status="int">
+    string
+</header>
+```
+
+ **Description**:
+ HEADER sets a single HTTP response header field and optionally resets the HTTP response status code.
+
+
+> **Attention:**
+>
+> All header fields must be sent before any actual output is sent.
+
+### Content: string
+
+```xml
+<content type="string"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| status | int | HTTP status code | header |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<header>Content-Type: text/plain</header>
+```
+

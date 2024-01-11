@@ -1,0 +1,164 @@
+# Function definition
+
+### Anatomy
+
+```xml
+<function var="var">
+    ixml
+    <use name="string" var="var"/>
+</function>
+```
+
+ **Description**:
+ The FUNCTION construct defines a closed subroutine as a code sequence that can be invoked with subsequent CALL statements.
+
+The USE construct declares a free function variable for use as a local variable within the closure function that is explicitly bound to a corresponding variable from the immediate context within which the function is defined, thereby directly referencing the non-local variable from the parent scope outside of the inherent context of the function. The parent scope of the closure is the one in which the function is defined, not necessarily the one that the function was called from.
+
+In the context of object-oriented design, a function that corresponds to an array item is to be termed a method while the referenced array is to be termed an object.
+
+A function can be coded so that it may call itself recursively. This technique allows direct implementation of functions defined by mathematical induction and recursive divide and conquer algorithms.
+
+
+> **Attention:**
+>
+> The function incorporates a local context when being called. Therefore local variables may be declared within the function.
+> 
+> The special local variable 'this' is a direct reference to the calling object of the method.
+> 
+> The special local variable 'return' is a reference to the return value that is passed back as the result of the invoking control statement.
+> 
+> The special local variable 'arguments' is a reference to all arguments that have been passed to local variables on switch of context.
+> 
+> The RETURN, BREAK and NEXT operations may be used to break-off the execution of the function, thereby implicitly returning to the original control flow of the invoking control statement.
+
+### Content: ixml
+
+```xml
+<content type="ixml"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Variable name | function |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | function | no-result-propagation |
+
+
+## Children
+
+<details>
+<summary>Use</summary>
+
+### Anatomy
+```xml
+<use name="string" var="var"></use>
+```
+
+**Attributes**:
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| name | string | Name |
+| var | var | Variable name |
+
+</details>
+
+## Examples
+
+### Example: Basic function call
+
+```xml
+<global var="name"/>
+<function var="outputName">
+<output>$name</output>
+</function>
+<set var="name">iXML</set>
+<call func="outputName"/>
+<!-- iXML -->
+```
+
+### Example: Parameterized function call
+
+```xml
+<function var="outputName">
+<output>$name</output>
+</function>
+<call func="outputName">
+<param name="name">iXML</param>
+</call>
+<!-- iXML -->
+```
+
+### Example: Method call
+
+```xml
+<set var="obj.name">iXML</set>
+<function var="obj.outputName">
+<output>$this.name</output>
+</function>
+<call func="obj.outputName"/>
+<!-- iXML -->
+```
+
+### Example: Return from function
+
+```xml
+<function var="getName">
+<set var="return">iXML</set>
+<return/>
+<set var="return">XML</set>
+</function>
+<call func="getName" var="name"/>
+<output>$name</output>
+<!-- iXML -->
+```
+
+### Example: Iterating function call
+
+```xml
+<function var="outputName">
+<output>$name&n;</output>
+</function>
+<array var="names">
+<item>Bill Gates</item>
+<item>Steve Jobs</item>
+</array>
+<foreach var="names" var_value="name">
+<call func="outputName">
+<param name="name">$name</param>
+</call>
+</foreach>
+<!--
+Bill Gates
+Steve Jobs
+-->
+```
+
+### Example: Closure function call
+
+```xml
+<set var="count">1</set>
+<function var="output">
+<use var="count"/>
+<output>$count&n;</output>
+<math:inc var="count"/>
+</function>
+<for from="1" to="5">
+<call func="output"/>
+</for>
+<!--
+1
+2
+3
+4
+5
+-->
+```
+

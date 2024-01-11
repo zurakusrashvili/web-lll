@@ -1,0 +1,193 @@
+# Call function
+
+### Anatomy
+
+```xml
+<call func="var" var="var" var_params="var" var_this="var">
+    ixml
+</call>
+```
+
+ **Description**:
+ CALL breaks out of the current control flow and continues with the execution of a function. It then returns to its original control flow. Arguments may be passed to local variables as parameters on switch of context.
+
+A function can be coded so that it may call itself recursively. This technique allows direct implementation of functions defined by mathematical induction and recursive divide and conquer algorithms.
+
+
+> **Attention:**
+>
+> CALL will throw an error for an undefined or invalid function.
+> 
+> The function incorporates a local context when being called. Therefore local variables may be declared within the function.
+> 
+> The special local variable 'this' is a direct reference to the calling object of the method.
+> 
+> The special local variable 'return' is a reference to the return value that is passed back as the result of CALL.
+> 
+> The special local variable 'arguments' is a reference to all arguments that have been passed to local variables on switch of context.
+> 
+> The RETURN, BREAK and NEXT operations may be used to break-off the execution of the function, thereby implicitly returning to the original control flow of the invoking control statement.
+
+### Content: ixml
+
+```xml
+<content type="ixml"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| func | var | Function variable name | call |
+| var | var | Result variable name | call |
+| var_params | var | Variable name for associated parameter name and value pairs | call |
+| var_this | var | Variable name for explicit rebinding of 'this' | call |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var |  | N/A |
+
+
+## Examples
+
+### Example: Basic function call
+
+```xml
+<global var="name"/>
+<function var="outputName">
+<output>$name</output>
+</function>
+<set var="name">iXML</set>
+<call func="outputName"/>
+<!-- iXML -->
+```
+
+### Example: Parameterized function call
+
+```xml
+<function var="outputName">
+<output>$name</output>
+</function>
+<call func="outputName">
+<param name="name">iXML</param>
+</call>
+<!-- iXML -->
+```
+
+### Example: Method call
+
+```xml
+<set var="obj.name">iXML</set>
+<function var="obj.outputName">
+<output>$this.name</output>
+</function>
+<call func="obj.outputName"/>
+<!-- iXML -->
+```
+
+### Example: Return from function
+
+```xml
+<function var="getName">
+<set var="return">iXML</set>
+<return/>
+<set var="return">XML</set>
+</function>
+<call func="getName" var="name"/>
+<output>$name</output>
+<!-- iXML -->
+```
+
+### Example: Iterating function call
+
+```xml
+<function var="outputName">
+<output>$name&n;</output>
+</function>
+<array var="names">
+<item>Bill Gates</item>
+<item>Steve Jobs</item>
+</array>
+<foreach var="names" var_value="name">
+<call func="outputName">
+<param name="name">$name</param>
+</call>
+</foreach>
+<!--
+Bill Gates
+Steve Jobs
+-->
+```
+
+### Example: Closure function call
+
+```xml
+<set var="count">1</set>
+<function var="output">
+<use var="count"/>
+<output>$count&n;</output>
+<math:inc var="count"/>
+</function>
+<for from="1" to="5">
+<call func="output"/>
+</for>
+<!--
+1
+2
+3
+4
+5
+-->
+```
+
+### Example: SOAP operation call
+
+```xml
+<soap:client wsdl="http://www.dneonline.com/calculator.asmx?WSDL">
+<soap:bind var="add">add</soap:bind>
+</soap:client>
+<array var="parameters">
+<item key="intA">2</item>
+<item key="intB">5</item>
+</array>
+<call func="add" var="result">
+<param var="parameters"/>
+</call>
+<output>$result.AddResult</output>
+<!-- 7 -->
+```
+
+### Example: RESTful resource call
+
+```xml
+<rest:client url="https://api.predic8.de/shop">
+<rest:header>
+Content-Type: application/json
+</rest:header>
+<rest:bind var="createProduct" method="POST">/products/</rest:bind>
+<rest:bind var="updateProduct" method="PATCH">/products/:id</rest:bind>
+<rest:bind var="getProduct" method="GET">/products/:id</rest:bind>
+</rest:client>
+<decode:json var="data">
+<call func="createProduct">
+<param>{"name": "Some Fruit", "price": 4.99}</param>
+</call>
+</decode:json>
+<match var_matches="matches" pattern="/\d+/">$data.product_url</match>
+<set var="id">$matches[0][0]</set>
+<call func="updateProduct">
+<param var="id"/>
+<param>{"name": "Wildberries"}</param>
+</call>
+<decode:json var="data">
+<call func="getProduct">
+<param var="id"/>
+</call>
+</decode:json>
+<output>$data.name</output>
+<!-- Wildberries -->
+```
+

@@ -1,0 +1,32 @@
+# Write entry
+
+### Anatomy
+
+```xml
+<zip:write filename="string">
+    string
+</zip:write>
+```
+
+**Parents**: zip:archive
+
+ **Description**:
+ ZIP:WRITE writes content to an entry within an archive.
+
+If the entry does not exist within the archive, it will implicitly be created. Otherwise, the existing entry is overwritten.
+
+ZIP:WRITE is the complement of the ZIP:READ operation.
+
+### Content: string
+
+```xml
+<content type="string"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| filename | string | Filename | zip:write |
+
+

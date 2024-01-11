@@ -1,0 +1,44 @@
+# Absolute number
+
+### Anatomy
+
+```xml
+<math:abs var="var">
+    float
+</math:abs>
+```
+
+ **Description**:
+ MATH:ABS returns the absolute number of a value.
+
+### Content: float
+
+```xml
+<content type="float"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | math:abs |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | float | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<output>
+<math:abs>-13.74</math:abs>
+</output>
+<!-- 13.74 -->
+```
+

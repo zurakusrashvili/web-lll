@@ -1,0 +1,55 @@
+# Unique array
+
+### Anatomy
+
+```xml
+<array:unique var="var" var_result="var"/>
+```
+
+ **Description**:
+ ARRAY:UNIQUE discards duplicate items from an array, keeping only the first occurrence of each value.
+
+A given key may specify the column of a multidimensional array to distinguish by. If however, the key is omitted, then the array is treated as an unidimensional list.
+
+
+> **Attention:**
+>
+> If a key is specified and that key does not exist within the inner array, the corresponding item of the outer array will be discarded.
+> 
+> ARRAY:UNIQUE is destructive, in the sense that it modifies the array in-place, unless 'var_result' is specified in which case a copy of the resulting array will be stored in 'var_result' instead. If a value has several occurrences within the array, only the first key will be used while all other items with that particular key will be discarded.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Variable name | array:unique |
+| var_result | var | Result variable name | array:unique |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var|var_result | array | no-result-propagation |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<array var="names">
+<item key="bg1">Bill Gates</item>
+<item key="sj">Steve Jobs</item>
+<item key="bg2">Bill Gates</item>
+</array>
+<array:unique var="names"/>
+<foreach var="names" var_key="key" var_value="name">
+<output>$key: $name&n;</output>
+</foreach>
+<!--
+bg1: Bill Gates
+sj: Steve Jobs
+-->
+```
+

@@ -1,0 +1,28 @@
+# Rename file
+
+### Anatomy
+
+```xml
+<file:rename oldname="string" newname="string"/>
+```
+
+ **Description**:
+ FILE:RENAME renames/moves a file or directory from an old filename to a new filename.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| oldname | string | Old filename/URL | file:rename |
+| newname | string | New filename/URL | file:rename |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<file:write filename="./test/ixml_old.inc">iXML</file:write>
+<file:rename oldname="./test/ixml_old.inc" newname="./test/ixml.inc"/>
+```
+

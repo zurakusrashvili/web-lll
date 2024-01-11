@@ -1,0 +1,49 @@
+# Decode quoted-printable
+
+### Anatomy
+
+```xml
+<decode:quotedprint var="var">
+    string
+</decode:quotedprint>
+```
+
+ **Description**:
+ DECODE:QUOTEDPRINT decodes a value according to RFC 2045 by replacing sequences incipient with an equal sign ('=') followed by a 2-character hexadecimal number with their applicable characters.
+
+DECODE:QUOTEDPRINT is the complement of the ENCODE:QUOTEDPRINT operation.
+
+### Content: string
+
+```xml
+<content type="string"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | decode:quotedprint |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | string | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<output>
+<decode:quotedprint>Hello World!=0AMy name is iXML!</decode:quotedprint>
+</output>
+<!--
+Hello World!
+My name is iXML!
+-->
+```
+

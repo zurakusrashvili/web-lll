@@ -1,0 +1,31 @@
+# Length
+
+### Anatomy
+
+```xml
+<excel:length var_sheets="var" var_rows="var" var_cols="var"/>
+```
+
+**Parents**: excel:workbook
+
+ **Description**:
+ EXCEL:LENGTH gets the number of sheets, rows and columns in context of the current position of the cell cursor.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var_sheets | var | Result variable name for number of sheets | excel:length |
+| var_rows | var | Result variable name for number of rows | excel:length |
+| var_cols | var | Result variable name for number of columns | excel:length |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var_sheets | int | no-result-propagation |
+| var_rows | int | no-result-propagation |
+| var_cols | int | no-result-propagation |
+
+

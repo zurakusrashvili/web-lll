@@ -1,0 +1,43 @@
+# Serialize variable
+
+### Anatomy
+
+```xml
+<serialize var="var" var_result="var"/>
+```
+
+ **Description**:
+ SERIALIZE generates a storable representation of the structural value of a variable.
+
+SERIALIZE is the complement of the UNSERIALIZE operation.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Variable name | serialize |
+| var_result | var | Result variable name | serialize |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var_result | string | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<array var="names">
+<item key="bg">Bill Gates</item>
+<item key="sj">Steve Jobs</item>
+</array>
+<output>
+<serialize var="names"/>
+</output>
+<!-- a:2:{s:2:"bg";s:10:"Bill Gates";s:2:"sj";s:10:"Steve Jobs";} -->
+```
+

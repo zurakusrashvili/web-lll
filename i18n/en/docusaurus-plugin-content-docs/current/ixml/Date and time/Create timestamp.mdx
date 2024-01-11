@@ -1,0 +1,45 @@
+# Create timestamp
+
+### Anatomy
+
+```xml
+<date:create var="var" day="int" month="int" year="int" hour="int" minute="int" second="int" timezone="string"/>
+```
+
+ **Description**:
+ DATE:CREATE creates the timestamp for a date, specified by day, month, year, hour, minute and second.
+
+Timestamps are based on Unix time, defined as the number of seconds elapsed since midnight proleptic Coordinated Universal Time (UTC) of January 1, 1970, not counting leap seconds.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | date:create |
+| day | int | Day | date:create |
+| month | int | Month | date:create |
+| year | int | Year | date:create |
+| hour | int | Hour | date:create |
+| minute | int | Minute | date:create |
+| second | int | Second | date:create |
+| timezone | string | Time zone | date:create |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var |  | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<output>
+<date:create day="1" month="1" year="2000"/>
+</output>
+<!-- 946684800 -->
+```
+

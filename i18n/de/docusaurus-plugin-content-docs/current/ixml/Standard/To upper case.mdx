@@ -1,0 +1,63 @@
+# To upper case
+
+### Anatomy
+
+```xml
+<toupper var="var" type="type">
+    string
+</toupper>
+```
+
+ **Description**:
+ TOUPPER returns the upper case representation of a value by capitalizing the first character, all words or all characters.
+
+### Content: string
+
+```xml
+<content type="string"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | toupper |
+| type | type | Capitilization type | toupper |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | string | N/A |
+
+
+## Examples
+
+### Example: Capitalize first character
+
+```xml
+<output>
+<toupper type="first">bill gates</toupper>
+</output>
+<!-- Bill gates -->
+```
+
+### Example: Capitalize all words
+
+```xml
+<output>
+<toupper type="words">bill gates</toupper>
+</output>
+<!-- Bill Gates -->
+```
+
+### Example: Capitalize all characters
+
+```xml
+<output>
+<toupper>iXML</toupper>
+</output>
+<!-- IXML -->
+```
+

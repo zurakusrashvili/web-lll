@@ -1,0 +1,34 @@
+# Group array items
+
+### Anatomy
+
+```xml
+<array:group var="var" var_result="var" key="string"/>
+```
+
+ **Description**:
+ ARRAY:GROUP groups the items of a multidimensional array by a given key.
+
+
+> **Attention:**
+>
+> If the key does not exist within the inner array, the corresponding item of the outer array will be discarded.
+> 
+> ARRAY:GROUP is destructive, in the sense that it modifies the array in-place, unless 'var_result' is specified in which case a copy of the resulting array will be stored in 'var_result' instead. It preserves the key and value associations of the array.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Variable name | array:group |
+| var_result | var | Result variable name | array:group |
+| key | string | Key | array:group |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var|var_result | array | no-result-propagation |
+
+

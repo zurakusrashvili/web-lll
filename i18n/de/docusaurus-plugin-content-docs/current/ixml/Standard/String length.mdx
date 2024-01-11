@@ -1,0 +1,51 @@
+# String length
+
+### Anatomy
+
+```xml
+<length var="var">
+    string
+</length>
+```
+
+ **Description**:
+ LENGTH returns the string length of a value in characters.
+
+
+> **Attention:**
+>
+> The string length of a multibyte character sequence may not match the size of its binary representation.
+
+### Content: string
+
+```xml
+<content type="string"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | length |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | int | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<set var="name">iXML</set>
+<length var="len">$name</length>
+<if value1="$len" func="&gt;" value2="0">
+<output>My name contains more than zero characters!</output>
+</if>
+<!-- My name contains more than zero characters! -->
+```
+

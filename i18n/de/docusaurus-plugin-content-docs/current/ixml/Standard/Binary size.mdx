@@ -1,0 +1,51 @@
+# Binary size
+
+### Anatomy
+
+```xml
+<size var="var">
+    string
+</size>
+```
+
+ **Description**:
+ SIZE returns the binary size of a value in bytes.
+
+
+> **Attention:**
+>
+> The binary size of a multibyte character sequence may not match the length of its string representation.
+
+### Content: string
+
+```xml
+<content type="string"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | size |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | int | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<set var="name"/>
+<size var="size">$name</size>
+<if value1="$size" func="=" value2="0">
+<output>My name is empty!</output>
+</if>
+<!-- My name is empty! -->
+```
+

@@ -13,7 +13,7 @@ const config = {
   favicon: 'img/favicon.png',
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://devcenterzeyos.netlify.app/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -32,6 +32,14 @@ const config = {
   i18n: {
     defaultLocale: 'en',
     locales: ['en', 'de'],
+    localeConfigs: {
+      en: {
+        label: 'English',
+      },
+      de: {
+        label: 'Deutsch',
+      }
+    },
   },
 
   presets: [
@@ -115,32 +123,32 @@ const config = {
               {
                 label: 'Start-Up',
                 to: 'solutions/start-up',
-                icon: 'img/start-up-icon.svg',
+                icon: 'fa-duotone fa-rocket-launch',
                 category: 'BY STAGE',
               },
               {
                 label: 'SMB',
                 to: 'solutions/smb',
-                icon: 'img/smb-icon.svg',
+                icon: 'fa-duotone fa-building',
                 category: 'BY STAGE',
               },
               {
                 label: 'Enterprise',
                 to: 'solutions/smb',
-                icon: 'img/enterprise-icon.svg',
+                icon: 'fa-duotone fa-city',
                 category: 'BY STAGE',
               },
               //By Industry
               {
                 label: 'Medical',
                 to: 'solutions/start-up',
-                icon: 'img/start-up-icon.svg',
+                icon: 'fa-duotone fa-suitcase-medical',
                 category: 'BY INDUSTRY',
               },
               {
                 label: 'E-Commerce',
                 to: 'solutions/smb',
-                icon: 'img/smb-icon.svg',
+                icon: 'fa-duotone fa-shop',
                 category: 'BY INDUSTRY',
               },
               {
@@ -152,38 +160,38 @@ const config = {
               {
                 label: 'SaaS',
                 to: 'solutions/smb',
-                icon: 'img/enterprise-icon.svg',
+                icon: 'fa-duotone fa-arrow-turn-up',
                 category: 'BY INDUSTRY',
               },
               // BY USE CASE
               {
                 label: 'Shop-Backend',
                 to: 'solutions/start-up',
-                icon: 'img/start-up-icon.svg',
+                icon: 'fa-duotone fa-bags-shopping',
                 category: 'BY USE CASE',
               },
               {
                 label: 'Self-Service Portals',
                 to: 'solutions/smb',
-                icon: 'img/smb-icon.svg',
+                icon: 'fa-duotone fa-person-to-portal',
                 category: 'BY USE CASE',
               },
               {
                 label: 'Billing and Subscriptions',
                 to: 'solutions/smb',
-                icon: 'img/enterprise-icon.svg',
+                icon: 'fa-duotone fa-file-invoice-dollar',
                 category: 'BY USE CASE',
               },
               {
                 label: 'Warehouse',
                 to: 'solutions/smb',
-                icon: 'img/enterprise-icon.svg',
+                icon: 'fa-duotone fa-warehouse-full',
                 category: 'BY USE CASE',
               },
               {
                 label: 'Point-of-sales',
                 to: 'solutions/smb',
-                icon: 'img/enterprise-icon.svg',
+                icon: 'fa-duotone fa-cash-register',
                 category: 'BY USE CASE',
               },
             ]
@@ -192,22 +200,63 @@ const config = {
             type: 'dropdown',
             position: 'left',
             label: 'Developers',
+            menuType: 'category-grid',
+            needhelp: {
+              title: 'NEED HELP WITH YOUR PROJECT?',
+              description: 'Tell us about your project and our team will reach out with a proposal or recommend a suitable partner!',
+              icon: 'fa-regular fa-chevron-right',
+              to: 'needhelp'
+            },
             items: [
+              //REST API
               {
-                label: "Product 1",
-                href: '/'
+                label: 'Getting Started',
+                to: 'solutions/start-up',
+                icon: 'fa-duotone fa-book-open',
+                category: 'REST API',
               },
               {
-                label: "Product 2",
-                href: '/',
+                label: 'Authentication',
+                to: 'solutions/smb',
+                icon: 'fa-duotone fa-lock-a',
+                category: 'REST API',
               },
               {
-                label: "Product 3",
-                href: '/'
+                label: 'API reference',
+                to: 'solutions/smb',
+                icon: 'fa-duotone fa-webhook',
+                category: 'REST API',
+              },
+              // DEVELOPMENT REFERENCE
+              {
+                label: 'DevCenter documentation',
+                to: 'solutions/start-up',
+                icon: 'fa-duotone fa-book-open',
+                category: 'DEVELOPMENT REFERENCE',
               },
               {
-                label: "Product 4",
-                href: '/'
+                label: 'iXML documentation',
+                to: 'docs/ixml/',
+                icon: 'fa-duotone fa-code',
+                category: 'DEVELOPMENT REFERENCE',
+              },
+              {
+                label: 'Zymbda documentation',
+                to: 'solutions/smb',
+                icon: 'fa-duotone fa-brackets-curly',
+                category: 'DEVELOPMENT REFERENCE',
+              },
+              {
+                label: 'Database reference',
+                to: 'solutions/smb',
+                icon: 'fa-duotone fa-database',
+                category: 'DEVELOPMENT REFERENCE',
+              },
+              {
+                label: 'Boiler plates',
+                to: 'solutions/smb',
+                icon: 'fa-duotone fa-object-subtract',
+                category: 'DEVELOPMENT REFERENCE',
               },
             ]
           },
@@ -215,23 +264,39 @@ const config = {
             type: 'dropdown',
             position: 'left',
             label: 'Resourses',
+            menuType: 'category-grid',
+            additionaltags:[
+              {
+                title: 'WANT TO BECOME A PARTNER?',
+                description: 'You are a consultant, agency, disributor or technology company? Reach out to our team and discover how we can grow your business together.',
+                to: 'partner'
+              },
+              {
+                title: 'WE ARE HIRING!',
+                description:'You are looking for a new challenge? Discover our open job positions and joinour team to reshape the way people work in the future.',
+                to: 'hiring'
+              }
+            ],
             items: [
+              //REST API
               {
-                label: "Product 1",
-                href: '/'
+                label: 'User documentation',
+                to: 'solutions/start-up',
+                icon: 'fa-duotone fa-rocket-launch',
+                category: '',
               },
               {
-                label: "Product 2",
-                href: '/'
+                label: 'Blog articles',
+                to: 'solutions/smb',
+                icon: 'img/smb-icon.svg',
+                category: '',
               },
               {
-                label: "Product 3",
-                href: '/'
-              },
-              {
-                label: "Product 4",
-                href: '/'
-              },
+                label: 'Media',
+                to: 'solutions/smb',
+                icon: 'img/enterprise-icon.svg',
+                category: '',
+              }
             ]
           },
           
@@ -250,54 +315,78 @@ const config = {
       },
       footer: {
         style: 'dark',
-        // links: [
-        //   {
-        //     title: 'Docs',
-        //     items: [
-        //       {
-        //         label: 'Tutorial',
-        //         to: '/docs/intro',
-        //       },
-        //     ],
-        //   },
-        //   {
-        //     title: 'Community',
-        //     items: [
-        //       {
-        //         label: 'Stack Overflow',
-        //         href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-        //       },
-        //       {
-        //         label: 'Discord',
-        //         href: 'https://discordapp.com/invite/docusaurus',
-        //       },
-        //       {
-        //         label: 'Twitter',
-        //         href: 'https://twitter.com/docusaurus',
-        //       },
-        //     ],
-        //   },
-        //   {
-        //     title: 'More',
-        //     items: [
-        //       {
-        //         label: 'Blog',
-        //         to: '/blog',
-        //       },
-        //       {
-        //         label: 'GitHub',
-        //         href: 'https://github.com/facebook/docusaurus',
-        //       },
-        //     ],
-        //   },
-        // ],
-        // copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        links: [
+          {
+            title: 'Legal Notices',
+            items: [
+              {
+                label: 'Privacy Policy',
+                to: 'privacy',
+              },
+              {
+                label: 'Terms of Service',
+                to: 'termsofservice',
+              },
+              {
+                label: 'Standard Business Terms',
+                to: 'stb',
+              },
+              {
+                label: 'Imprint',
+                to: 'impressum',
+              },
+            ],
+          },
+          // {
+          //   title: 'Community',
+          //   items: [
+          //     {
+          //       label: 'Stack Overflow',
+          //       href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+          //     },
+          //     {
+          //       label: 'Discord',
+          //       href: 'https://discordapp.com/invite/docusaurus',
+          //     },
+          //     {
+          //       label: 'Twitter',
+          //       href: 'https://twitter.com/docusaurus',
+          //     },
+          //   ],
+          // },
+          // {
+          //   title: 'More',
+          //   items: [
+          //     {
+          //       label: 'Blog',
+          //       to: '/blog',
+          //     },
+          //     {
+          //       label: 'GitHub',
+          //       href: 'https://github.com/facebook/docusaurus',
+          //     },
+          //   ],
+          // },
+        ],
+        copyright: `Copyright © 2012-2024 ZeyOS GmbH & Co. KG\nAll rights reserved. All trademarks held by their respective owners.`,
       },
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
       },
+      colorMode: {
+        defaultMode: 'light',
+        disableSwitch: true,
+        respectPrefersColorScheme: false,
+      },
     }),
+    scripts: [
+      {
+        src: 'https://kit.fontawesome.com/e434cf4aa3.js',
+        crossorigin: 'anonymous',
+        async: true,
+      },
+    ],
 };
 
 export default config;

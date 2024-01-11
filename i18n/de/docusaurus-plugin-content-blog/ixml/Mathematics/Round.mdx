@@ -1,0 +1,45 @@
+# Round
+
+### Anatomy
+
+```xml
+<math:round var="var" precision="int">
+    float
+</math:round>
+```
+
+ **Description**:
+ MATH:ROUND rounds a value half away from zero to a number of decimal digits, specified by a given precision.
+
+### Content: float
+
+```xml
+<content type="float"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | math:round |
+| precision | int | Precision | math:round |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | float | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<output>
+<math:round precision="2">17.213482971852</math:round>
+</output>
+<!-- 17.21 -->
+```
+

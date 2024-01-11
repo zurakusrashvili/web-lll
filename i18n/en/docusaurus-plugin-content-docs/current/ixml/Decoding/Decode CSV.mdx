@@ -1,0 +1,36 @@
+# Decode CSV
+
+### Anatomy
+
+```xml
+<decode:csv var="var" delimiter="string">
+    string
+</decode:csv>
+```
+
+ **Description**:
+ DECODE:CSV parses comma-separated values into a multidimensional array.
+
+Comma-separated values represent tabular data. Each line corresponds to a row in the table. Within a line, fields are separated by a delimiter, each field belonging to one table column.
+
+### Content: string
+
+```xml
+<content type="string"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | decode:csv |
+| delimiter | string | Delimiter (single ASCII character) | decode:csv |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | array | no-result-propagation |
+
+

@@ -1,0 +1,38 @@
+# File exists
+
+### Anatomy
+
+```xml
+<file:exists var="var" filename="string"/>
+```
+
+ **Description**:
+ FILE:EXISTS checks whether a file or directory exists and returns the canonicalized absolute filename if applicable.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | file:exists |
+| filename | string | Filename/URL | file:exists |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var |  | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<file:exists var="exists" filename="./test/ixml_non_existing.inc"/>
+<is var="exists" type="false">
+<output>File does not exist!</output>
+</is>
+<!-- File does not exist! -->
+```
+

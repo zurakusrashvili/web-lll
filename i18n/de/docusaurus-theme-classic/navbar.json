@@ -8,35 +8,127 @@
     "description": "The alt text of navbar logo"
   },
   "item.label.Products": {
-    "message": "Products",
+    "message": "Products de ",
     "description": "Navbar item with label Products"
   },
   "item.label.Solutions": {
-    "message": "Solutions",
+    "message": "Solutions de ",
     "description": "Navbar item with label Solutions"
   },
   "item.label.Developers": {
-    "message": "Developers",
+    "message": "Developers de ",
     "description": "Navbar item with label Developers"
   },
   "item.label.Resourses": {
-    "message": "Resourses",
+    "message": "Resourses de",
     "description": "Navbar item with label Resourses"
   },
   "item.label.Product 1": {
-    "message": "Product 1 de ",
-    "description": "Navbar item with label Product 1 de"
+    "message": "Product 1",
+    "description": "Navbar item with label Product 1"
   },
   "item.label.Product 2": {
     "message": "Product 2 de",
-    "description": "Navbar item with label Product 2 de"
+    "description": "Navbar item with label Product 2"
   },
   "item.label.Product 3": {
     "message": "Product 3 de",
-    "description": "Navbar item with label Product 3 de"
+    "description": "Navbar item with label Product 3"
   },
   "item.label.Product 4": {
     "message": "Product 4 de",
-    "description": "Navbar item with label Product 4 de"
+    "description": "Navbar item with label Product 4"
+  },
+  "item.label.Start-Up": {
+    "message": "Start-Up de",
+    "description": "Navbar item with label Start-Up"
+  },
+  "item.label.SMB": {
+    "message": "SMB de",
+    "description": "Navbar item with label SMB"
+  },
+  "item.label.Enterprise": {
+    "message": "Enterprise de",
+    "description": "Navbar item with label Enterprise"
+  },
+  "item.label.Medical": {
+    "message": "Medical de",
+    "description": "Navbar item with label Medical"
+  },
+  "item.label.E-Commerce": {
+    "message": "E-Commerce de",
+    "description": "Navbar item with label E-Commerce"
+  },
+  "item.label.MSP-Providers": {
+    "message": "MSP-Providers de",
+    "description": "Navbar item with label MSP-Providers"
+  },
+  "item.label.SaaS": {
+    "message": "SaaS de",
+    "description": "Navbar item with label SaaS"
+  },
+  "item.label.Shop-Backend": {
+    "message": "Shop-Backend de",
+    "description": "Navbar item with label Shop-Backend"
+  },
+  "item.label.Self-Service Portals": {
+    "message": "Self-Service Portals de",
+    "description": "Navbar item with label Self-Service Portals"
+  },
+  "item.label.Billing and Subscriptions": {
+    "message": "Billing and Subscriptions de",
+    "description": "Navbar item with label Billing and Subscriptions"
+  },
+  "item.label.Warehouse": {
+    "message": "Warehouse de",
+    "description": "Navbar item with label Warehouse"
+  },
+  "item.label.Point-of-sales": {
+    "message": "Point-of-sales",
+    "description": "Navbar item with label Point-of-sales"
+  },
+  "item.label.Getting Started": {
+    "message": "Getting Started",
+    "description": "Navbar item with label Getting Started"
+  },
+  "item.label.Authentication": {
+    "message": "Authentication",
+    "description": "Navbar item with label Authentication"
+  },
+  "item.label.API reference": {
+    "message": "API reference",
+    "description": "Navbar item with label API reference"
+  },
+  "item.label.DevCenter documentation": {
+    "message": "DevCenter documentation",
+    "description": "Navbar item with label DevCenter documentation"
+  },
+  "item.label.iXML documentation": {
+    "message": "iXML documentation",
+    "description": "Navbar item with label iXML documentation"
+  },
+  "item.label.Zymbda documentation": {
+    "message": "Zymbda documentation",
+    "description": "Navbar item with label Zymbda documentation"
+  },
+  "item.label.Database reference": {
+    "message": "Database reference",
+    "description": "Navbar item with label Database reference"
+  },
+  "item.label.Boiler plates": {
+    "message": "Boiler plates",
+    "description": "Navbar item with label Boiler plates"
+  },
+  "item.label.User documentation": {
+    "message": "User documentation",
+    "description": "Navbar item with label User documentation"
+  },
+  "item.label.Blog articles": {
+    "message": "Blog articles",
+    "description": "Navbar item with label Blog articles"
+  },
+  "item.label.Media": {
+    "message": "Media",
+    "description": "Navbar item with label Media"
   }
 }

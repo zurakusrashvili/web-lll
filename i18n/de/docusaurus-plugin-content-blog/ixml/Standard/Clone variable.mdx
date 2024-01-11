@@ -1,0 +1,48 @@
+# Clone variable
+
+### Anatomy
+
+```xml
+<clone var="var" var_result="var"/>
+```
+
+ **Description**:
+ CLONE creates a shallow copy of the value of a variable independent of it's data type.
+
+If the result variable 'var_result' is omitted, the resulting value will be stored in 'var' instead.
+
+
+> **Attention:**
+>
+> CLONE preserves all meta information associated with the original variable including the class information of an object.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Variable name | clone |
+| var_result | var | Result variable name | clone |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var_result | array | no-result-propagation |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<array var="original">
+<item>Bill Gates</item>
+<item>Steve Jobs</item>
+</array>
+<clone var="original" var_result="new"/>
+<set var="new[1]">Larry Ellison</set>
+<output>$original[1] and $new[1] are friends!</output>
+<!-- Steve Jobs and Larry Ellison are friends! -->
+```
+

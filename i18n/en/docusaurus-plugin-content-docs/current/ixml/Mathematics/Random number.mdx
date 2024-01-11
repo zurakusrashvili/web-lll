@@ -1,0 +1,39 @@
+# Random number
+
+### Anatomy
+
+```xml
+<math:rand var="var" min="int" max="int"/>
+```
+
+ **Description**:
+ MATH:RAND generates a random number between a given numeric range.
+
+If the maximum number is omitted, it will range up to the largest possible integer number.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | math:rand |
+| min | int | Minimum number | math:rand |
+| max | int | Maximum number | math:rand |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | float | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<output>
+<math:rand/>
+</output>
+```
+

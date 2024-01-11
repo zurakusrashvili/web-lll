@@ -1,0 +1,38 @@
+# Floating point modulo
+
+### Anatomy
+
+```xml
+<math:mod var="var" x="float" y="float"/>
+```
+
+ **Description**:
+ MATH:MOD calculates the floating point remainder of the division of two values (x/y).
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | math:mod |
+| x | float | Numerator | math:mod |
+| y | float | Denominator | math:mod |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | float | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<output>
+<math:mod x="5.72" y="1.38"/>
+</output>
+<!-- 0.2 -->
+```
+

@@ -1,0 +1,41 @@
+# Pathname pattern expansion
+
+### Anatomy
+
+```xml
+<file:glob var="var" pattern="string"/>
+```
+
+ **Description**:
+ FILE:GLOB finds all pathnames matching a given pattern based on wildcard characters ('?', '*' and '[...]').
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | file:glob |
+| pattern | string | Pattern | file:glob |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | array | no-result-propagation |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<file:glob var="files" pattern="./test/*.inc"/>
+<foreach var="files" var_value="filename">
+<output>$filename&n;</output>
+</foreach>
+<!--
+./test/ixml.inc
+./test/ixml_link.inc
+-->
+```
+

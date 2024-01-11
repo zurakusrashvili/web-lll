@@ -1,0 +1,89 @@
+# Class information
+
+### Anatomy
+
+```xml
+<classinfo class="var" var="var"/>
+```
+
+ **Description**:
+ CLASSINFO returns various components of a class.
+
+
+				CLASSINFO returns an array comprised of the following items:
+
+				Key          Description
+				------------------------------------------------
+				class        class
+				extends      array of extended classes
+				parents      array of all derived parent classes
+				constructors array of constructor functions
+				prototype    array prototype
+			
+
+
+> **Attention:**
+>
+> CLASSINFO will throw an error for an undefined or invalid class.
+> 
+> The class variable 'class' may alternatively be an object in which case it's derived class is used instead.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| class | var | Class variable name | classinfo |
+| var | var | Result variable name | classinfo |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | array | no-result-propagation |
+
+
+## Examples
+
+### Example: Class related
+
+```xml
+<class var="Human"/>
+<class var="Person">
+<extends class="Human"/>
+<property name="name"/>
+<constructor>
+<set var="this.name">$name</set>
+</constructor>
+</class>
+<classinfo class="Person" var="info"/>
+<foreach var="info.parents" var_value="class">
+<equals var1="class" var2="Human" var_result="equals"/>
+<is var="equals" type="true">
+<output>A person is human!</output>
+<break/>
+</is>
+</foreach>
+<!-- A person is human! -->
+```
+
+### Example: Object related
+
+```xml
+<class var="Person">
+<property name="name"/>
+<constructor>
+<set var="this.name">$name</set>
+</constructor>
+</class>
+<new class="Person" var="obj">
+<param name="name">Bill Gates</param>
+</new>
+<classinfo class="obj" var="info"/>
+<equals var1="info.class" var2="Person" var_result="equals"/>
+<is var="equals" type="true">
+<output>$obj.name is a person!</output>
+</is>
+<!-- Bill Gates is a person! -->
+```
+

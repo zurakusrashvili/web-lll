@@ -1,0 +1,56 @@
+# Set variable to TRUE
+
+### Anatomy
+
+```xml
+<true var="var" key="string"/>
+```
+
+ **Description**:
+ TRUE sets the value of a variable to TRUE.
+
+
+				
+					These three statements are semantically equivalent:
+
+					<true var="var[key]"/>
+					<true var="var.key"/>
+					<true var="var" key="key"/>
+				
+			
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Variable name | true |
+| key | string | Key | true |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | bool | N/A |
+
+
+## Examples
+
+### Example: Setting variable to TRUE
+
+```xml
+<true var="var"/>
+```
+
+### Example: Setting array item implicitly to TRUE
+
+```xml
+<true var="var[key]"/>
+```
+
+### Example: Setting array item explicitly to TRUE
+
+```xml
+<true var="var" key="key"/>
+```
+

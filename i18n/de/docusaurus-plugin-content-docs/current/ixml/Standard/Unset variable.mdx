@@ -1,0 +1,54 @@
+# Unset variable
+
+### Anatomy
+
+```xml
+<unset var="var" key="string"/>
+```
+
+ **Description**:
+ UNSET unsets a variable.
+
+
+				
+					These three statements are semantically equivalent:
+
+					<unset var="var[key]"/>
+					<unset var="var.key"/>
+					<unset var="var" key="key"/>
+				
+			
+
+
+> **Attention:**
+>
+> The TYPEOF operation will subsequently return 'undefined' for this variable.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Variable name | unset |
+| key | string | Key | unset |
+
+
+## Examples
+
+### Example: Unsetting variable
+
+```xml
+<unset var="var"/>
+```
+
+### Example: Unsetting array item implicitly
+
+```xml
+<unset var="var[key]"/>
+```
+
+### Example: Unsetting array item explicitly
+
+```xml
+<unset var="var" key="key"/>
+```
+

@@ -1,0 +1,45 @@
+# Strip whitespaces
+
+### Anatomy
+
+```xml
+<trim var="var" type="type">
+    string
+</trim>
+```
+
+ **Description**:
+ TRIM strips whitespace characters from the beginning and/or end of a value.
+
+### Content: string
+
+```xml
+<content type="string"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | trim |
+| type | type | Direction type | trim |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | string | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<output>
+<trim>     iXML     </trim>
+</output>
+<!-- iXML -->
+```
+

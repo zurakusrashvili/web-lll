@@ -1,0 +1,25 @@
+# Return
+
+ **Description**:
+ RETURN returns to the original control flow of the invoking control statement, thereby passing back the special local variable 'return'.
+
+
+> **Attention:**
+>
+> If RETURN is executed within the most upper control flow, it behaves like EXIT.
+
+## Examples
+
+### Example: Example
+
+```xml
+<function var="getName">
+<set var="return">iXML</set>
+<return/>
+<set var="return">XML</set>
+</function>
+<call func="getName" var="name"/>
+<output>$name</output>
+<!-- iXML -->
+```
+

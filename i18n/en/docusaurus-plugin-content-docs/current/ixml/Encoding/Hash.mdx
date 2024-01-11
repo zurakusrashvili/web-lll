@@ -1,0 +1,46 @@
+# Hash
+
+### Anatomy
+
+```xml
+<encode:hash var="var" algorithm="string" raw="bool">
+    string
+</encode:hash>
+```
+
+ **Description**:
+ ENCODE:HASH generates the hash of a value according to a given algorithm.
+
+### Content: string
+
+```xml
+<content type="string"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | encode:hash |
+| algorithm | string | Algorithm | encode:hash |
+| raw | bool | Raw binary format | encode:hash |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | string | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<output>
+<encode:hash algorithm="sha1" key="ixml">My name is iXML!</encode:hash>
+</output>
+<!-- f66b1452e6c9a6061bb9837a511470e06f23d9b5 -->
+```
+

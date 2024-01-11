@@ -1,0 +1,144 @@
+# For each loop
+
+### Anatomy
+
+```xml
+<foreach var="var" var_key="var" var_value="var">
+    ixml
+    <else>ixml</else>
+</foreach>
+```
+
+ **Description**:
+ The FOREACH construct is a control flow structure for traversing items in a collection by iterating over an array, populating the associated key and value pairs for each item.
+
+On each loop iteration, the embedded code is executed with the key of the current item assigned to 'var_key' and the value of the current item assigned to 'var_value'.
+
+
+> **Attention:**
+>
+> The BREAK operation may be used to break-off the execution of the current loop iteration, thereby implicitly terminating the loop. Also, the NEXT operation may be used to skip the rest of the current loop iteration and continue with the execution of the next loop iteration.
+
+### Content: ixml
+
+```xml
+<content type="ixml"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Source variable name | foreach |
+| var_key | var | Variable name for key | foreach |
+| var_value | var | Variable name for value | foreach |
+
+
+## Children
+
+<details>
+<summary>Elsewise execution</summary>
+
+### Anatomy
+```xml
+<else>ixml</else>
+```
+
+**Content: Code (ixml)**
+
+```xml
+<content type="ixml"/>
+```
+
+</details>
+
+## Examples
+
+### Example: Iterating over an array
+
+```xml
+<array var="names">
+<item>Bill Gates</item>
+<item>Steve Jobs</item>
+</array>
+<foreach var="names" var_value="name">
+<output>$name&n;</output>
+</foreach>
+<!--
+Bill Gates
+Steve Jobs
+-->
+```
+
+### Example: Dynamically altering an array
+
+```xml
+<array var="names">
+<item>Bill Gates</item>
+<item>Steve Jobs</item>
+</array>
+<foreach var="names" var_key="key" var_value="name">
+<if value1="$name" func="=" value2="Bill Gates">
+<set var="names[$key]">William Henry Gates III</set>
+</if>
+</foreach>
+<output>
+<array:join var="names" delimiter=", "/>
+</output>
+<!-- William Henry Gates III, Steve Jobs -->
+```
+
+### Example: Dynamically altering a multidimensional array
+
+```xml
+<array var="names">
+<array>
+<item key="firstname">Bill</item>
+<item key="lastname">Gates</item>
+</array>
+<array>
+<item key="firstname">Steve</item>
+<item key="lastname">Jobs</item>
+</array>
+</array>
+<foreach var="names" var_value="name">
+<if value1="$name.lastname" func="=" value2="Gates">
+<set var="name.fullname">William Henry Gates III</set>
+</if>
+</foreach>
+<output>$names[0].fullname</output>
+<!-- William Henry Gates III -->
+```
+
+### Example: Indirect loop termination
+
+```xml
+<array var="names">
+<item>Bill Gates</item>
+<item>Steve Jobs</item>
+</array>
+<foreach var="names" var_value="name">
+<output>$name</output>
+<if value1="$name" func="=" value2="Bill Gates">
+<break/>
+</if>
+</foreach>
+<!-- Bill Gates -->
+```
+
+### Example: Continuation with next iteration
+
+```xml
+<array var="names">
+<item>Bill Gates</item>
+<item>Steve Jobs</item>
+</array>
+<foreach var="names" var_value="name">
+<if value1="$name" func="=" value2="Bill Gates">
+<next/>
+</if>
+<output>$name</output>
+</foreach>
+<!-- Steve Jobs -->
+```
+

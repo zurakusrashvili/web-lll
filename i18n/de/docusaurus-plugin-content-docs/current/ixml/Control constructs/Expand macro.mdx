@@ -1,0 +1,61 @@
+# Expand macro
+
+### Anatomy
+
+```xml
+<expand macro="var"/>
+```
+
+ **Description**:
+ EXPAND breaks out of the current control flow and continues with the execution of a macro. It then returns to its original control flow.
+
+Macro expansion allows for code reuse with minimal computational overhead compared to function invokation.
+
+A macro can be coded so that it may expand itself recursively. This technique allows direct implementation of functions defined by mathematical induction and recursive divide and conquer algorithms.
+
+
+> **Attention:**
+>
+> EXPAND will throw an error for an undefined or invalid macro.
+> 
+> The macro remains within the current context when being expanded.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| macro | var | Macro variable name | expand |
+
+
+## Examples
+
+### Example: Basic macro expansion
+
+```xml
+<macro var="outputName">
+<output>$name</output>
+</macro>
+<set var="name">iXML</set>
+<expand macro="outputName"/>
+<!-- iXML -->
+```
+
+### Example: Iterating macro expansion
+
+```xml
+<macro var="outputName">
+<output>$name&n;</output>
+</macro>
+<array var="names">
+<item>Bill Gates</item>
+<item>Steve Jobs</item>
+</array>
+<foreach var="names" var_value="name">
+<expand macro="outputName"/>
+</foreach>
+<!--
+Bill Gates
+Steve Jobs
+-->
+```
+

@@ -1,0 +1,44 @@
+# MD5 hash
+
+### Anatomy
+
+```xml
+<encode:md5 var="var">
+    string
+</encode:md5>
+```
+
+ **Description**:
+ ENCODE:MD5 generates the MD5 hash of a value as a 32-character hexadecimal number using the RSA Data Security, Inc. MD5 Message-Digest Algorithm.
+
+### Content: string
+
+```xml
+<content type="string"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | encode:md5 |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | string | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<output>
+<encode:md5>My name is iXML!</encode:md5>
+</output>
+<!-- 5a93f1d56c2f7551b9e3dd90e93fb6c0 -->
+```
+

@@ -1,0 +1,49 @@
+# Pad array
+
+### Anatomy
+
+```xml
+<array:pad var="var" var_result="var" length="int" padding="string"/>
+```
+
+ **Description**:
+ ARRAY:PAD pads an array to a given length.
+
+If the length is positive then the array is padded on the right, if it is negative then on the left. If the absolute length is less than or equal to the actual length of the array then no padding takes place.
+
+
+> **Attention:**
+>
+> ARRAY:PAD is destructive, in the sense that it modifies the array in-place, unless 'var_result' is specified in which case a copy of the resulting array will be stored in 'var_result' instead. It will re-index all keys in the array numerically.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Variable name | array:pad |
+| var_result | var | Result variable name | array:pad |
+| length | int | Length | array:pad |
+| padding | string | Padding value | array:pad |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var|var_result | array | no-result-propagation |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<array var="names">
+<item>Bill Gates</item>
+<item>Steve Jobs</item>
+</array>
+<array:pad var="names" length="3" padding="Larry Ellison"/>
+<output>$names[1] and $names[2] are friends!</output>
+<!-- Steve Jobs and Larry Ellison are friends! -->
+```
+

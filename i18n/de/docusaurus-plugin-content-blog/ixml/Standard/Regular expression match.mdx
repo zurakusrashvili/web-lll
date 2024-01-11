@@ -1,0 +1,53 @@
+# Regular expression match
+
+### Anatomy
+
+```xml
+<match var="var" var_matches="var" pattern="regexp" offset="int">
+    string
+</match>
+```
+
+ **Description**:
+ MATCH performs a global regular expression match on a subject against a given pattern and assignes the number of full matches to 'var', while the actual matches are assigned to 'var_matches'.
+
+Results are ordered so that matches[0] is an array of first set of matches, matches[1] is an array of second set of matches, and so on.
+
+If the offset is negative it will start that many characters from the end of the subject.
+
+### Content: string
+
+```xml
+<content type="string"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name for number of matches | match |
+| var_matches | var | Result variable name for actual matches | match |
+| pattern | regexp | Pattern | match |
+| offset | int | Search offset | match |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | int | N/A |
+| var_matches | array | no-result-propagation |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<match var="count" var_matches="matches" pattern="/ixml/i">My name is iXML!</match>
+<if value1="$count" func="&gt;" value2="0">
+<output>$matches[0][0]</output>
+</if>
+<!-- iXML -->
+```
+

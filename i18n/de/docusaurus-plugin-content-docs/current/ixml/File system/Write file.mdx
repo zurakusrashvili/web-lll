@@ -1,0 +1,42 @@
+# Write file
+
+### Anatomy
+
+```xml
+<file:write filename="string">
+    string
+</file:write>
+```
+
+ **Description**:
+ FILE:WRITE writes content to a file.
+
+If the file does not exist, it will implicitly be created. Otherwise, the existing file is overwritten.
+
+FILE:WRITE is the complement of the FILE:READ operation.
+
+### Content: string
+
+```xml
+<content type="string"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| filename | string | Filename/URL | file:write |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<file:write filename="./test/ixml.inc">iXML</file:write>
+<output>
+<file:read filename="./test/ixml.inc"/>
+</output>
+<!-- iXML -->
+```
+

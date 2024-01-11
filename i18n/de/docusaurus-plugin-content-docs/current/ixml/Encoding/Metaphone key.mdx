@@ -1,0 +1,51 @@
+# Metaphone key
+
+### Anatomy
+
+```xml
+<encode:metaphone var="var">
+    string
+</encode:metaphone>
+```
+
+ **Description**:
+ ENCODE:METAPHONE generates the metaphone key of a value.
+
+Metaphone keys have the property that words pronounced similarly produce the same metaphone key.
+
+
+> **Attention:**
+>
+> ENCODE:METAPHONE is more accurate than ENCODE:SOUNDEX as it knows the basic rules of English pronunciation.
+
+### Content: string
+
+```xml
+<content type="string"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | encode:metaphone |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | string | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<output>
+<encode:metaphone>iXML</encode:metaphone>
+</output>
+<!-- IKSML -->
+```
+

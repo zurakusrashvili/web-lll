@@ -1,0 +1,97 @@
+# Style
+
+### Anatomy
+
+```xml
+<excel:style var="var">
+    string
+</excel:style>
+```
+
+**Parents**: excel:workbook
+
+ **Description**:
+ EXCEL:STYLE applies style to a range of cells.
+
+
+				The given variable must be an array corresponding to the following structure (keys are case-insensitive):
+
+				merge (range only)
+
+				freeze (no range)
+
+				heigth (no range)
+				width (no range)
+
+				collapseCol (no range)
+				collapseRow (no range)
+
+				outlineLevelCol (0-7) (no range)
+				outlineLevelRow (0-7) (no range)
+
+				font
+					- name
+					- bold
+					- italic
+					- superscript
+					- subscript
+					- underline: none, double, doubleAccounting, single, singleAccounting
+					- strikethrough
+					- color
+						- rgb
+						- argb
+					- size
+
+				alignment
+					- horizontal: general, left, right, center, centerContinuous, justify, fill, distributed
+					- verical: bottom, top, center, justify, distributed
+					- textRotation
+					- wrapText
+					- shrinkToFit
+					- indent
+					- readOrder: 0 (context), 1 (ltr), 2 (rtl)
+
+				borders
+					- allBorders, left, right, top, bottom, diagonal, outline, inside, horizontal, vertical
+						- borderStyle: none, dashDot, dashDotDot, dashed, dotted, double, hair, medium, mediumDashDot, mediumDashDotDot, mediumDashed, slantDashDot, thick, thin
+						- color
+							- rgb
+							- argb
+					- diagonalDirection: 0 (none), 1 (up), 2 (down), 3 (both)
+
+				fill
+					- fillType: none, solid, linear, path, darkDown, darkGray, darkGrid, darkHorizontal, darkTrellis, darkVertical, gray0625, gray125, lightDown, lightGray, lightGrid, lightHorizontal, lightTrellis, lightUp, lightVertical, mediumGray
+					- rotation
+					- startColor
+						- rgb
+						- argb
+					- endColor
+						- rgb
+						- argb
+					- color
+						- rgb
+						- argb
+
+				numberFormat
+					- formatCode
+
+				protection
+					- locked: inherit, protected, unprotected
+					- hidden: inherit, protected, unprotected
+
+				quotePrefix
+			
+
+### Content: string
+
+```xml
+<content type="string"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Variable name for associated style name and value pairs | excel:style |
+
+

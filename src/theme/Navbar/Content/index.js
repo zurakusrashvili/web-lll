@@ -10,6 +10,7 @@ import SearchBar from '@theme/SearchBar';
 import NavbarMobileSidebarToggle from '@theme/Navbar/MobileSidebar/Toggle';
 import NavbarLogo from '@theme/Navbar/Logo';
 import NavbarSearch from '@theme/Navbar/Search';
+import clsx from 'clsx';
 import styles from './styles.module.css';
 function useNavbarItems() {
   // TODO temporary casting until ThemeConfig type is improved
@@ -38,7 +39,7 @@ ${JSON.stringify(item, null, 2)}`,
 function NavbarContentLayout({left, right}) {
   return (
     <div className="navbar__inner">
-      <div className="navbar__items">{left}</div>
+      <div className={clsx('navbar__items', styles[`custom-navbar`])} >{left}</div>
       <div className="navbar__items navbar__items--right">{right}</div>
     </div>
   );
@@ -53,9 +54,9 @@ export default function NavbarContent() {
       left={
         // TODO stop hardcoding items?
         <>
-          {!mobileSidebar.disabled && <NavbarMobileSidebarToggle />}
           <NavbarLogo />
           <NavbarItems items={leftItems} />
+          {!mobileSidebar.disabled && <NavbarMobileSidebarToggle />}
         </>
       }
       right={

@@ -1,0 +1,59 @@
+# Equals strictly
+
+### Anatomy
+
+```xml
+<equals var1="var" var2="var" var_result="var"/>
+```
+
+ **Description**:
+ EQUALS checks whether the values of two variables are strictly equal without type coercion.
+
+
+> **Attention:**
+>
+> Undefined variables as well as variables of different intrinsic data types are not considered equal.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var1 | var | Variable name 1 | equals |
+| var2 | var | Variable name 2 | equals |
+| var_result | var | Result variable name | equals |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var_result | bool | N/A |
+
+
+## Examples
+
+### Example: Basic equals
+
+```xml
+<set var="name1">Bill Gates</set>
+<set var="name2">Steve Jobs</set>
+<equals var1="name1" var2="name2" var_result="equals"/>
+<is var="equals" type="false">
+<output>$name1 and $name2 are not strictly equal!</output>
+</is>
+<!-- Bill Gates and Steve Jobs are not strictly equal! -->
+```
+
+### Example: Type dependent equals
+
+```xml
+<set var="numeric">123</set>
+<set var="number">123</set>
+<cast var="number" type="int"/>
+<equals var1="numeric" var2="number" var_result="equals"/>
+<is var="equals" type="false">
+<output>"$numeric" and $number are not strictly equal!</output>
+</is>
+<!-- "123" and 123 are not strictly equal! -->
+```
+

@@ -1,0 +1,39 @@
+# Type of file
+
+### Anatomy
+
+```xml
+<file:typeof var="var" filename="string"/>
+```
+
+ **Description**:
+ FILE:TYPEOF returns the type of a file or directory.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | file:typeof |
+| filename | string | Filename | file:typeof |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | string | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<file:write filename="./test/ixml.inc">iXML</file:write>
+<file:typeof var="type" filename="./test/ixml.inc"/>
+<if value1="$type" func="=" value2="file">
+<output>Filename refers to a regular file!</output>
+</if>
+<!-- Filename refers to a regular file! -->
+```
+

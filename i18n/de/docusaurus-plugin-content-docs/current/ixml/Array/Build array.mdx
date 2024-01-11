@@ -1,0 +1,60 @@
+# Build array
+
+### Anatomy
+
+```xml
+<array var="var" key="string">
+    ixml
+</array>
+```
+
+ **Description**:
+ ARRAY builds an array with associated key and value pairs. It may be deeply nested in order to build a multidimensional array.
+
+If the key is omitted within ARRAY or ITEM, a consecutive numeric key will implicitly be generated.
+
+### Content: ixml
+
+```xml
+<content type="ixml"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | array |
+| key | string | Key | array |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | array | no-result-propagation |
+
+
+## Examples
+
+### Example: Array with explicit keys
+
+```xml
+<array var="names">
+<item key="bg">Bill Gates</item>
+<item key="sj">Steve Jobs</item>
+</array>
+<output>$names.bg and $names.sj are competitors!</output>
+<!-- Bill Gates and Steve Jobs are competitors! -->
+```
+
+### Example: Array with implicit numeric keys
+
+```xml
+<array var="names">
+<item>Bill Gates</item>
+<item>Steve Jobs</item>
+</array>
+<output>$names[0] and $names[1] are competitors!</output>
+<!-- Bill Gates and Steve Jobs are competitors! -->
+```
+

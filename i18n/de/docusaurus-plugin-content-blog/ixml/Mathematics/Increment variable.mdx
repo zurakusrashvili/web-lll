@@ -1,0 +1,44 @@
+# Increment variable
+
+### Anatomy
+
+```xml
+<math:inc var="var">
+    int
+</math:inc>
+```
+
+ **Description**:
+ MATH:INC increments the value of a variable.
+
+### Content: int
+
+```xml
+<content type="int"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Variable name | math:inc |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | int | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<set var="number">1</set>
+<math:inc var="number"/>
+<output>$number</output>
+<!-- 2 -->
+```
+

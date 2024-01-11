@@ -1,0 +1,52 @@
+# URL information
+
+### Anatomy
+
+```xml
+<http:urlinfo var="var" url="string"/>
+```
+
+ **Description**:
+ HTTP:URLINFO parses a URL according to RFC 1738 and returns the various components thereof.
+
+
+				HTTP:URLINFO returns an array comprised of the following items:
+
+				Key      Description
+				----------------------------------------------------------------------
+				scheme   scheme
+				host     hostname
+				port     port
+				pass     password
+				user     username
+				path     path
+				query    query
+				fragment fragment/anchor
+				args     array of query arguments with associated name and value pairs
+			
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | http:urlinfo |
+| url | string | URL | http:urlinfo |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | array | no-result-propagation |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<http:urlinfo var="info" url="http://www.google.com?q=iXML"/>
+<output>Scheme: $info.scheme, Host: $info.host, Query: $info.query, Arg 'q': $info.args.q</output>
+<!-- Scheme: http, Host: www.google.com, Query: q=iXML, Arg 'q': iXML -->
+```
+

@@ -1,0 +1,55 @@
+# Assign variable
+
+### Anatomy
+
+```xml
+<assign var="var" var_source="var" key="string" key_source="string"/>
+```
+
+ **Description**:
+ ASSIGN assignes the value of a source variable to a target variable.
+
+
+				
+					These three statements are semantically equivalent:
+
+					<assign var="var[key]" var_source="var_source"/>
+					<assign var="var.key" var_source="var_source"/>
+					<assign var="var" key="key" var_source="var_source"/>
+
+					These three statements are semantically equivalent:
+
+					<assign var="var" var_source="var_source[key]"/>
+					<assign var="var" var_source="var_source.key"/>
+					<assign var="var" var_source="var_source" key_source="key"/>
+				
+			
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Target variable name | assign |
+| var_source | var | Source variable name | assign |
+| key | string | Target key | assign |
+| key_source | string | Source key | assign |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var |  | no-result-propagation |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<set var="name1">iXML</set>
+<assign var="name2" var_source="name1"/>
+<output>$name2</output>
+<!-- iXML -->
+```
+

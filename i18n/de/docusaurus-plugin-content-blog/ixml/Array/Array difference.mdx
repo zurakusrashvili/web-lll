@@ -1,0 +1,67 @@
+# Array difference
+
+### Anatomy
+
+```xml
+<array:diff var="var" var_set="var" var_result="var" type="type"/>
+```
+
+ **Description**:
+ ARRAY:DIFF generates the symmetric difference of two arrays by merging those items of both arrays that do not exist within both arrays together, whereas duplicated non-numeric keys are overwritten while items with numeric keys are appended.
+
+
+> **Attention:**
+>
+> ARRAY:DIFF is destructive, in the sense that it modifies the array in-place, unless 'var_result' is specified in which case a copy of the resulting array will be stored in 'var_result' instead. It partially preserves the key and value associations of the array.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Variable name | array:diff |
+| var_set | var | Set variable name | array:diff |
+| var_result | var | Result variable name | array:diff |
+| type | type | Difference type | array:diff |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var|var_result | array | no-result-propagation |
+
+
+## Examples
+
+### Example: Difference by keys
+
+```xml
+<array var="names">
+<item key="bg">Bill Gates</item>
+<item key="sj">Steve Jobs</item>
+</array>
+<array var="diff">
+<item key="sj">Steve Jobs</item>
+<item key="le">Larry Ellison</item>
+</array>
+<array:diff var="names" var_set="diff" type="keys"/>
+<output>$names.bg and $names.le are competitors!</output>
+<!-- Bill Gates and Larry Ellison are competitors! -->
+```
+
+### Example: Difference by values
+
+```xml
+<array var="names">
+<item>Bill Gates</item>
+<item>Steve Jobs</item>
+</array>
+<array var="diff">
+<item>Steve Jobs</item>
+<item>Larry Ellison</item>
+</array>
+<array:diff var="names" var_set="diff" type="values"/>
+<output>$names[0] and $names[1] are competitors!</output>
+<!-- Bill Gates and Larry Ellison are competitors! -->
+```
+

@@ -1,0 +1,52 @@
+# Slice array items
+
+### Anatomy
+
+```xml
+<array:slice var="var" var_result="var" offset="int" length="int"/>
+```
+
+ **Description**:
+ ARRAY:SLICE slices part of an array, isolated by an offset and a length.
+
+If the offset is negative it will start that many items from the end of the array. If the length is omitted, every item from the offset until the end of the array will be returned. If the length is negative then it will stop that many items from the end of the array.
+
+
+> **Attention:**
+>
+> ARRAY:SLICE is destructive, in the sense that it modifies the array in-place, unless 'var_result' is specified in which case a copy of the resulting array will be stored in 'var_result' instead. It preserves the key and value associations of the array.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Variable name | array:slice |
+| var_result | var | Result variable name | array:slice |
+| offset | int | Offset | array:slice |
+| length | int | Length | array:slice |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var|var_result | array | no-result-propagation |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<array var="names">
+<item>Bill Gates</item>
+<item>Steve Jobs</item>
+<item>Larry Ellison</item>
+</array>
+<array:slice var="names" offset="1" length="2"/>
+<output>
+<array:join var="names" delimiter=", "/>
+</output>
+<!-- Steve Jobs, Larry Ellison -->
+```
+

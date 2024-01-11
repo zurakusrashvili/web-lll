@@ -1,0 +1,38 @@
+# Symmetric-key decryption
+
+### Anatomy
+
+```xml
+<decode:crypt var="var" cipher="string" iv="string" key="string">
+    string
+</decode:crypt>
+```
+
+ **Description**:
+ DECODE:CRYPT decryptes ciphertext with a key according to a given cipher.
+
+DECODE:CRYPT is the complement of the ENCODE:CRYPT operation.
+
+### Content: string
+
+```xml
+<content type="string"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | decode:crypt |
+| cipher | string | Cipher | decode:crypt |
+| iv | string | Initialization vector | decode:crypt |
+| key | string | Cryptographic key | decode:crypt |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | string | N/A |
+
+

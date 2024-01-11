@@ -1,0 +1,45 @@
+# Flip array
+
+### Anatomy
+
+```xml
+<array:flip var="var" var_result="var"/>
+```
+
+ **Description**:
+ ARRAY:FLIP exchanges all keys in an array with their associated values.
+
+
+> **Attention:**
+>
+> ARRAY:FLIP is destructive, in the sense that it modifies the array in-place, unless 'var_result' is specified in which case a copy of the resulting array will be stored in 'var_result' instead. A distinct array with string-recasted values as keys will be created. If a value has several occurrences within the array, only the last key will be used while all other items with that particular key will be discarded.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Variable name | array:flip |
+| var_result | var | Result variable name | array:flip |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var|var_result | array | no-result-propagation |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<array var="names">
+<item key="bg">Bill Gates</item>
+<item key="sj">Steve Jobs</item>
+</array>
+<array:flip var="names"/>
+<output>$names[Bill Gates] and $names[Steve Jobs] are competitors!</output>
+<!-- bg and sj are competitors! -->
+```
+

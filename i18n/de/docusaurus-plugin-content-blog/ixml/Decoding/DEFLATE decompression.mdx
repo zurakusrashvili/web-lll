@@ -1,0 +1,35 @@
+# DEFLATE decompression
+
+### Anatomy
+
+```xml
+<decode:deflate var="var">
+    string
+</decode:deflate>
+```
+
+ **Description**:
+ DECODE:DEFLATE decompresses a value from DEFLATE data format according to RFC 1951.
+
+DECODE:DEFLATE is the complement of the ENCODE:DEFLATE operation.
+
+### Content: string
+
+```xml
+<content type="string"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | decode:deflate |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | string | N/A |
+
+

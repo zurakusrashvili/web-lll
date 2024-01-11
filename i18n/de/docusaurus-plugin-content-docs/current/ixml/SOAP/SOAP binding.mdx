@@ -1,0 +1,35 @@
+# SOAP binding
+
+### Anatomy
+
+```xml
+<soap:bind var="var">
+    string
+</soap:bind>
+```
+
+**Parents**: soap:client
+
+ **Description**:
+ SOAP:BIND defines a SOAP operation as a function that can be invoked with subsequent CALL statements.
+
+### Content: string
+
+```xml
+<content type="string"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Function variable name | soap:bind |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | function | no-result-propagation |
+
+

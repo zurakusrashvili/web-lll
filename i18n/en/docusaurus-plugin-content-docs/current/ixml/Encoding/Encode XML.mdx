@@ -1,0 +1,51 @@
+# Encode XML
+
+### Anatomy
+
+```xml
+<encode:xml var="var">
+    string
+</encode:xml>
+```
+
+ **Description**:
+ ENCODE:XML encodes a value by converting special reserved characters to their applicable XML entites.
+
+ENCODE:XML is the complement of the DECODE:XML operation.
+
+
+> **Attention:**
+>
+> The characters mentioned above have special significance in XML, and should be represented by XML entities if they are to preserve their meanings.
+
+### Content: string
+
+```xml
+<content type="string"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | encode:xml |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | string | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<output>
+<encode:xml>My name is "iXML" &amp; I am a XML derivative!</encode:xml>
+</output>
+<!-- My name is &quot;iXML&quot; &amp; I am a XML derivative! -->
+```
+

@@ -1,0 +1,47 @@
+# Evaluate expression
+
+### Anatomy
+
+```xml
+<eval var="var" type="type">
+    string
+</eval>
+```
+
+ **Description**:
+ EVAL evaluates an expression of a given data type.
+
+### Content: string
+
+```xml
+<content type="string"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Variable name | eval |
+| type | type | Data type | eval |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | bool|int|float|string | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<set var="dollar">$</set>
+<set var="name">iXML</set>
+<output>
+<eval>My name is $dollar$name!</eval>
+</output>
+<!-- My name is iXML! -->
+```
+

@@ -1,0 +1,148 @@
+# Conditional value execution
+
+### Anatomy
+
+```xml
+<if value1="string" value2="string|regexp" func="string">
+    ixml
+    <elseif value1="string" value2="string|regexp" func="string">ixml</elseif>
+    <elseis var="var" type="type">ixml</elseis>
+    <else>ixml</else>
+</if>
+```
+
+ **Description**:
+ The IF construct is a control flow structure that allows for conditional execution of code dependent on two values.
+
+If the condition is true, the embedded code is executed. Otherwise, a series of embedded ELSEIF and ELSEIS statements is tested one by one. Only the first ELSEIF or ELSEIS statement that is found to be true will be executed. If none of the conditions are true, the embedded ELSE statement will be executed instead.
+
+
+> **Attention:**
+>
+> Comparison of numeric values is always performed numerically regardless of the intrinsic data types.
+> 
+> Regular expression matches regard 'value1' as the subject and 'value2' as the pattern.
+> 
+> IF will propagate results into the context of its paternal statement.
+
+### Content: ixml
+
+```xml
+<content type="ixml"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| value1 | string | Value to compare from | if |
+| value2 | string|regexp | Value to compare to | if |
+| func | string | Comparison function | if |
+
+
+## Children
+
+<details>
+<summary>Elsewise conditional value execution</summary>
+
+### Anatomy
+```xml
+<elseif value1="string" value2="string|regexp" func="string">ixml</elseif>
+```
+
+**Attributes**:
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value1 | string | Value to compare from |
+| value2 | string|regexp | Value to compare to |
+| func | string | Comparison function |
+
+**Content: Code (ixml)**
+
+```xml
+<content type="ixml"/>
+```
+
+</details>
+
+<details>
+<summary>Elsewise conditional type execution</summary>
+
+### Anatomy
+```xml
+<elseis var="var" type="type">ixml</elseis>
+```
+
+**Attributes**:
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| var | var | Variable name |
+| type | type | Type |
+
+**Content: Code (ixml)**
+
+```xml
+<content type="ixml"/>
+```
+
+</details>
+
+<details>
+<summary>Elsewise execution</summary>
+
+### Anatomy
+```xml
+<else>ixml</else>
+```
+
+**Content: Code (ixml)**
+
+```xml
+<content type="ixml"/>
+```
+
+</details>
+
+## Examples
+
+### Example: Basic comparison
+
+```xml
+<set var="name">iXML</set>
+<if value1="$name" func="=" value2="iXML">
+<output>My name is iXML!</output>
+<else>
+<output>My name is not iXML!</output>
+</else>
+</if>
+<!-- My name is iXML! -->
+```
+
+### Example: Multiple comparison
+
+```xml
+<set var="name">Steve Jobs</set>
+<if value1="$name" func="=" value2="Bill Gates">
+<output>My name is Bill Gates!</output>
+<elseif value1="$name" func="=" value2="Steve Jobs">
+<output>My name is Steve Jobs!</output>
+</elseif>
+<else>
+<output>My name is not Bill Gates nor Steve Jobs!</output>
+</else>
+</if>
+<!-- My name is Steve Jobs! -->
+```
+
+### Example: Regular expression match
+
+```xml
+<set var="name">iXML</set>
+<if value1="$name" func="~" value2="/^I/i">
+<output>My name starts with an I!</output>
+</if>
+<!-- My name starts with an I! -->
+```
+

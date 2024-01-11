@@ -1,0 +1,48 @@
+# Decode MIME Base64
+
+### Anatomy
+
+```xml
+<decode:base64 var="var">
+    string
+</decode:base64>
+```
+
+ **Description**:
+ DECODE:BASE64 decodes a value according to RFC 2045 by converting printable characters back to arbitrary byte sequences.
+
+MIME Base64 is designed to make binary data survive transport through transport layers that are not 8-bit clean. MIME Base64-encoded data is about 33 percent larger than the unencoded data.
+
+DECODE:BASE64 is the complement of the ENCODE:BASE64 operation.
+
+### Content: string
+
+```xml
+<content type="string"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | decode:base64 |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | string | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<output>
+<decode:base64>TXkgbmFtZSBpcyBpWE1MIQ==</decode:base64>
+</output>
+<!-- My name is iXML! -->
+```
+

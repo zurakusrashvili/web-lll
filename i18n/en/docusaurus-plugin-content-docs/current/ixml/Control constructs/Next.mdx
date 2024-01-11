@@ -1,0 +1,74 @@
+# Next
+
+### Anatomy
+
+```xml
+<next leap="int"/>
+```
+
+ **Description**:
+ NEXT skips the rest of the current branch or loop iteration and continues with the execution of the next consecutive branch or loop iteration, though leaping over arbitrary levels of nested control statements.
+
+
+> **Attention:**
+>
+> If NEXT is executed outside the control flow of a multiway branch or a loop, it behaves like BREAK.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| leap | int | Leap | next |
+
+
+## Examples
+
+### Example: Fall-through branch
+
+```xml
+<set var="firstname">Steve</set>
+<set var="lastname">Gates</set>
+<switch value="$lastname">
+<case value="Gates">
+<if value1="$firstname" func="=" value2="Steve">
+<next/>
+</if>
+<output>My name might be Bill Gates!</output>
+</case>
+<case value="Jobs">
+<output>My name might be Steve Jobs!</output>
+</case>
+</switch>
+<!-- My name might be Steve Jobs! -->
+```
+
+### Example: Continuation with next iteration (WHILE)
+
+```xml
+<set var="count">0</set>
+<while value1="$count" func="&lt;" value2="9">
+<math:inc var="count"/>
+<if value1="$count" func="=" value2="5">
+<next/>
+</if>
+<output>$count</output>
+</while>
+<!-- 12346789 -->
+```
+
+### Example: Continuation with next iteration (FOREACH)
+
+```xml
+<array var="names">
+<item>Bill Gates</item>
+<item>Steve Jobs</item>
+</array>
+<foreach var="names" var_value="name">
+<if value1="$name" func="=" value2="Bill Gates">
+<next/>
+</if>
+<output>$name</output>
+</foreach>
+<!-- Steve Jobs -->
+```
+

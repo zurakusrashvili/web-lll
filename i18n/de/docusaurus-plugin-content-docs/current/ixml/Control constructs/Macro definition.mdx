@@ -1,0 +1,74 @@
+# Macro definition
+
+### Anatomy
+
+```xml
+<macro var="var">
+    ixml
+</macro>
+```
+
+ **Description**:
+ The MACRO construct defines an open subroutine as a code sequence that can be expanded with subsequent EXPAND statements.
+
+Macro expansion allows for code reuse with minimal computational overhead compared to function invokation.
+
+A macro can be coded so that it may expand itself recursively. This technique allows direct implementation of functions defined by mathematical induction and recursive divide and conquer algorithms.
+
+
+> **Attention:**
+>
+> The macro remains within the current context when being expanded.
+
+### Content: ixml
+
+```xml
+<content type="ixml"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Variable name | macro |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | macro | no-result-propagation |
+
+
+## Examples
+
+### Example: Basic macro expansion
+
+```xml
+<macro var="outputName">
+<output>$name</output>
+</macro>
+<set var="name">iXML</set>
+<expand macro="outputName"/>
+<!-- iXML -->
+```
+
+### Example: Iterating macro expansion
+
+```xml
+<macro var="outputName">
+<output>$name&n;</output>
+</macro>
+<array var="names">
+<item>Bill Gates</item>
+<item>Steve Jobs</item>
+</array>
+<foreach var="names" var_value="name">
+<expand macro="outputName"/>
+</foreach>
+<!--
+Bill Gates
+Steve Jobs
+-->
+```
+

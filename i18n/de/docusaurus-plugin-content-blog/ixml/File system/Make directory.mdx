@@ -1,0 +1,28 @@
+# Make directory
+
+### Anatomy
+
+```xml
+<file:makedir dirname="string"/>
+```
+
+ **Description**:
+ FILE:MAKEDIR makes a new directory.
+
+The directory path is created recursively as paternal directories are implicitly created if they do not yet exist.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| dirname | string | Directory name/URL | file:makedir |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<file:makedir dirname="./test/ixml_dir"/>
+```
+

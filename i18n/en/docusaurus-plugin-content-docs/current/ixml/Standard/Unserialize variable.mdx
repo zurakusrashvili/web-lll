@@ -1,0 +1,45 @@
+# Unserialize variable
+
+### Anatomy
+
+```xml
+<unserialize var="var">
+    string
+</unserialize>
+```
+
+ **Description**:
+ UNSERIALIZE generates a structural value from a stored representation.
+
+UNSERIALIZE is the complement of the SERIALIZE operation.
+
+### Content: string
+
+```xml
+<content type="string"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | unserialize |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var |  | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<unserialize var="names">a:2:{s:2:"bg";s:10:"Bill Gates";s:2:"sj";s:10:"Steve Jobs";}</unserialize>
+<output>$names.bg</output>
+<!-- Bill Gates -->
+```
+

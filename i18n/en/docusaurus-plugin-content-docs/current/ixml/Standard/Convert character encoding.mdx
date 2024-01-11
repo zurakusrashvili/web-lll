@@ -1,0 +1,35 @@
+# Convert character encoding
+
+### Anatomy
+
+```xml
+<convert var="var" from="type" to="type">
+    string
+</convert>
+```
+
+ **Description**:
+ CONVERT converts the character encoding of a value from a source character set to a target character set.
+
+### Content: string
+
+```xml
+<content type="string"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | convert |
+| from | type | Source character set | convert |
+| to | type | Target character set | convert |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | string | N/A |
+
+

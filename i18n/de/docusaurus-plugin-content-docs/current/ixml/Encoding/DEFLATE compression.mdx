@@ -1,0 +1,36 @@
+# DEFLATE compression
+
+### Anatomy
+
+```xml
+<encode:deflate var="var" level="int">
+    string
+</encode:deflate>
+```
+
+ **Description**:
+ ENCODE:DEFLATE compresses a value to DEFLATE data format according to RFC 1951.
+
+ENCODE:DEFLATE is the complement of the DECODE:DEFLATE operation.
+
+### Content: string
+
+```xml
+<content type="string"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | encode:deflate |
+| level | int | Compression level | encode:deflate |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | string | N/A |
+
+

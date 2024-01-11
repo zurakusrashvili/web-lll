@@ -1,0 +1,56 @@
+# Set variable to FALSE
+
+### Anatomy
+
+```xml
+<false var="var" key="string"/>
+```
+
+ **Description**:
+ FALSE sets the value of a variable to FALSE.
+
+
+				
+					These three statements are semantically equivalent:
+
+					<false var="var[key]"/>
+					<false var="var.key"/>
+					<false var="var" key="key"/>
+				
+			
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Variable name | false |
+| key | string | Key | false |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | bool | N/A |
+
+
+## Examples
+
+### Example: Setting variable to FALSE
+
+```xml
+<false var="var"/>
+```
+
+### Example: Setting array item implicitly to FALSE
+
+```xml
+<false var="var[key]"/>
+```
+
+### Example: Setting array item explicitly to FALSE
+
+```xml
+<false var="var" key="key"/>
+```
+

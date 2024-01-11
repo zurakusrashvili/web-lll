@@ -1,0 +1,111 @@
+# Selective execution
+
+### Anatomy
+
+```xml
+<switch value="string">
+    <case value="string">ixml</case>
+    <default>ixml</default>
+</switch>
+```
+
+ **Description**:
+ The SWITCH construct is a control flow structure that allows for selective execution of code controlled via a multiway branch. It can be thought of as a series of IF constructs, each with the same value to compare from.
+
+If the value of a SWITCH statement equals the value of an embedded CASE statement, the control flow continues with the execution of that CASE statement. Otherwise, the control flow continues with the execution of the embedded DEFAULT statement.
+
+
+> **Attention:**
+>
+> Comparison of numeric values is always performed numerically regardless of the intrinsic data types.
+> 
+> It is in some cases desirable, for a branch to intentionally fall through to the next branch, thereby creating a cascading execution stack. For that prupose the NEXT operation may be used to skip the rest of the current CASE statement and continue with the execution of the next consecutive CASE statement inside the same paternal SWITCH statement. Also, the BREAK operation may be used to break-off the execution of the current CASE or DEFAULT statement and continue with the execution outside the paternal SWITCH statement.
+> 
+> SWITCH will propagate results into the context of its paternal statement.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| value | string | Value to compare from | switch |
+
+
+## Children
+
+<details>
+<summary>Branch execution</summary>
+
+### Anatomy
+```xml
+<case value="string">ixml</case>
+```
+
+**Attributes**:
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | string | Value to compare to |
+
+**Content: Code (ixml)**
+
+```xml
+<content type="ixml"/>
+```
+
+</details>
+
+<details>
+<summary>Default execution</summary>
+
+### Anatomy
+```xml
+<default>ixml</default>
+```
+
+**Content: Code (ixml)**
+
+```xml
+<content type="ixml"/>
+```
+
+</details>
+
+## Examples
+
+### Example: Basic branch
+
+```xml
+<set var="lastname">Gates</set>
+<switch value="$lastname">
+<case value="Gates">
+<output>My name might be Bill Gates!</output>
+</case>
+<case value="Jobs">
+<output>My name might be Steve Jobs!</output>
+</case>
+<default>
+<output>My name is not Bill Gates nor Steve Jobs!</output>
+</default>
+</switch>
+<!-- My name might be Bill Gates! -->
+```
+
+### Example: Fall-through branch
+
+```xml
+<set var="firstname">Steve</set>
+<set var="lastname">Gates</set>
+<switch value="$lastname">
+<case value="Gates">
+<if value1="$firstname" func="=" value2="Steve">
+<next/>
+</if>
+<output>My name might be Bill Gates!</output>
+</case>
+<case value="Jobs">
+<output>My name might be Steve Jobs!</output>
+</case>
+</switch>
+<!-- My name might be Steve Jobs! -->
+```
+

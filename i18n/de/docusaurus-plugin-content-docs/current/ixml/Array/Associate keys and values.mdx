@@ -1,0 +1,45 @@
+# Associate keys and values
+
+### Anatomy
+
+```xml
+<array:assoc var="var" var_keys="var" var_values="var"/>
+```
+
+ **Description**:
+ ARRAY:ASSOC creates an array of associated key and value pairs by combining two separate arrays of keys and values.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | array:assoc |
+| var_keys | var | Variable name for keys | array:assoc |
+| var_values | var | Variable name for values | array:assoc |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | array | no-result-propagation |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<array var="keys">
+<item>bg</item>
+<item>sj</item>
+</array>
+<array var="values">
+<item>Bill Gates</item>
+<item>Steve Jobs</item>
+</array>
+<array:assoc var="names" var_keys="keys" var_values="values"/>
+<output>$names.bg and $names.sj are competitors!</output>
+<!-- Bill Gates and Steve Jobs are competitors! -->
+```
+

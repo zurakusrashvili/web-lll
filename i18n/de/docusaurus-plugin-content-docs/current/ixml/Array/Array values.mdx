@@ -1,0 +1,49 @@
+# Array values
+
+### Anatomy
+
+```xml
+<array:values var="var" var_result="var"/>
+```
+
+ **Description**:
+ ARRAY:VALUES extracts all values of an array.
+
+A given key may specify the column of a multidimensional array to extract from. If however, the key is omitted, then the array is treated as an unidimensional list.
+
+
+> **Attention:**
+>
+> If a key is specified and that key does not exist within the inner array, the corresponding item of the outer array will be skipped.
+> 
+> ARRAY:VALUES is destructive, in the sense that it modifies the array in-place, unless 'var_result' is specified in which case a copy of the resulting array will be stored in 'var_result' instead.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Variable name | array:values |
+| var_result | var | Result variable name | array:values |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var|var_result | array | no-result-propagation |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<array var="names">
+<item key="bg">Bill Gates</item>
+<item key="sj">Steve Jobs</item>
+</array>
+<array:values var="names" var_result="values"/>
+<output>$values[0] and $values[1] are competitors!</output>
+<!-- Bill Gates and Steve Jobs are competitors! -->
+```
+

@@ -1,0 +1,40 @@
+# Build URL query
+
+### Anatomy
+
+```xml
+<http:query var="var" var_result="var"/>
+```
+
+ **Description**:
+ HTTP:QUERY builds a URL query component out of an array of associated name and value pairs according to RFC 3986.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Variable name | http:query |
+| var_result | var | Result variable name | http:query |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | string | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<array var="args">
+<item key="q">iXML</item>
+</array>
+<output>
+<http:query var="args"/>
+</output>
+<!-- q=iXML -->
+```
+

@@ -1,0 +1,44 @@
+# CRC32 checksum
+
+### Anatomy
+
+```xml
+<encode:crc32 var="var">
+    string
+</encode:crc32>
+```
+
+ **Description**:
+ ENCODE:CRC32 generates the 32-bit cyclic redundancy checksum polynomial of a value as a signed integer number.
+
+### Content: string
+
+```xml
+<content type="string"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | encode:crc32 |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | int | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<output>
+<encode:crc32>My name is iXML!</encode:crc32>
+</output>
+<!-- -122920343 -->
+```
+

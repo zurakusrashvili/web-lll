@@ -1,0 +1,49 @@
+# Date information
+
+### Anatomy
+
+```xml
+<date:info var="var" timezone="string">
+    int
+</date:info>
+```
+
+ **Description**:
+ DATE:INFO returns the various components of a date and time.
+
+
+				DATE:INFO returns an array comprised of the following items:
+
+				Key    Description
+				---------------------------------------------
+				day    Day (1..31)
+				month  Month (1..12)
+				year   Year, 4 digits
+				hour   Hour (0..59)
+				minute Minute (0..59)
+				second Second (0..59)
+				wday   Day of week, Sunday to Saturday (0..6)
+				yday   Day of year (0..365)
+			
+
+### Content: int
+
+```xml
+<content type="int"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | date:info |
+| timezone | string | Time zone | date:info |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | array | no-result-propagation |
+
+

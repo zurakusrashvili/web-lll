@@ -1,0 +1,47 @@
+# Path information
+
+### Anatomy
+
+```xml
+<file:pathinfo var="var" filename="string"/>
+```
+
+ **Description**:
+ FILE:PATHINFO parses a filename and returns the various components thereof.
+
+
+				FILE:PATHINFO returns an array comprised of the following items:
+
+				Key       Description
+				------------------------------------
+				dirname   directory name
+				basename  base name
+				extension file extension
+				filename  filename without extension
+			
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | file:pathinfo |
+| filename | string | Filename | file:pathinfo |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | array | no-result-propagation |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<file:pathinfo var="info" filename="./test/ixml.inc"/>
+<output>Dir: $info.dirname, Base: $info.basename, Ext: $info.extension, Name: $info.filename</output>
+<!-- Dir: ./test, Base: ixml.inc, Ext: inc, Name: ixml -->
+```
+

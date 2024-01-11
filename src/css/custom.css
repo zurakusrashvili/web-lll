@@ -28,8 +28,21 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+@font-face {
+  font-family: 'IBM-MONO';
+  src: url('/static/fonts/plex/ttf/IBMPlexMono-Bold.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+body{
+  /* font-family: 'IBM-MONO'; */
+}
+
 
 
 h2 img{
   width: 28px;
+}
+.dropdown > .navbar__link:after{
+  display:none;
 }

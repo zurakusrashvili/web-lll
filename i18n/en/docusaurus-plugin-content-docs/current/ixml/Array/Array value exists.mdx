@@ -1,0 +1,50 @@
+# Array value exists
+
+### Anatomy
+
+```xml
+<array:valueexists var="var" var_result="var">
+    string
+</array:valueexists>
+```
+
+ **Description**:
+ ARRAY:VALUEEXISTS checks whether a value exists within an array.
+
+### Content: string
+
+```xml
+<content type="string"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Variable name | array:valueexists |
+| var_result | var | Result variable name | array:valueexists |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var_result | bool | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<array var="names">
+<item>Bill Gates</item>
+<item>Steve Jobs</item>
+</array>
+<array:valueexists var="names" var_result="exists">Steve Jobs</array:valueexists>
+<is var="exists" type="true">
+<output>Value exists!</output>
+</is>
+<!-- Value exists! -->
+```
+

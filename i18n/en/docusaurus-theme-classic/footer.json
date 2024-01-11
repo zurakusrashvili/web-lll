@@ -1,0 +1,26 @@
+{
+  "link.title.Legal Notices": {
+    "message": "Legal Notices",
+    "description": "The title of the footer links column with title=Legal Notices in the footer"
+  },
+  "link.item.label.Privacy Policy": {
+    "message": "Privacy Policy",
+    "description": "The label of footer link with label=Privacy Policy linking to privacy"
+  },
+  "link.item.label.Terms of Service": {
+    "message": "Terms of Service",
+    "description": "The label of footer link with label=Terms of Service linking to termsofservice"
+  },
+  "link.item.label.Standard Business Terms": {
+    "message": "Standard Business Terms",
+    "description": "The label of footer link with label=Standard Business Terms linking to stb"
+  },
+  "link.item.label.Imprint": {
+    "message": "Imprint",
+    "description": "The label of footer link with label=Imprint linking to impressum"
+  },
+  "copyright": {
+    "message": "Copyright © 2012-2024 ZeyOS GmbH & Co. KG\nAll rights reserved. All trademarks held by their respective owners.",
+    "description": "The footer copyright"
+  }
+}

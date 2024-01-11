@@ -1,0 +1,167 @@
+# Class definition
+
+### Anatomy
+
+```xml
+<class var="var">
+    <extends class="var"/>
+    <property name="string" var="var">string</property>
+    <constructor>ixml</constructor>
+    <method name="string">ixml</method>
+</class>
+```
+
+ **Description**:
+ The CLASS construct defines a class that can be instantiated with subsequent NEW statements. It serves as an array prototype for object-oriented design.
+
+A class is used as a blueprint to create instances of itself. It defines constituent properties and methods which enable these class instances to have state and behavior. Upon instantiation the properties and methods of a class become the associated key and value pairs of a newly created array, which in the context of object-oriented design is to be termed an object.
+
+Classes can be derived from multiple existing classes, thereby establishing a hierarchial relationship in which a parent class can be considered as a common part of its subclasses. Extending a class will have the subclass inherit all the properties and methods from the parent class.
+
+The EXTENDS construct incorporates the properties, constructors and methods of a parent class, thereby overloading existing constituents.
+
+The PROPERTY construct defines a property of the class, which upon instantiation will become a regular array item with its name as the key.
+
+The CONSTRUCTOR construct defines a special type of subroutine as a code sequence that cannot be invoked directly but will automatically be called on each newly created object in order to establish the invariant of the class and put the object in some desired state upon instantiation. Upon instantiation parent constructors are automatically called along the lines of inheritance.
+
+The METHOD construct defines a closed subroutine as a code sequence analog to the FUNCTION construct but with explicit reference to the corresponding class. Upon instantiation a class method becomes a regular array item with its name as the key and the underlying function as the value.
+
+
+> **Attention:**
+>
+> EXTENDS will throw an error for an undefined or invalid class.
+> 
+> The class variable 'class' may alternatively be an object in which case it's derived class is used instead.
+> 
+> The constructors and methods incorporate a local context when being called. Therefore local variables may be declared within the constructors and methods.
+> 
+> The special local variable 'this' is a direct reference to the calling object of the constructor or method.
+> 
+> The special local variable 'return' is a reference to the return value that is passed back as the result of the invoking control statement.
+> 
+> The special local variable 'arguments' is a reference to all arguments that have been passed to local variables on switch of context.
+> 
+> The RETURN, BREAK and NEXT operations may be used to break-off the execution of the constructor or method, thereby implicitly returning to the original control flow of the invoking control statement.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Variable name | class |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | class | no-result-propagation |
+
+
+## Children
+
+<details>
+<summary>Extends</summary>
+
+### Anatomy
+```xml
+<extends class="var"></extends>
+```
+
+**Attributes**:
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| class | var | Class variable name |
+
+</details>
+
+<details>
+<summary>Property</summary>
+
+### Anatomy
+```xml
+<property name="string" var="var">string</property>
+```
+
+**Attributes**:
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| name | string | Name |
+| var | var | Variable name |
+
+**Value: Code (string)**
+
+```xml
+<content type="string"/>
+```
+
+</details>
+
+<details>
+<summary>Constructor</summary>
+
+### Anatomy
+```xml
+<constructor>ixml</constructor>
+```
+
+**Content: Code (ixml)**
+
+```xml
+<content type="ixml"/>
+```
+
+</details>
+
+<details>
+<summary>Method</summary>
+
+### Anatomy
+```xml
+<method name="string">ixml</method>
+```
+
+**Attributes**:
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| name | string | Name |
+
+**Content: Code (ixml)**
+
+```xml
+<content type="ixml"/>
+```
+
+</details>
+
+## Examples
+
+### Example: Example
+
+```xml
+<class var="Human">
+<property name="gender">male</property>
+</class>
+<class var="Person">
+<extends class="Human"/>
+<property name="firstname"/>
+<property name="lastname"/>
+<constructor>
+<set var="this.firstname">$firstname</set>
+<set var="this.lastname">$lastname</set>
+</constructor>
+<method name="getName">
+<set var="return">$this.firstname $this.lastname</set>
+</method>
+</class>
+<new class="Person" var="obj">
+<param name="firstname">Bill</param>
+<param name="lastname">Gates</param>
+</new>
+<call func="obj.getName" var="name"/>
+<output>$name is $obj.gender!</output>
+<!-- Bill Gates is male! -->
+```
+

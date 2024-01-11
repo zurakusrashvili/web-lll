@@ -1,0 +1,79 @@
+# New instance
+
+### Anatomy
+
+```xml
+<new class="var" var="var" var_params="var">
+    ixml
+</new>
+```
+
+ **Description**:
+ NEW creates a new object by instantiating a class and automatically calling all constructors along the lines of inheritance. Arguments may be passed to local variables as parameters on switch of context.
+
+
+> **Attention:**
+>
+> NEW will throw an error for an undefined or invalid class.
+> 
+> The class variable 'class' may alternatively be an object in which case it's derived class is used instead.
+> 
+> The constructor incorporates a local context when being called. Therefore local variables may be declared within the constructors and methods.
+> 
+> The special local variable 'this' is a direct reference to the calling object of the constructor.
+> 
+> The special local variable 'arguments' is a reference to all arguments that have been passed to local variables on switch of context.
+> 
+> The RETURN, BREAK and NEXT operations may be used to break-off the execution of the constructor, thereby implicitly returning to the original control flow of the invoking control statement.
+
+### Content: ixml
+
+```xml
+<content type="ixml"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| class | var | Class variable name | new |
+| var | var | Object variable name | new |
+| var_params | var | Variable name for associated parameter name and value pairs | new |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | array | no-result-propagation |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<class var="Human">
+<property name="gender">male</property>
+</class>
+<class var="Person">
+<extends class="Human"/>
+<property name="firstname"/>
+<property name="lastname"/>
+<constructor>
+<set var="this.firstname">$firstname</set>
+<set var="this.lastname">$lastname</set>
+</constructor>
+<method name="getName">
+<set var="return">$this.firstname $this.lastname</set>
+</method>
+</class>
+<new class="Person" var="obj">
+<param name="firstname">Bill</param>
+<param name="lastname">Gates</param>
+</new>
+<call func="obj.getName" var="name"/>
+<output>$name is $obj.gender!</output>
+<!-- Bill Gates is male! -->
+```
+

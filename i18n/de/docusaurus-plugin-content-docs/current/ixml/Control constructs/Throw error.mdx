@@ -1,0 +1,30 @@
+# Throw error
+
+ **Description**:
+ ERROR breaks out of the current control flow by throwing an error with an error message.
+
+An error can be thrown and caught. Code may be surrounded by a TRY statement, to facilitate the catching of potential errors.
+
+### Content: string
+
+```xml
+<content type="string"/>
+```
+
+## Examples
+
+### Example: Example
+
+```xml
+<try>
+<set var="name">iXML</set>
+<if value1="$name" func="=" value2="iXML">
+<error>An error has occured!</error>
+</if>
+<catch var="error">
+<output>$error</output>
+</catch>
+</try>
+<!-- An error has occured! -->
+```
+

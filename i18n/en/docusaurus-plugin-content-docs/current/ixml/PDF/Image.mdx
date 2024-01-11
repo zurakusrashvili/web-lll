@@ -1,0 +1,28 @@
+# Image
+
+### Anatomy
+
+```xml
+<pdf:image filename="string" type="string" dpi="int" height="float" width="float" x="float" y="float"/>
+```
+
+**Parents**: pdf:header, pdf:footer, pdf:body
+
+ **Description**:
+ PDF:IMAGE prints an image, specified by a filename/URL.
+
+If the type is omitted, it will implicitly be inferred from the filename extension component of the given filename.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| filename | string | Filename/URL | pdf:image |
+| type | string | Image type | pdf:image |
+| dpi | int | Dots per inch | pdf:image |
+| height | float | Height | pdf:image |
+| width | float | Width | pdf:image |
+| x | float | Abscissa | pdf:image |
+| y | float | Ordinate | pdf:image |
+
+

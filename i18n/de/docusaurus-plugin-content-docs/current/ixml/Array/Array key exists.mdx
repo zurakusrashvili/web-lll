@@ -1,0 +1,50 @@
+# Array key exists
+
+### Anatomy
+
+```xml
+<array:keyexists var="var" var_result="var">
+    string
+</array:keyexists>
+```
+
+ **Description**:
+ ARRAY:KEYEXISTS checks whether a key exists within an array.
+
+### Content: string
+
+```xml
+<content type="string"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Variable name | array:keyexists |
+| var_result | var | Result variable name | array:keyexists |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var_result | bool | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<array var="names">
+<item key="bg">Bill Gates</item>
+<item key="sj">Steve Jobs</item>
+</array>
+<array:keyexists var="names" var_result="exists">sj</array:keyexists>
+<is var="exists" type="true">
+<output>Key exists!</output>
+</is>
+<!-- Key exists! -->
+```
+

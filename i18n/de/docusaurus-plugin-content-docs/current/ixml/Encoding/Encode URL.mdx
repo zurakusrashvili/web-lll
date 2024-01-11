@@ -1,0 +1,46 @@
+# Encode URL
+
+### Anatomy
+
+```xml
+<encode:url var="var">
+    string
+</encode:url>
+```
+
+ **Description**:
+ ENCODE:URL encodes a value according to RFC 1738 by replacing non-alphanumeric characters except '-', '_' and '.' with a percent sign ('%') followed by a 2-character hexadecimal number.
+
+ENCODE:URL is the complement of the DECODE:URL operation.
+
+### Content: string
+
+```xml
+<content type="string"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | encode:url |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | string | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<output>
+<encode:url>My name is iXML!</encode:url>
+</output>
+<!-- My%20name%20is%20iXML%21 -->
+```
+

@@ -1,0 +1,91 @@
+# RESTful server
+
+ **Description**:
+ The REST:SERVER construct is a control flow structure that allows for selective execution of code according to the underlying RESTful request based on HTTP, in which each resource is a special type of subroutine.
+
+REST:SERVER will invoke the resource subroutine of the first route that matches the current HTTP request's path and method with the associated request header field name and value pairs assigned to 'var_header' and the request body assigned to 'var_body'. Also, resource route arguments of the form ':name' as well as query arguments are assigned to corresponding local variables. The route may contain a final variadic argument of the form '*name' for all remaining route components as an array.
+
+The USE construct declares a free function variable for use as a local variable within the resource subroutine that is explicitly bound to a corresponding variable from the immediate context within which the RESTful server is defined, thereby directly referencing the non-local variable from the parent scope outside of the inherent context of the resource subroutine.
+
+
+> **Attention:**
+>
+> Within a REST:SERVER statement all output is buffered so that header fields can be sent after output has already been initiated, though actual output must not be sent before that REST:SERVER statement.
+> 
+> The resource subroutine incorporates a local context when being called. Therefore local variables may be declared within the resource subroutine.
+> 
+> The special local variable 'return' is a reference to the return value that may be passed back as as the HTTP status code to the client.
+> 
+> The special local variable 'arguments' is a reference to all arguments that have been passed to local variables on switch of context.
+> 
+> The RETURN, BREAK and NEXT operations may be used to break-off the execution of the resource subroutine, thereby implicitly returning to the original control flow of the invoking control statement.
+
+## Children
+
+<details>
+<summary>RESTful resource definition</summary>
+
+### Anatomy
+```xml
+<rest:resource var_header="var" var_body="var" route="string" method="string">ixml</rest:resource>
+```
+
+**Attributes**:
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| var_header | var | Result variable name for request header |
+| var_body | var | Result variable name for request body |
+| route | string | Route |
+| method | string | Method |
+
+**Content: Code (ixml)**
+
+```xml
+<content type="ixml"/>
+```
+
+</details>
+
+## Examples
+
+### Example: Example
+
+```xml
+<global var="people"/>
+<array var="people">
+<array key="bg">
+<item key="lastname">Gates</item>
+<item key="firstname">Bill</item>
+</array>
+<array key="sj">
+<item key="lastname">Jobs</item>
+<item key="firstname">Steve</item>
+</array>
+</array>
+<rest:server>
+<rest:resource route="/person/:id" method="GET">
+<array:keyexists var="people" var_result="exists">$id</array:keyexists>
+<is var="exists" type="false">
+<set var="return">404</set>
+<return/>
+</is>
+<header>Content-Type: application/json</header>
+<output>
+<encode:json var="people[$id]"/>
+</output>
+</rest:resource>
+<rest:resource route="/person/:id" method="POST">
+<set var="people[$id].lastname">$lastname</set>
+<set var="people[$id].firstname">$firstname</set>
+</rest:resource>
+<rest:resource route="/person/:id" method="PUT" var_body="data">
+<decode:json var="people[$id]">$data</decode:json>
+<set var="return">201</set>
+</rest:resource>
+<rest:resource route="/person/:id" method="DELETE">
+<unset var="people[$id]"/>
+</rest:resource>
+</rest:server>
+```
+

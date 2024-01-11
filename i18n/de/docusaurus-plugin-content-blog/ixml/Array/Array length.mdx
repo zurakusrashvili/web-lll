@@ -1,0 +1,42 @@
+# Array length
+
+### Anatomy
+
+```xml
+<array:length var="var" var_result="var"/>
+```
+
+ **Description**:
+ ARRAY:LENGTH returns the number of items in an array.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Variable name | array:length |
+| var_result | var | Result variable name | array:length |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var_result | int | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<array var="names">
+<item>Bill Gates</item>
+<item>Steve Jobs</item>
+</array>
+<array:length var="names" var_result="len"/>
+<if value1="$len" func="&gt;" value2="0">
+<output>There are names available!</output>
+</if>
+<!-- There are names available! -->
+```
+

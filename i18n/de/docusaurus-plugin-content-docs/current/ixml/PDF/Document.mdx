@@ -1,0 +1,64 @@
+# Document
+
+### Anatomy
+
+```xml
+<pdf:document var="var" author="string" title="string" subject="string" keywords="string" subsetting="bool" unit="string" zoom="string" layout="string" mode="string">
+    ixml
+    <pdf:signature signcert="string" privatekey="string" password="string" extracerts="string"/>
+</pdf:document>
+```
+
+ **Description**:
+ PDF:DOCUMENT generates a PDF document that is comprised of multiple sections.
+
+### Content: ixml
+
+```xml
+<content type="ixml"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | pdf:document |
+| author | string | Author | pdf:document |
+| title | string | Title | pdf:document |
+| subject | string | Subject | pdf:document |
+| keywords | string | Keywords | pdf:document |
+| subsetting | bool | Font subsetting | pdf:document |
+| unit | string | Unit | pdf:document |
+| zoom | string | Zoom | pdf:document |
+| layout | string | Layout | pdf:document |
+| mode | string | Mode | pdf:document |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | string | N/A |
+
+
+## Children
+
+<details>
+<summary>Signature</summary>
+
+### Anatomy
+```xml
+<pdf:signature signcert="string" privatekey="string" password="string" extracerts="string"></pdf:signature>
+```
+
+**Attributes**:
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| signcert | string | Signing certificate (PEM notation) |
+| privatekey | string | Private key (PEM notation) |
+| password | string | Private key password |
+| extracerts | string | Extra certificates (PEM notation) |
+
+</details>
+

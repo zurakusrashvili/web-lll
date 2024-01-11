@@ -1,0 +1,49 @@
+# Position of first/last occurrence
+
+### Anatomy
+
+```xml
+<pos var="var" value="string" offset="int" type="type">
+    string
+</pos>
+```
+
+ **Description**:
+ POS finds the position of first or last occurrence of a value within a subject and returns the index of the corresponding byte or character if applicable.
+
+If the offset is negative it will start that many bytes or characters from the end of the subject.
+
+### Content: string
+
+```xml
+<content type="string"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | pos |
+| value | string | Value | pos |
+| offset | int | Search offset | pos |
+| type | type | Measurement type | pos |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var |  | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<output>
+<pos value="X">iXML</pos>
+</output>
+<!-- 1 -->
+```
+

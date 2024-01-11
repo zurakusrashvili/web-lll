@@ -1,0 +1,29 @@
+# Remove record (ZeyOS)
+
+### Anatomy
+
+```xml
+<db:remove entity="string" id="int"/>
+```
+
+**Parents**: db:connection
+
+ **Description**:
+ DB:REMOVE removes a database record, specified by an entity and an ID.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| entity | string | Entity | db:remove |
+| id | int | ID | db:remove |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<db:remove entity="contacts" id="123"/>
+```
+

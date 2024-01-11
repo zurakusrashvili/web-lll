@@ -1,0 +1,36 @@
+# ZLIB compression
+
+### Anatomy
+
+```xml
+<encode:zlib var="var" level="int">
+    string
+</encode:zlib>
+```
+
+ **Description**:
+ ENCODE:ZLIB compresses a value to ZLIB data format according to RFC 1950.
+
+ENCODE:ZLIB is the complement of the DECODE:ZLIB operation.
+
+### Content: string
+
+```xml
+<content type="string"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | encode:zlib |
+| level | int | Compression level | encode:zlib |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | string | N/A |
+
+

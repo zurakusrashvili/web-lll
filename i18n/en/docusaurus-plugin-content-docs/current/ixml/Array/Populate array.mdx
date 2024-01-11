@@ -1,0 +1,33 @@
+# Populate array
+
+### Anatomy
+
+```xml
+<array:populate var="var" prefix="string"/>
+```
+
+ **Description**:
+ ARRAY:POPULATE imports all associated key and value pairs from an array into the local variable scope by treating keys as variable names, expanded by a given prefix, and values as non-referential variable values.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Variable name | array:populate |
+| prefix | string | Prefix | array:populate |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<array var="names">
+<item key="bg">Bill Gates</item>
+<item key="sj">Steve Jobs</item>
+</array>
+<array:populate var="names" prefix="n_"/>
+<output>$n_bg and $n_sj are competitors!</output>
+<!-- Bill Gates and Steve Jobs are competitors! -->
+```
+

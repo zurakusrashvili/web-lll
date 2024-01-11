@@ -1,0 +1,57 @@
+# Array range
+
+### Anatomy
+
+```xml
+<array:range var="var" from="int" to="int" step="int"/>
+```
+
+ **Description**:
+ ARRAY:RANGE creates an array with values of a given numeric range.
+
+ARRAY:RANGE will implicitly generate a consecutive numeric key for each item of the numeric range.
+
+
+> **Attention:**
+>
+> If the given step is less than one, the array will be empty.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | array:range |
+| from | int | From | array:range |
+| to | int | To | array:range |
+| step | int | Step | array:range |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | array | no-result-propagation |
+
+
+## Examples
+
+### Example: Incremental range
+
+```xml
+<array:range var="range" from="6" to="10" step="2"/>
+<output>
+<array:join var="range" delimiter=", "/>
+</output>
+<!-- 6, 8, 10 -->
+```
+
+### Example: Decremental range
+
+```xml
+<array:range var="range" from="10" to="6" step="2"/>
+<output>
+<array:join var="range" delimiter=", "/>
+</output>
+<!-- 10, 8, 6  -->
+```
+

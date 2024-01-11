@@ -1,0 +1,40 @@
+# Read file
+
+### Anatomy
+
+```xml
+<file:read var="var" filename="string"/>
+```
+
+ **Description**:
+ FILE:READ reads the entire content of a file.
+
+FILE:READ is the complement of the FILE:WRITE operation.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | file:read |
+| filename | string | Filename/URL | file:read |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | string | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<file:write filename="./test/ixml.inc">iXML</file:write>
+<output>
+<file:read filename="./test/ixml.inc"/>
+</output>
+<!-- iXML -->
+```
+

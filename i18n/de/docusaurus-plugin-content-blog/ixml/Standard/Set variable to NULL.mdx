@@ -1,0 +1,56 @@
+# Set variable to NULL
+
+### Anatomy
+
+```xml
+<null var="var" key="string"/>
+```
+
+ **Description**:
+ NULL sets the value of a variable to NULL.
+
+
+				
+					These three statements are semantically equivalent:
+
+					<null var="var[key]"/>
+					<null var="var.key"/>
+					<null var="var" key="key"/>
+				
+			
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Variable name | null |
+| key | string | Key | null |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | null | N/A |
+
+
+## Examples
+
+### Example: Setting variable to NULL
+
+```xml
+<null var="var"/>
+```
+
+### Example: Setting array item implicitly to NULL
+
+```xml
+<null var="var[key]"/>
+```
+
+### Example: Setting array item explicitly to NULL
+
+```xml
+<null var="var" key="key"/>
+```
+

@@ -7,6 +7,14 @@
     "message": "Array",
     "description": "The label for category Array in sidebar xmlSidebar"
   },
+  "sidebar.xmlSidebar.category.Authentication ": {
+    "message": "Authentication ",
+    "description": "The label for category Authentication  in sidebar xmlSidebar"
+  },
+  "sidebar.xmlSidebar.category.Binary data store ": {
+    "message": "Binary data store ",
+    "description": "The label for category Binary data store  in sidebar xmlSidebar"
+  },
   "sidebar.xmlSidebar.category.Control constructs": {
     "message": "Control constructs",
     "description": "The label for category Control constructs in sidebar xmlSidebar"
@@ -35,17 +43,37 @@
     "message": "Excel",
     "description": "The label for category Excel in sidebar xmlSidebar"
   },
+  "sidebar.xmlSidebar.category.Extensional data ": {
+    "message": "Extensional data ",
+    "description": "The label for category Extensional data  in sidebar xmlSidebar"
+  },
   "sidebar.xmlSidebar.category.File system": {
     "message": "File system",
     "description": "The label for category File system in sidebar xmlSidebar"
+  },
+  "sidebar.xmlSidebar.category.Form ": {
+    "message": "Form ",
+    "description": "The label for category Form  in sidebar xmlSidebar"
   },
   "sidebar.xmlSidebar.category.HTTP": {
     "message": "HTTP",
     "description": "The label for category HTTP in sidebar xmlSidebar"
   },
+  "sidebar.xmlSidebar.category.Mail ": {
+    "message": "Mail ",
+    "description": "The label for category Mail  in sidebar xmlSidebar"
+  },
   "sidebar.xmlSidebar.category.Mathematics": {
     "message": "Mathematics",
     "description": "The label for category Mathematics in sidebar xmlSidebar"
+  },
+  "sidebar.xmlSidebar.category.Miscellaneous ": {
+    "message": "Miscellaneous ",
+    "description": "The label for category Miscellaneous  in sidebar xmlSidebar"
+  },
+  "sidebar.xmlSidebar.category.Number format ": {
+    "message": "Number format ",
+    "description": "The label for category Number format  in sidebar xmlSidebar"
   },
   "sidebar.xmlSidebar.category.PDF": {
     "message": "PDF",
@@ -62,6 +90,14 @@
   "sidebar.xmlSidebar.category.Standard": {
     "message": "Standard",
     "description": "The label for category Standard in sidebar xmlSidebar"
+  },
+  "sidebar.xmlSidebar.category.Tags ": {
+    "message": "Tags ",
+    "description": "The label for category Tags  in sidebar xmlSidebar"
+  },
+  "sidebar.xmlSidebar.category.Temporary data store ": {
+    "message": "Temporary data store ",
+    "description": "The label for category Temporary data store  in sidebar xmlSidebar"
   },
   "sidebar.xmlSidebar.category.XML": {
     "message": "XML",

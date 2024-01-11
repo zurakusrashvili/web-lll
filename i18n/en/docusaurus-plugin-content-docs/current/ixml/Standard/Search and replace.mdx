@@ -1,0 +1,67 @@
+# Search and replace
+
+### Anatomy
+
+```xml
+<replace var="var" var_count="var" replacement="string" limit="int">
+    string
+</replace>
+```
+
+ **Description**:
+ REPLACE searches a subject for occurrences of a given search value or matches to a given search pattern and replaces them with a given replacement value. The number of actual replacements is assigned to 'var_count'.
+
+The replacement value of a regular expression may contain backreferences of the form '\n'. Every such reference will be replaced by the text captured by the n'th parenthesized pattern. '\0' always refers to the text matched by the entire search pattern.
+
+### Content: string
+
+```xml
+<content type="string"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | replace |
+| var_count | var | Result variable name for number of replacements | replace |
+| replacement | string | Replacement value | replace |
+| limit | int | Limit | replace |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | string | N/A |
+
+
+## Examples
+
+### Example: Basic search and replace
+
+```xml
+<output>
+<replace value="Bill Gates" replacement="William Henry Gates III">My name is Bill Gates!</replace>
+</output>
+<!-- My name is William Henry Gates III! -->
+```
+
+### Example: Regular expression search and replace
+
+```xml
+<output>
+<replace pattern="/B[il]+\s*G\w+/" replacement="William Henry Gates III">My name is Bill Gates!</replace>
+</output>
+<!-- My name is William Henry Gates III! -->
+```
+
+### Example: Search and replace using backreferences
+
+```xml
+<output>
+<replace pattern="/Bill ([a-z]+)/i" replacement="William Henry \1 III, call me \0">My name is Bill Gates!</replace>
+</output>
+<!-- My name is William Henry Gates III, call me Bill Gates! -->
+```
+

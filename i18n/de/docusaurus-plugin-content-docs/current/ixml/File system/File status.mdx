@@ -1,0 +1,57 @@
+# File status
+
+### Anatomy
+
+```xml
+<file:status var="var" filename="string" follow="bool"/>
+```
+
+ **Description**:
+ FILE:STATUS returns the status of a file or directory.
+
+
+				FILE:STATUS returns an array comprised of the following items:
+
+				Index/Key  Description
+				-----------------------------------------------------
+				0/dev      device number
+				1/ino      inode number
+				2/mode     inode protection mode
+				3/nlink    number of links
+				4/uid      userid of owner
+				5/gid      groupid of owner
+				6/rdev     device type if inode device
+				7/size     size in bytes
+				8/atime    time of last access (Unix timestamp)
+				9/mtime    time of last modification (Unix timestamp)
+				10/ctime   time of last inode change (Unix timestamp)
+				11/blksize blocksize of filesystem IO
+				12/blocks  number of 512-byte blocks allocated
+			
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | file:status |
+| filename | string | Filename | file:status |
+| follow | bool | Follow symbolic links | file:status |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | array | no-result-propagation |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<file:status var="status" filename="./test/ixml.inc"/>
+<output>$status.size</output>
+<!-- 4 -->
+```
+

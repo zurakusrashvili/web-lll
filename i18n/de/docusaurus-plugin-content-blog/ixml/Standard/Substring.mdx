@@ -1,0 +1,49 @@
+# Substring
+
+### Anatomy
+
+```xml
+<substr var="var" offset="int" length="int" type="type">
+    string
+</substr>
+```
+
+ **Description**:
+ SUBSTR returns part of a value, isolated by an offset and a length.
+
+If the offset is negative it will start that many bytes or characters from the end of the value. If the length is omitted, every byte or character from the offset until the end of the value will be returned. If the length is negative then it will stop that many bytes or characters from the end of the value.
+
+### Content: string
+
+```xml
+<content type="string"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | substr |
+| offset | int | Offset | substr |
+| length | int | Length | substr |
+| type | type | Measurement type | substr |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | string | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<output>
+<substr offset="6" length="2">Name: iXML</substr>
+</output>
+<!-- iX -->
+```
+

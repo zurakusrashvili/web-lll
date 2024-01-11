@@ -1,0 +1,44 @@
+# Round fractions down
+
+### Anatomy
+
+```xml
+<math:floor var="var">
+    float
+</math:floor>
+```
+
+ **Description**:
+ MATH:FLOOR rounds a value down to the next lowest integer number.
+
+### Content: float
+
+```xml
+<content type="float"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | math:floor |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | float | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<output>
+<math:floor>17.213482971852</math:floor>
+</output>
+<!-- 17 -->
+```
+

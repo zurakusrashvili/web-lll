@@ -1,0 +1,33 @@
+# Get position
+
+### Anatomy
+
+```xml
+<excel:getpos var_coords="var" var_sheet="var" var_row="var" var_col="var"/>
+```
+
+**Parents**: excel:workbook
+
+ **Description**:
+ EXCEL:GETPOS gets the current position of the cell cursor.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var_coords | var | Result variable name for cell coordinates | excel:getpos |
+| var_sheet | var | Result variable name for sheet index | excel:getpos |
+| var_row | var | Result variable name for row index | excel:getpos |
+| var_col | var | Result variable name for column index | excel:getpos |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var_coords | string | no-result-propagation |
+| var_sheet | int | no-result-propagation |
+| var_row | int | no-result-propagation |
+| var_col | int | no-result-propagation |
+
+

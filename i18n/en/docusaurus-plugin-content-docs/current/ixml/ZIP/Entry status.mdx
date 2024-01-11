@@ -1,0 +1,42 @@
+# Entry status
+
+### Anatomy
+
+```xml
+<zip:status var="var" filename="string"/>
+```
+
+**Parents**: zip:archive
+
+ **Description**:
+ ZIP:STATUS returns the status of an entry within an archive.
+
+
+				ZIP:STATUS returns an array comprised of the following items:
+
+				Key         Description
+				--------------------------------------------------------
+				name        filename
+				index       index
+				crc         32-bit cyclic redundancy checksum polynomial
+				size        size in bytes
+				mtime       time of last modification (Unix timestamp)
+				comp_size   compressed size in bytes
+				comp_method compression method
+			
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | zip:status |
+| filename | string | Filename | zip:status |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var |  | no-result-propagation |
+
+

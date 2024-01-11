@@ -1,0 +1,31 @@
+# Create symbolic link
+
+### Anatomy
+
+```xml
+<file:link linkname="string" targetname="string"/>
+```
+
+ **Description**:
+ FILE:LINK creates a symbolic link to a target name.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| linkname | string | Link name | file:link |
+| targetname | string | Target name | file:link |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<file:exists var="exists" filename="./test/ixml_link.inc"/>
+<if value1="$exists" func="!=" value2="">
+<file:delete filename="./test/ixml_link.inc"/>
+</if>
+<file:link linkname="./test/ixml_link.inc" targetname="./test/ixml.inc"/>
+```
+

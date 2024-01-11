@@ -1,0 +1,49 @@
+# Array merging
+
+### Anatomy
+
+```xml
+<array:merge var="var" var_set="var" var_result="var"/>
+```
+
+ **Description**:
+ ARRAY:MERGE merges an array with the set array, whereas duplicated non-numeric keys are overwritten while items with numeric keys are appended.
+
+
+> **Attention:**
+>
+> ARRAY:MERGE is destructive, in the sense that it modifies the array in-place, unless 'var_result' is specified in which case a copy of the resulting array will be stored in 'var_result' instead. It partially preserves the key and value associations of the array.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Variable name | array:merge |
+| var_set | var | Set variable name | array:merge |
+| var_result | var | Result variable name | array:merge |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var|var_result | array | no-result-propagation |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<array var="names">
+<item>Bill Gates</item>
+</array>
+<array var="addition">
+<item>Steve Jobs</item>
+<item>Larry Ellison</item>
+</array>
+<array:merge var="names" var_set="addition"/>
+<output>$names[0] and $names[1] are competitors!</output>
+<!-- Bill Gates and Steve Jobs are competitors! -->
+```
+

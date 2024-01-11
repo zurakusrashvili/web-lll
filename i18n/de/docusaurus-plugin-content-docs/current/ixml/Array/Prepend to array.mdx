@@ -1,0 +1,51 @@
+# Prepend to array
+
+### Anatomy
+
+```xml
+<array:unshift var="var">
+    string
+</array:unshift>
+```
+
+ **Description**:
+ ARRAY:UNSHIFT prepends a value to the beginning of an array.
+
+
+> **Attention:**
+>
+> ARRAY:UNSHIFT is destructive, in the sense that it modifies the array in-place. It will re-index all numeric keys in the array.
+
+### Content: string
+
+```xml
+<content type="string"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Variable name | array:unshift |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | array | no-result-propagation |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<array var="names">
+<item>Bill Gates</item>
+</array>
+<array:unshift var="names">Steve Jobs</array:unshift>
+<output>$names[0] and $names[1] are competitors!</output>
+<!-- Steve Jobs and Bill Gates are competitors! -->
+```
+

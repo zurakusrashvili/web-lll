@@ -1,0 +1,38 @@
+# Arc tangent of y/x
+
+### Anatomy
+
+```xml
+<math:atan2 var="var" x="float" y="float"/>
+```
+
+ **Description**:
+ MATH:ATAN2 calculates the inverse tangent of the division of two values (y/x) using the sign of both values to determine the quadrant.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | math:atan2 |
+| x | float | Abscissa | math:atan2 |
+| y | float | Ordinate | math:atan2 |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | float | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<output>
+<math:atan2 x="3" y="5"/>
+</output>
+<!-- 1.0303768265243 -->
+```
+

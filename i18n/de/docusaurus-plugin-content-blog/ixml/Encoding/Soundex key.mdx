@@ -1,0 +1,51 @@
+# Soundex key
+
+### Anatomy
+
+```xml
+<encode:soundex var="var">
+    string
+</encode:soundex>
+```
+
+ **Description**:
+ ENCODE:SOUNDEX generates the 4-character soundex key of a value.
+
+Soundex keys have the property that words pronounced similarly produce the same soundex key.
+
+
+> **Attention:**
+>
+> ENCODE:SOUNDEX is less accurate than ENCODE:METAPHONE as the latter knows the basic rules of English pronunciation.
+
+### Content: string
+
+```xml
+<content type="string"/>
+```
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | encode:soundex |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | string | N/A |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<output>
+<encode:soundex>iXML</encode:soundex>
+</output>
+<!-- I254 -->
+```
+

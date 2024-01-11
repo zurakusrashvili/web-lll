@@ -1,0 +1,43 @@
+# List directory
+
+### Anatomy
+
+```xml
+<file:listdir var="var" dirname="string"/>
+```
+
+ **Description**:
+ FILE:LISTDIR lists the filenames of all files within a directory.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Result variable name | file:listdir |
+| dirname | string | Directory name/URL | file:listdir |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var | array | no-result-propagation |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<file:listdir var="files" dirname="./test"/>
+<foreach var="files" var_value="filename">
+<if value1="$filename" func="$" value2=".inc">
+<output>$filename&n;</output>
+</if>
+</foreach>
+<!--
+ixml.inc
+ixml_link.inc
+-->
+```
+

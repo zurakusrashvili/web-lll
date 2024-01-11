@@ -1,0 +1,39 @@
+# Swap variables
+
+### Anatomy
+
+```xml
+<swap var1="var" var2="var"/>
+```
+
+ **Description**:
+ SWAP swappes the values of two variables.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var1 | var | Variable name 1 | swap |
+| var2 | var | Variable name 2 | swap |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var1 |  | no-result-propagation |
+| var2 |  | no-result-propagation |
+
+
+## Examples
+
+### Example: Example
+
+```xml
+<set var="name1">XML</set>
+<set var="name2">iXML</set>
+<swap var1="name1" var2="name2"/>
+<output>My name is "$name1" &amp; I am a $name2 derivative!</output>
+<!-- My name is "iXML" & I am a XML derivative! -->
+```
+

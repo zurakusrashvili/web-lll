@@ -1,0 +1,65 @@
+# Array union
+
+### Anatomy
+
+```xml
+<array:union var="var" var_set="var" var_result="var" type="type"/>
+```
+
+ **Description**:
+ ARRAY:UNION generates the union of two arrays by merging the items of an array with those items of the set array that do not exist in the original array, whereas duplicated non-numeric keys are overwritten while items with numeric keys are appended.
+
+
+> **Attention:**
+>
+> ARRAY:UNION is destructive, in the sense that it modifies the array in-place, unless 'var_result' is specified in which case a copy of the resulting array will be stored in 'var_result' instead. It partially preserves the key and value associations of the array.
+
+**Attributes**:
+
+| Name | Type | Description | Defined By |
+| ---- | ---- | ----------- | ---------- |
+| var | var | Variable name | array:union |
+| var_set | var | Set variable name | array:union |
+| var_result | var | Result variable name | array:union |
+| type | type | Union type | array:union |
+
+
+**Results**:
+
+| Binding | Type | Predicate |
+| ------- | ---- | --------- |
+| var|var_result | array | no-result-propagation |
+
+
+## Examples
+
+### Example: Union by keys
+
+```xml
+<array var="names">
+<item key="bg">Bill Gates</item>
+</array>
+<array var="union">
+<item key="sj">Steve Jobs</item>
+<item key="le">Larry Ellison</item>
+</array>
+<array:union var="names" var_set="union" type="keys"/>
+<output>$names.bg and $names.sj are competitors!</output>
+<!-- Bill Gates and Steve Jobs are competitors! -->
+```
+
+### Example: Union by values
+
+```xml
+<array var="names">
+<item>Bill Gates</item>
+</array>
+<array var="union">
+<item>Steve Jobs</item>
+<item>Larry Ellison</item>
+</array>
+<array:union var="names" var_set="union" type="values"/>
+<output>$names[0] and $names[1] are competitors!</output>
+<!-- Bill Gates and Steve Jobs are competitors! -->
+```
+

@@ -94,7 +94,6 @@ const config = {
         isCloseable: true,
       },
       navbar: {
-        title: '',
         logo: {
           alt: 'My Site Logo',
           src: 'img/logo.png',

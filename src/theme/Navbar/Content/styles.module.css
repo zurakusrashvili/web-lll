@@ -5,7 +5,8 @@ Hide color mode toggle in small viewports
   .colorModeToggle {
     display: none;
   }
+
   .custom-navbar{
-    justify-content: space-between;
+    /* justify-content: space-between; */
   }
 }

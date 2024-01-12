@@ -78,14 +78,23 @@ const config = {
       }),
     ],
   ],
+  
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
+      announcementBar: {
+        id: 'action',
+        content:
+          'Action Bar: Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, natus.',
+        backgroundColor: 'red',
+        textColor: 'white',
+        isCloseable: true,
+      },
       navbar: {
-        title: 'ZeyOS Developer Center',
+        title: '',
         logo: {
           alt: 'My Site Logo',
           src: 'img/logo.png',
@@ -330,7 +339,7 @@ const config = {
         ],
       },
       footer: {
-        style: 'dark',
+        style: 'light',
         links: [
           {
             title: 'Legal Notices',
@@ -353,6 +362,79 @@ const config = {
               },
             ],
           },
+          {
+            title: 'About Us',
+            items: [
+              {
+                label: 'Career opportunities',
+                to: 'career',
+              },
+              {
+                label: 'Become a partner',
+                to: 'becomepartner',
+              }
+            ],
+          },
+          {
+            title: 'Support',
+            items: [
+              {
+                label: 'Contact support',
+                to: 'contactsupport',
+              },
+              {
+                label: 'Customer portal',
+                to: 'customerportal',
+              },
+              {
+                label: 'Start a new project',
+                to: 'newproject',
+              }
+            ],
+          },
+          {
+            title: 'Documentation',
+            items: [
+              {
+                label: 'User guide',
+                to: 'contactsupport',
+              },
+              {
+                label: 'REST API',
+                to: 'api',
+              },
+              {
+                label: 'Devcenter',
+                to: 'devcenter',
+              },
+              {
+                label: 'iXML documentation',
+                to: 'docs/ixml',
+              }
+            ],
+          },
+          {
+            title: 'Solutions',
+            items: [
+              {
+                label: 'Medical',
+                to: 'medical',
+              },
+              {
+                label: 'E-Commerce',
+                to: 'ecommerce',
+              },
+              {
+                label: 'SaaS',
+                to: 'saas',
+              },
+              {
+                label: 'MSP providers',
+                to: 'msp',
+              }
+            ],
+          },
+          
           // {
           //   title: 'Community',
           //   items: [

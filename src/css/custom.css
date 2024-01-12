@@ -29,14 +29,17 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 @font-face {
-  font-family: 'IBM-MONO';
-  src: url('/static/fonts/plex/ttf/IBMPlexMono-Bold.ttf') format('ttf');
-  font-weight: normal;
-  font-style: normal;
+  font-family: "IBM-BOLD";
+  src:url("/static/fonts/plexsans/otf/IBMPlexSans-Bold.otf") format("opentype"),
+    url("/static/fonts/plexsans/woff/IBMPlexSans-Bold.woff") format("woff");
 }
-body{
-  /* font-family: 'IBM-MONO'; */
+
+@font-face {
+  font-family: "IBM-Regular";
+  src:url("/static/fonts/plexsans/otf/IBMPlexSans-Regular.otf") format("opentype"),
+    url("/static/fonts/plexsans/woff/IBMPlexSans-Regular.woff") format("woff");
 }
+
 
 @media only screen and (min-width: 896px){
   .navbar{
@@ -44,10 +47,28 @@ body{
     height:unset;
   }
 }
+.navbar{
+  font-family: "IBM-BOLD";
+}
 
 .navbar__item{
   padding: 20px var(--ifm-navbar-item-padding-horizontal);
   position:relative;
+}
+.navbar__item:not(.get-started)::before{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -1px;
+  width: 0;
+  height: 0;
+  content: '';
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid white;
+  z-index: 999;
+  drop-shadow: 0px 10px 2px #00000090;
+  filter: drop-shadow(2px -2px 2px rgba(0,0,0,0.3));
 }
 .navbar__item:not(.get-started):hover::before{
   content: '';
@@ -66,6 +87,14 @@ body{
   filter: drop-shadow(2px -2px 2px rgba(0,0,0,0.3));
 }
 
+.dropdown__menu{
+  opacity:0;
+  transition: opacity .7s;
+}
+.navbar__item:hover .dropdown__menu{
+  opacity:1;
+}
+
 
 h2 img{
   width: 28px;
@@ -81,4 +110,8 @@ h2 img{
   transition: background-color 0.2s;
   border: none;
   margin-right: 1rem; 
+}
+
+.footer{
+  font-family: "IBM-Regular";
 }

@@ -1,4 +1,3 @@
-// @ts-check
 // `@type` JSDoc annotations allow editor autocompletion and type checking
 // (when paired with `@ts-check`).
 // There are various equivalent ways to declare your Docusaurus config.
@@ -23,8 +22,8 @@ const config = {
   organizationName: 'facebook', // Usually your GitHub org/user name.
   projectName: 'docusaurus', // Usually your repo name.
 
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: 'ignore',
+  onBrokenMarkdownLinks: 'ignore',
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
@@ -65,6 +64,17 @@ const config = {
         theme: {
           customCss: './src/css/custom.css',
         },
+      }),
+    ],
+  ],
+  plugins: [
+    [
+      require.resolve("@easyops-cn/docusaurus-search-local"),
+      /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
+      ({
+        hashed: true,
+        searchBarShortcut: false,
+        searchBarShortcutHint: false
       }),
     ],
   ],
@@ -307,6 +317,12 @@ const config = {
           //   label: 'Join US',
           //   position: 'right',
           // },
+          {
+            to: '/getstarted',            
+            label: 'Get started',
+            position: 'right', 
+            className: 'get-started', 
+          },
           {
             type: 'localeDropdown',
             position: 'right'

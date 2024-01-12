@@ -23,9 +23,9 @@ function CloseButton() {
 export default function NavbarMobileSidebarHeader() {
   return (
     <div className="navbar-sidebar__brand">
+      <CloseButton />
       <NavbarLogo />
       <NavbarColorModeToggle className="margin-right--md" />
-      <CloseButton />
     </div>
   );
 }

@@ -130,5 +130,9 @@
   "item.label.Media": {
     "message": "Media",
     "description": "Navbar item with label Media"
+  },
+  "item.label.Get started": {
+    "message": "Get started de",
+    "description": "Navbar item with label Get started"
   }
 }

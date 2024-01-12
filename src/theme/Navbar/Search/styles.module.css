@@ -26,3 +26,9 @@ see https://github.com/facebook/docusaurus/issues/9527#issuecomment-1805272379
       var(--ifm-navbar-item-padding-horizontal);
   }
 }
+
+@media (max-width: 896px){
+  .navbarSearchContainer{
+    display: none;
+  }
+}

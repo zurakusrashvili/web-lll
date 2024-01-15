@@ -79,8 +79,12 @@
 }
 
 .dropdown__menu{
-  opacity:0;
-  transition: opacity .7s ease;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.4s, left 0s, visibility 0s linear 0.4s;
+  transform: rotateX(-25deg);
+  transform-origin: -100% 0;
+  will-change: left, transform, visibility, opacity, height;
 }
 .navbar__item:hover .dropdown__menu{
   opacity:1;

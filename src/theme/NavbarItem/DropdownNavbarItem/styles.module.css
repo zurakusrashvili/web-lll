@@ -67,7 +67,7 @@
   padding: 20px 0px;
 }
 .category-section:not(:last-child){
-  border-bottom: 3px solid #80808070;
+  border-bottom: 1px solid #80808070;
 }
 
 .category-section__title{

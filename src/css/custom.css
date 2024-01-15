@@ -74,13 +74,13 @@
 
 .navbar__item:not(.get-started):hover::before{
   content: '';
-  transition: opacity .7s;
+  transition: opacity .7s ease;
   opacity:1;
 }
 
 .dropdown__menu{
   opacity:0;
-  transition: opacity .7s;
+  transition: opacity .7s ease;
 }
 .navbar__item:hover .dropdown__menu{
   opacity:1;
@@ -107,4 +107,10 @@ h2 img{
 
 .footer{
   font-family: "IBM-Regular";
+}
+
+.navbar__item:hover .navbar__link,.navbar__item:hover .navbar__link--active{
+  color: black;
+  opacity: 0.6;
+  transition: opacity .6s ease;
 }

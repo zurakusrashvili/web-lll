@@ -28,6 +28,13 @@
   align-items:center;
   color: black;
 }
+
+.dropdown__menu-item-grid-link:hover{
+  color: black;
+  opacity: 0.6;
+  transition: opacity .6s ease;
+  text-decoration: none;
+}
 .dropdown__menu-item-grid-image{
   height: 60px;
 }
@@ -60,7 +67,7 @@
   padding: 20px 0px;
 }
 .category-section:not(:last-child){
-  border-bottom: 3px solid gray;
+  border-bottom: 3px solid #80808070;
 }
 
 .category-section__title{
@@ -81,6 +88,13 @@
   align-items: center;
   gap:10px;
   color: black;
+}
+
+.category-grid__item:hover{
+  color: black;
+  opacity: 0.6;
+  transition: opacity .6s ease;
+  text-decoration: none;
 }
 .category-grid__item__icon{
   font-size:20px;

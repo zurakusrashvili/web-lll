@@ -41,6 +41,7 @@ function DropdownNavbarItemDesktop({
 }) {
   const dropdownRef = useRef(null);
   const [showDropdown, setShowDropdown] = useState(false);
+  
 
   useEffect(() => {
     const handleClickOutside = (event) => {

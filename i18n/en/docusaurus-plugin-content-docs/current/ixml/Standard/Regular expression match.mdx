@@ -45,9 +45,11 @@ If the offset is negative it will start that many characters from the end of the
 
 ```xml
 <match var="count" var_matches="matches" pattern="/ixml/i">My name is iXML!</match>
+
 <if value1="$count" func="&gt;" value2="0">
-<output>$matches[0][0]</output>
+	<output>$matches[0][0]</output>
 </if>
+
 <!-- iXML -->
 ```
 

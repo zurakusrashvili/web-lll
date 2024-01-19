@@ -114,5 +114,9 @@
   "sidebar.sdkSideBar.category.Config_files": {
     "message": "Config_files",
     "description": "The label for category Config_files in sidebar sdkSideBar"
+  },
+  "sidebar.xmlSidebar.category.iXML Documentation": {
+    "message": "iXML Documentation",
+    "description": "The label for category iXML Documentation in sidebar xmlSidebar"
   }
 }

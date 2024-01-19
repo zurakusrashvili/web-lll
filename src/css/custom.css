@@ -30,14 +30,16 @@
 }
 @font-face {
   font-family: "IBM-BOLD";
-  src:url("/static/fonts/plexsans/otf/IBMPlexSans-Bold.otf") format("opentype"),
-    url("/static/fonts/plexsans/woff/IBMPlexSans-Bold.woff") format("woff");
+  src: url("/static/fonts/plexsans/woff2/IBMPlexSans-Bold.woff2") format("woff2"),
+       url("/static/fonts/plexsans/woff/IBMPlexSans-Bold.woff") format("woff"),
+       url("/static/fonts/plexsans/otf/IBMPlexSans-Bold.otf") format("opentype");
 }
 
 @font-face {
   font-family: "IBM-Regular";
-  src:url("/static/fonts/plexsans/otf/IBMPlexSans-Regular.otf") format("opentype"),
-    url("/static/fonts/plexsans/woff/IBMPlexSans-Regular.woff") format("woff");
+  src: url("/static/fonts/plexsans/woff2/IBMPlexSans-Regular.woff2") format("woff2"),
+       url("/static/fonts/plexsans/woff/IBMPlexSans-Regular.woff") format("woff"),
+       url("/static/fonts/plexsans/otf/IBMPlexSans-Regular.otf") format("opentype");
 }
 
 
@@ -117,4 +119,28 @@ h2 img{
   color: black;
   opacity: 0.6;
   transition: opacity .6s ease;
+}
+
+.footer .col{
+  flex: unset;
+  width: unset;
+}
+.footer__title{
+  font-family: "IBM-BOLD";
+  font-size:14px;
+  margin-bottom:8px;
+}
+.footer__item{
+  font-family: "IBM-Regular";
+  font-size: 12px;
+}
+
+@media (max-width: 740px){
+  .footer .row{
+    justify-content: center;
+  }
+}
+/* Hide the collapsible list item if it contains an <a> with "iXML" */
+.menu__list-item-collapsible:has(> .menu__link[title="iXML"]) {
+  display: none;
 }

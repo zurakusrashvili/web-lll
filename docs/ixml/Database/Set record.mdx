@@ -42,8 +42,8 @@
 
 ```xml
 <db:set entity="contacts">
-<db:data field="lastname">Gates</db:data>
-<db:data field="firstname">Bill</db:data>
+	<db:data field="lastname">Gates</db:data>
+	<db:data field="firstname">Bill</db:data>
 </db:set>
 ```
 
@@ -51,8 +51,8 @@
 
 ```xml
 <db:set entity="contacts" id="123">
-<db:data field="lastname">Jobs</db:data>
-<db:data field="firstname">Steve</db:data>
+	<db:data field="lastname">Jobs</db:data>
+	<db:data field="firstname">Steve</db:data>
 </db:set>
 ```
 
@@ -60,12 +60,14 @@
 
 ```xml
 <db:get var="obj" entity="contacts" id="123">
-<db:field>lastname</db:field>
+	<db:field>lastname</db:field>
 </db:get>
+
 <if value1="$obj.lastname" func="=" value2="Gates">
-<set var="obj.lastname">Jobs</set>
-<set var="obj.firstname">Steve</set>
+	<set var="obj.lastname">Jobs</set>
+	<set var="obj.firstname">Steve</set>
 </if>
+
 <db:set entity="contacts" id="123" var_data="obj"/>
 ```
 

@@ -37,14 +37,17 @@
 
 ```xml
 <array var="names">
-<item key="bg">Bill Gates</item>
+	<item key="bg">Bill Gates</item>
 </array>
+
 <array var="union">
-<item key="sj">Steve Jobs</item>
-<item key="le">Larry Ellison</item>
+	<item key="sj">Steve Jobs</item>
+	<item key="le">Larry Ellison</item>
 </array>
+
 <array:union var="names" var_set="union" type="keys"/>
 <output>$names.bg and $names.sj are competitors!</output>
+
 <!-- Bill Gates and Steve Jobs are competitors! -->
 ```
 
@@ -52,14 +55,17 @@
 
 ```xml
 <array var="names">
-<item>Bill Gates</item>
+	<item>Bill Gates</item>
 </array>
+
 <array var="union">
-<item>Steve Jobs</item>
-<item>Larry Ellison</item>
+	<item>Steve Jobs</item>
+	<item>Larry Ellison</item>
 </array>
+
 <array:union var="names" var_set="union" type="values"/>
 <output>$names[0] and $names[1] are competitors!</output>
+
 <!-- Bill Gates and Steve Jobs are competitors! -->
 ```
 

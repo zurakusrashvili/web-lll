@@ -31,9 +31,9 @@ If the condition is true, the embedded code is executed. Otherwise, a series of 
 ## Children
 
 <details>
-<summary>Elsewise conditional value execution</summary>
+<summary>elseif</summary>
 
-### Anatomy
+### Anatomy of Elsewise conditional value execution
 ```xml
 <elseif value1="string" value2="string|regexp" func="string">ixml</elseif>
 ```
@@ -55,9 +55,9 @@ If the condition is true, the embedded code is executed. Otherwise, a series of 
 </details>
 
 <details>
-<summary>Elsewise conditional type execution</summary>
+<summary>elseis</summary>
 
-### Anatomy
+### Anatomy of Elsewise conditional type execution
 ```xml
 <elseis var="var" type="type">ixml</elseis>
 ```
@@ -78,9 +78,9 @@ If the condition is true, the embedded code is executed. Otherwise, a series of 
 </details>
 
 <details>
-<summary>Elsewise execution</summary>
+<summary>else</summary>
 
-### Anatomy
+### Anatomy of Elsewise execution
 ```xml
 <else>ixml</else>
 ```
@@ -99,9 +99,11 @@ If the condition is true, the embedded code is executed. Otherwise, a series of 
 
 ```xml
 <set var="name">iXML</set>
+
 <is var="name" type="string">
-<output>My name is a string!</output>
+	<output>My name is a string!</output>
 </is>
+
 <!-- My name is a string! -->
 ```
 

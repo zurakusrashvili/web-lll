@@ -30,11 +30,13 @@
 
 ```xml
 <file:listdir var="files" dirname="./test"/>
+
 <foreach var="files" var_value="filename">
-<if value1="$filename" func="$" value2=".inc">
-<output>$filename&n;</output>
-</if>
+	<if value1="$filename" func="$" value2=".inc">
+		<output>$filename&n;</output>
+	</if>
 </foreach>
+
 <!--
 ixml.inc
 ixml_link.inc

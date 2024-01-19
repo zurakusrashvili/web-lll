@@ -41,12 +41,14 @@ If the offset is negative it will start that many items from the end of the arra
 
 ```xml
 <array var="names">
-<item>Bill Gates</item>
-<item>Steve Jobs</item>
-<item>Larry Ellison</item>
+	<item>Bill Gates</item>
+	<item>Steve Jobs</item>
+	<item>Larry Ellison</item>
 </array>
+
 <array:extract var="names" var_result="extract" offset="1" length="2"/>
 <output>$extract[0] and $extract[1] are friends!</output>
+
 <!-- Steve Jobs and Larry Ellison are friends! -->
 ```
 
@@ -54,14 +56,17 @@ If the offset is negative it will start that many items from the end of the arra
 
 ```xml
 <array var="names">
-<item>Bill Gates</item>
-<item>Larry Ellison</item>
+	<item>Bill Gates</item>
+	<item>Larry Ellison</item>
 </array>
+
 <array var="replacement">
-<item>Steve Jobs</item>
+	<item>Steve Jobs</item>
 </array>
+
 <array:extract var="names" var_replacement="replacement" length="1"/>
 <output>$names[0] and $names[1] are friends!</output>
+
 <!-- Steve Jobs and Larry Ellison are friends! -->
 ```
 

@@ -323,5 +323,41 @@
   "theme.SearchPage.noResultsText": {
     "message": "Es wurden keine Dokumente gefunden",
     "description": "The paragraph for empty search result"
+  },
+  "Billing and Subscriptions": {
+    "message": "Billing and Subscriptions"
+  },
+  "Medical": {
+    "message": "Medical"
+  },
+  "MSP-Providers": {
+    "message": "MSP-Providers"
+  },
+  "Ecommerce": {
+    "message": "Ecommerce"
+  },
+  "Enterprise": {
+    "message": "Enterprise"
+  },
+  "Point-of-sales": {
+    "message": "Point-of-sales"
+  },
+  "SaaS": {
+    "message": "SaaS"
+  },
+  "SMB": {
+    "message": "SMB"
+  },
+  "Shop-Backend": {
+    "message": "Shop-Backend"
+  },
+  "Start-Up": {
+    "message": "Start-Up"
+  },
+  "Self-Service-Portals": {
+    "message": "Self-Service-Portals"
+  },
+  "Warehouse": {
+    "message": "Warehouse"
   }
 }

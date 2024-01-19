@@ -43,9 +43,9 @@ If the condition is true, the embedded code is executed. Otherwise, a series of 
 ## Children
 
 <details>
-<summary>Elsewise conditional value execution</summary>
+<summary>elseif</summary>
 
-### Anatomy
+### Anatomy of Elsewise conditional value execution
 ```xml
 <elseif value1="string" value2="string|regexp" func="string">ixml</elseif>
 ```
@@ -67,9 +67,9 @@ If the condition is true, the embedded code is executed. Otherwise, a series of 
 </details>
 
 <details>
-<summary>Elsewise conditional type execution</summary>
+<summary>elseis</summary>
 
-### Anatomy
+### Anatomy of Elsewise conditional type execution
 ```xml
 <elseis var="var" type="type">ixml</elseis>
 ```
@@ -90,9 +90,9 @@ If the condition is true, the embedded code is executed. Otherwise, a series of 
 </details>
 
 <details>
-<summary>Elsewise execution</summary>
+<summary>else</summary>
 
-### Anatomy
+### Anatomy of Elsewise execution
 ```xml
 <else>ixml</else>
 ```
@@ -111,12 +111,15 @@ If the condition is true, the embedded code is executed. Otherwise, a series of 
 
 ```xml
 <set var="name">iXML</set>
+
 <if value1="$name" func="=" value2="iXML">
-<output>My name is iXML!</output>
-<else>
-<output>My name is not iXML!</output>
-</else>
+	<output>My name is iXML!</output>
+
+	<else>
+		<output>My name is not iXML!</output>
+	</else>
 </if>
+
 <!-- My name is iXML! -->
 ```
 
@@ -124,15 +127,19 @@ If the condition is true, the embedded code is executed. Otherwise, a series of 
 
 ```xml
 <set var="name">Steve Jobs</set>
+
 <if value1="$name" func="=" value2="Bill Gates">
-<output>My name is Bill Gates!</output>
-<elseif value1="$name" func="=" value2="Steve Jobs">
-<output>My name is Steve Jobs!</output>
-</elseif>
-<else>
-<output>My name is not Bill Gates nor Steve Jobs!</output>
-</else>
+	<output>My name is Bill Gates!</output>
+
+	<elseif value1="$name" func="=" value2="Steve Jobs">
+		<output>My name is Steve Jobs!</output>
+	</elseif>
+
+	<else>
+		<output>My name is not Bill Gates nor Steve Jobs!</output>
+	</else>
 </if>
+
 <!-- My name is Steve Jobs! -->
 ```
 
@@ -140,9 +147,11 @@ If the condition is true, the embedded code is executed. Otherwise, a series of 
 
 ```xml
 <set var="name">iXML</set>
+
 <if value1="$name" func="~" value2="/^I/i">
-<output>My name starts with an I!</output>
+	<output>My name starts with an I!</output>
 </if>
+
 <!-- My name starts with an I! -->
 ```
 

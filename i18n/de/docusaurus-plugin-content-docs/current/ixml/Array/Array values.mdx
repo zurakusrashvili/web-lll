@@ -39,11 +39,13 @@ A given key may specify the column of a multidimensional array to extract from. 
 
 ```xml
 <array var="names">
-<item key="bg">Bill Gates</item>
-<item key="sj">Steve Jobs</item>
+	<item key="bg">Bill Gates</item>
+	<item key="sj">Steve Jobs</item>
 </array>
+
 <array:values var="names" var_result="values"/>
 <output>$values[0] and $values[1] are competitors!</output>
+
 <!-- Bill Gates and Steve Jobs are competitors! -->
 ```
 

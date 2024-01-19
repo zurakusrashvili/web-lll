@@ -23,9 +23,9 @@ The USE construct declares a free function variable for use as a local variable 
 ## Children
 
 <details>
-<summary>RESTful resource definition</summary>
+<summary>rest:resource</summary>
 
-### Anatomy
+### Anatomy of RESTful resource definition
 ```xml
 <rest:resource var_header="var" var_body="var" route="string" method="string">ixml</rest:resource>
 ```
@@ -53,39 +53,48 @@ The USE construct declares a free function variable for use as a local variable 
 
 ```xml
 <global var="people"/>
+
 <array var="people">
-<array key="bg">
-<item key="lastname">Gates</item>
-<item key="firstname">Bill</item>
+	<array key="bg">
+		<item key="lastname">Gates</item>
+		<item key="firstname">Bill</item>
+	</array>
+
+	<array key="sj">
+		<item key="lastname">Jobs</item>
+		<item key="firstname">Steve</item>
+	</array>
 </array>
-<array key="sj">
-<item key="lastname">Jobs</item>
-<item key="firstname">Steve</item>
-</array>
-</array>
+
 <rest:server>
-<rest:resource route="/person/:id" method="GET">
-<array:keyexists var="people" var_result="exists">$id</array:keyexists>
-<is var="exists" type="false">
-<set var="return">404</set>
-<return/>
-</is>
-<header>Content-Type: application/json</header>
-<output>
-<encode:json var="people[$id]"/>
-</output>
-</rest:resource>
-<rest:resource route="/person/:id" method="POST">
-<set var="people[$id].lastname">$lastname</set>
-<set var="people[$id].firstname">$firstname</set>
-</rest:resource>
-<rest:resource route="/person/:id" method="PUT" var_body="data">
-<decode:json var="people[$id]">$data</decode:json>
-<set var="return">201</set>
-</rest:resource>
-<rest:resource route="/person/:id" method="DELETE">
-<unset var="people[$id]"/>
-</rest:resource>
+	<rest:resource route="/person/:id" method="GET">
+		<array:keyexists var="people" var_result="exists">$id</array:keyexists>
+
+		<is var="exists" type="false">
+			<set var="return">404</set>
+			<return/>
+		</is>
+
+		<header>Content-Type: application/json</header>
+
+		<output>
+			<encode:json var="people[$id]"/>
+		</output>
+	</rest:resource>
+
+	<rest:resource route="/person/:id" method="POST">
+		<set var="people[$id].lastname">$lastname</set>
+		<set var="people[$id].firstname">$firstname</set>
+	</rest:resource>
+
+	<rest:resource route="/person/:id" method="PUT" var_body="data">
+		<decode:json var="people[$id]">$data</decode:json>
+		<set var="return">201</set>
+	</rest:resource>
+
+	<rest:resource route="/person/:id" method="DELETE">
+		<unset var="people[$id]"/>
+	</rest:resource>
 </rest:server>
 ```
 

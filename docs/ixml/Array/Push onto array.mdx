@@ -53,10 +53,12 @@ ARRAY:PUSH will implicitly generate a consecutive numeric key.
 
 ```xml
 <array var="names">
-<item>Bill Gates</item>
+	<item>Bill Gates</item>
 </array>
+
 <array:push var="names">Steve Jobs</array:push>
 <output>$names[0] and $names[1] are competitors!</output>
+
 <!-- Bill Gates and Steve Jobs are competitors! -->
 ```
 

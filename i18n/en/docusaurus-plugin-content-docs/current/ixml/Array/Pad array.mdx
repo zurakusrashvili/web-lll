@@ -39,11 +39,13 @@ If the length is positive then the array is padded on the right, if it is negati
 
 ```xml
 <array var="names">
-<item>Bill Gates</item>
-<item>Steve Jobs</item>
+	<item>Bill Gates</item>
+	<item>Steve Jobs</item>
 </array>
+
 <array:pad var="names" length="3" padding="Larry Ellison"/>
 <output>$names[1] and $names[2] are friends!</output>
+
 <!-- Steve Jobs and Larry Ellison are friends! -->
 ```
 

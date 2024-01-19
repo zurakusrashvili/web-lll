@@ -30,9 +30,11 @@
 
 ```xml
 <file:glob var="files" pattern="./test/*.inc"/>
+
 <foreach var="files" var_value="filename">
-<output>$filename&n;</output>
+	<output>$filename&n;</output>
 </foreach>
+
 <!--
 ./test/ixml.inc
 ./test/ixml_link.inc

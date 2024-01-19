@@ -43,9 +43,9 @@ While the condition is true, the embedded code is executed. Otherwise, the execu
 ## Children
 
 <details>
-<summary>Elsewise execution</summary>
+<summary>else</summary>
 
-### Anatomy
+### Anatomy of Elsewise execution
 ```xml
 <else>ixml</else>
 ```
@@ -64,10 +64,12 @@ While the condition is true, the embedded code is executed. Otherwise, the execu
 
 ```xml
 <set var="count">0</set>
+
 <while value1="$count" func="&lt;" value2="10">
-<output>$count</output>
-<math:inc var="count"/>
+	<output>$count</output>
+	<math:inc var="count"/>
 </while>
+
 <!-- 0123456789 -->
 ```
 
@@ -75,13 +77,16 @@ While the condition is true, the embedded code is executed. Otherwise, the execu
 
 ```xml
 <set var="count">0</set>
+
 <while>
-<output>$count</output>
-<math:inc var="count"/>
-<if value1="$count" func="=" value2="10">
-<break/>
-</if>
+	<output>$count</output>
+	<math:inc var="count"/>
+
+	<if value1="$count" func="=" value2="10">
+		<break/>
+	</if>
 </while>
+
 <!-- 0123456789 -->
 ```
 
@@ -89,13 +94,17 @@ While the condition is true, the embedded code is executed. Otherwise, the execu
 
 ```xml
 <set var="count">0</set>
+
 <while value1="$count" func="&lt;" value2="9">
-<math:inc var="count"/>
-<if value1="$count" func="=" value2="5">
-<next/>
-</if>
-<output>$count</output>
+	<math:inc var="count"/>
+
+	<if value1="$count" func="=" value2="5">
+		<next/>
+	</if>
+
+	<output>$count</output>
 </while>
+
 <!-- 12346789 -->
 ```
 

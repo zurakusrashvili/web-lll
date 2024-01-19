@@ -30,9 +30,9 @@
 ## Children
 
 <details>
-<summary>REST header</summary>
+<summary>rest:header</summary>
 
-### Anatomy
+### Anatomy of REST header
 ```xml
 <rest:header>string</rest:header>
 ```
@@ -51,30 +51,37 @@
 
 ```xml
 <rest:client url="https://api.predic8.de/shop">
-<rest:header>
-Content-Type: application/json
-</rest:header>
-<rest:bind var="createProduct" method="POST">/products/</rest:bind>
-<rest:bind var="updateProduct" method="PATCH">/products/:id</rest:bind>
-<rest:bind var="getProduct" method="GET">/products/:id</rest:bind>
+	<rest:header>
+		Content-Type: application/json
+	</rest:header>
+
+	<rest:bind var="createProduct" method="POST">/products/</rest:bind>
+	<rest:bind var="updateProduct" method="PATCH">/products/:id</rest:bind>
+	<rest:bind var="getProduct" method="GET">/products/:id</rest:bind>
 </rest:client>
+
 <decode:json var="data">
-<call func="createProduct">
-<param>{"name": "Some Fruit", "price": 4.99}</param>
-</call>
+	<call func="createProduct">
+		<param>{"name": "Some Fruit", "price": 4.99}</param>
+	</call>
 </decode:json>
+
 <match var_matches="matches" pattern="/\d+/">$data.product_url</match>
 <set var="id">$matches[0][0]</set>
+
 <call func="updateProduct">
-<param var="id"/>
-<param>{"name": "Wildberries"}</param>
+	<param var="id"/>
+	<param>{"name": "Wildberries"}</param>
 </call>
+
 <decode:json var="data">
-<call func="getProduct">
-<param var="id"/>
-</call>
+	<call func="getProduct">
+		<param var="id"/>
+	</call>
 </decode:json>
+
 <output>$data.name</output>
+
 <!-- Wildberries -->
 ```
 

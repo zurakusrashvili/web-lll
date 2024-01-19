@@ -33,9 +33,9 @@ If the value of a SWITCH statement equals the value of an embedded CASE statemen
 ## Children
 
 <details>
-<summary>Branch execution</summary>
+<summary>case</summary>
 
-### Anatomy
+### Anatomy of Branch execution
 ```xml
 <case value="string">ixml</case>
 ```
@@ -55,9 +55,9 @@ If the value of a SWITCH statement equals the value of an embedded CASE statemen
 </details>
 
 <details>
-<summary>Default execution</summary>
+<summary>default</summary>
 
-### Anatomy
+### Anatomy of Default execution
 ```xml
 <default>ixml</default>
 ```
@@ -76,17 +76,21 @@ If the value of a SWITCH statement equals the value of an embedded CASE statemen
 
 ```xml
 <set var="lastname">Gates</set>
+
 <switch value="$lastname">
-<case value="Gates">
-<output>My name might be Bill Gates!</output>
-</case>
-<case value="Jobs">
-<output>My name might be Steve Jobs!</output>
-</case>
-<default>
-<output>My name is not Bill Gates nor Steve Jobs!</output>
-</default>
+	<case value="Gates">
+		<output>My name might be Bill Gates!</output>
+	</case>
+
+	<case value="Jobs">
+		<output>My name might be Steve Jobs!</output>
+	</case>
+
+	<default>
+		<output>My name is not Bill Gates nor Steve Jobs!</output>
+	</default>
 </switch>
+
 <!-- My name might be Bill Gates! -->
 ```
 
@@ -95,17 +99,21 @@ If the value of a SWITCH statement equals the value of an embedded CASE statemen
 ```xml
 <set var="firstname">Steve</set>
 <set var="lastname">Gates</set>
+
 <switch value="$lastname">
-<case value="Gates">
-<if value1="$firstname" func="=" value2="Steve">
-<next/>
-</if>
-<output>My name might be Bill Gates!</output>
-</case>
-<case value="Jobs">
-<output>My name might be Steve Jobs!</output>
-</case>
+	<case value="Gates">
+		<if value1="$firstname" func="=" value2="Steve">
+			<next/>
+		</if>
+
+		<output>My name might be Bill Gates!</output>
+	</case>
+
+	<case value="Jobs">
+		<output>My name might be Steve Jobs!</output>
+	</case>
 </switch>
+
 <!-- My name might be Steve Jobs! -->
 ```
 

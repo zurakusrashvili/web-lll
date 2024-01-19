@@ -37,9 +37,9 @@ On each loop iteration, the embedded code is executed with the key of the curren
 ## Children
 
 <details>
-<summary>Elsewise execution</summary>
+<summary>else</summary>
 
-### Anatomy
+### Anatomy of Elsewise execution
 ```xml
 <else>ixml</else>
 ```
@@ -58,12 +58,14 @@ On each loop iteration, the embedded code is executed with the key of the curren
 
 ```xml
 <array var="names">
-<item>Bill Gates</item>
-<item>Steve Jobs</item>
+	<item>Bill Gates</item>
+	<item>Steve Jobs</item>
 </array>
+
 <foreach var="names" var_value="name">
-<output>$name&n;</output>
+	<output>$name&n;</output>
 </foreach>
+
 <!--
 Bill Gates
 Steve Jobs
@@ -74,17 +76,20 @@ Steve Jobs
 
 ```xml
 <array var="names">
-<item>Bill Gates</item>
-<item>Steve Jobs</item>
+	<item>Bill Gates</item>
+	<item>Steve Jobs</item>
 </array>
+
 <foreach var="names" var_key="key" var_value="name">
-<if value1="$name" func="=" value2="Bill Gates">
-<set var="names[$key]">William Henry Gates III</set>
-</if>
+	<if value1="$name" func="=" value2="Bill Gates">
+		<set var="names[$key]">William Henry Gates III</set>
+	</if>
 </foreach>
+
 <output>
-<array:join var="names" delimiter=", "/>
+	<array:join var="names" delimiter=", "/>
 </output>
+
 <!-- William Henry Gates III, Steve Jobs -->
 ```
 
@@ -92,21 +97,24 @@ Steve Jobs
 
 ```xml
 <array var="names">
-<array>
-<item key="firstname">Bill</item>
-<item key="lastname">Gates</item>
+	<array>
+		<item key="firstname">Bill</item>
+		<item key="lastname">Gates</item>
+	</array>
+	<array>
+		<item key="firstname">Steve</item>
+		<item key="lastname">Jobs</item>
+	</array>
 </array>
-<array>
-<item key="firstname">Steve</item>
-<item key="lastname">Jobs</item>
-</array>
-</array>
+
 <foreach var="names" var_value="name">
-<if value1="$name.lastname" func="=" value2="Gates">
-<set var="name.fullname">William Henry Gates III</set>
-</if>
+	<if value1="$name.lastname" func="=" value2="Gates">
+		<set var="name.fullname">William Henry Gates III</set>
+	</if>
 </foreach>
+
 <output>$names[0].fullname</output>
+
 <!-- William Henry Gates III -->
 ```
 
@@ -114,15 +122,18 @@ Steve Jobs
 
 ```xml
 <array var="names">
-<item>Bill Gates</item>
-<item>Steve Jobs</item>
+	<item>Bill Gates</item>
+	<item>Steve Jobs</item>
 </array>
+
 <foreach var="names" var_value="name">
-<output>$name</output>
-<if value1="$name" func="=" value2="Bill Gates">
-<break/>
-</if>
+	<output>$name</output>
+
+	<if value1="$name" func="=" value2="Bill Gates">
+		<break/>
+	</if>
 </foreach>
+
 <!-- Bill Gates -->
 ```
 
@@ -130,15 +141,18 @@ Steve Jobs
 
 ```xml
 <array var="names">
-<item>Bill Gates</item>
-<item>Steve Jobs</item>
+	<item>Bill Gates</item>
+	<item>Steve Jobs</item>
 </array>
+
 <foreach var="names" var_value="name">
-<if value1="$name" func="=" value2="Bill Gates">
-<next/>
-</if>
-<output>$name</output>
+	<if value1="$name" func="=" value2="Bill Gates">
+		<next/>
+	</if>
+
+	<output>$name</output>
 </foreach>
+
 <!-- Steve Jobs -->
 ```
 

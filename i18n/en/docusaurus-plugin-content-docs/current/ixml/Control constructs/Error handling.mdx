@@ -14,9 +14,9 @@ An error can be thrown and caught. Code may be surrounded by a TRY statement, to
 ## Children
 
 <details>
-<summary>Error triggered execution</summary>
+<summary>catch</summary>
 
-### Anatomy
+### Anatomy of Error triggered execution
 ```xml
 <catch var="var">ixml</catch>
 ```
@@ -36,9 +36,9 @@ An error can be thrown and caught. Code may be surrounded by a TRY statement, to
 </details>
 
 <details>
-<summary>Elsewise execution</summary>
+<summary>else</summary>
 
-### Anatomy
+### Anatomy of Elsewise execution
 ```xml
 <else>ixml</else>
 ```
@@ -52,9 +52,9 @@ An error can be thrown and caught. Code may be surrounded by a TRY statement, to
 </details>
 
 <details>
-<summary>Final execution</summary>
+<summary>finally</summary>
 
-### Anatomy
+### Anatomy of Final execution
 ```xml
 <finally>ixml</finally>
 ```
@@ -73,14 +73,17 @@ An error can be thrown and caught. Code may be surrounded by a TRY statement, to
 
 ```xml
 <try>
-<set var="name">iXML</set>
-<if value1="$name" func="=" value2="iXML">
-<error>An error has occured!</error>
-</if>
-<catch var="error">
-<output>$error</output>
-</catch>
+	<set var="name">iXML</set>
+
+	<if value1="$name" func="=" value2="iXML">
+		<error>An error has occured!</error>
+	</if>
+
+	<catch var="error">
+		<output>$error</output>
+	</catch>
 </try>
+
 <!-- An error has occured! -->
 ```
 
@@ -88,17 +91,21 @@ An error can be thrown and caught. Code may be surrounded by a TRY statement, to
 
 ```xml
 <try>
-<set var="name">iXML</set>
-<catch>
-<set var="output">My name is unknown!</set>
-</catch>
-<else>
-<set var="output">My name is $name!</set>
-</else>
-<finally>
-<output>$output</output>
-</finally>
+	<set var="name">iXML</set>
+
+	<catch>
+		<set var="output">My name is unknown!</set>
+	</catch>
+
+	<else>
+		<set var="output">My name is $name!</set>
+	</else>
+
+	<finally>
+		<output>$output</output>
+	</finally>
 </try>
+
 <!-- My name is iXML! -->
 ```
 

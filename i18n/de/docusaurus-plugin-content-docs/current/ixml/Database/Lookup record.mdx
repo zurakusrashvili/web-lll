@@ -40,12 +40,14 @@
 
 ```xml
 <db:lookup entity="contacts" var="id">
-<db:is field="lastname">Gates</db:is>
-<db:is field="firstname">Bill</db:is>
+	<db:is field="lastname">Gates</db:is>
+	<db:is field="firstname">Bill</db:is>
 </db:lookup>
+
 <if value1="$id" func="=" value2="">
-<output>Contact not found!</output>
+	<output>Contact not found!</output>
 </if>
+
 <!-- Contact not found! -->
 ```
 

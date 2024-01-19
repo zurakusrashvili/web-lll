@@ -37,15 +37,18 @@
 
 ```xml
 <array var="names">
-<item key="bg">Bill Gates</item>
-<item key="sj">Steve Jobs</item>
+	<item key="bg">Bill Gates</item>
+	<item key="sj">Steve Jobs</item>
 </array>
+
 <array var="diff">
-<item key="sj">Steve Jobs</item>
-<item key="le">Larry Ellison</item>
+	<item key="sj">Steve Jobs</item>
+	<item key="le">Larry Ellison</item>
 </array>
+
 <array:diff var="names" var_set="diff" type="keys"/>
 <output>$names.bg and $names.le are competitors!</output>
+
 <!-- Bill Gates and Larry Ellison are competitors! -->
 ```
 
@@ -53,15 +56,18 @@
 
 ```xml
 <array var="names">
-<item>Bill Gates</item>
-<item>Steve Jobs</item>
+	<item>Bill Gates</item>
+	<item>Steve Jobs</item>
 </array>
+
 <array var="diff">
-<item>Steve Jobs</item>
-<item>Larry Ellison</item>
+	<item>Steve Jobs</item>
+	<item>Larry Ellison</item>
 </array>
+
 <array:diff var="names" var_set="diff" type="values"/>
 <output>$names[0] and $names[1] are competitors!</output>
+
 <!-- Bill Gates and Larry Ellison are competitors! -->
 ```
 

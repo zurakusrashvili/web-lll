@@ -30,10 +30,13 @@
 
 ```xml
 <file:write filename="./test/ixml.inc">iXML</file:write>
+
 <file:typeof var="type" filename="./test/ixml.inc"/>
+
 <if value1="$type" func="=" value2="file">
-<output>Filename refers to a regular file!</output>
+	<output>Filename refers to a regular file!</output>
 </if>
+
 <!-- Filename refers to a regular file! -->
 ```
 

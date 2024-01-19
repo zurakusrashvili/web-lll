@@ -28,17 +28,21 @@
 ```xml
 <set var="firstname">Steve</set>
 <set var="lastname">Gates</set>
+
 <switch value="$lastname">
-<case value="Gates">
-<if value1="$firstname" func="=" value2="Steve">
-<next/>
-</if>
-<output>My name might be Bill Gates!</output>
-</case>
-<case value="Jobs">
-<output>My name might be Steve Jobs!</output>
-</case>
+	<case value="Gates">
+		<if value1="$firstname" func="=" value2="Steve">
+			<next/>
+		</if>
+
+		<output>My name might be Bill Gates!</output>
+	</case>
+
+	<case value="Jobs">
+		<output>My name might be Steve Jobs!</output>
+	</case>
 </switch>
+
 <!-- My name might be Steve Jobs! -->
 ```
 
@@ -46,13 +50,17 @@
 
 ```xml
 <set var="count">0</set>
+
 <while value1="$count" func="&lt;" value2="9">
-<math:inc var="count"/>
-<if value1="$count" func="=" value2="5">
-<next/>
-</if>
-<output>$count</output>
+	<math:inc var="count"/>
+
+	<if value1="$count" func="=" value2="5">
+		<next/>
+	</if>
+
+	<output>$count</output>
 </while>
+
 <!-- 12346789 -->
 ```
 
@@ -60,15 +68,18 @@
 
 ```xml
 <array var="names">
-<item>Bill Gates</item>
-<item>Steve Jobs</item>
+	<item>Bill Gates</item>
+	<item>Steve Jobs</item>
 </array>
+
 <foreach var="names" var_value="name">
-<if value1="$name" func="=" value2="Bill Gates">
-<next/>
-</if>
-<output>$name</output>
+	<if value1="$name" func="=" value2="Bill Gates">
+		<next/>
+	</if>
+
+	<output>$name</output>
 </foreach>
+
 <!-- Steve Jobs -->
 ```
 

@@ -37,10 +37,13 @@
 ```xml
 <set var="name1">Bill Gates</set>
 <set var="name2">Steve Jobs</set>
+
 <equals var1="name1" var2="name2" var_result="equals"/>
+
 <is var="equals" type="false">
-<output>$name1 and $name2 are not strictly equal!</output>
+	<output>$name1 and $name2 are not strictly equal!</output>
 </is>
+
 <!-- Bill Gates and Steve Jobs are not strictly equal! -->
 ```
 
@@ -48,12 +51,16 @@
 
 ```xml
 <set var="numeric">123</set>
+
 <set var="number">123</set>
 <cast var="number" type="int"/>
+
 <equals var1="numeric" var2="number" var_result="equals"/>
+
 <is var="equals" type="false">
-<output>"$numeric" and $number are not strictly equal!</output>
+	<output>"$numeric" and $number are not strictly equal!</output>
 </is>
+
 <!-- "123" and 123 are not strictly equal! -->
 ```
 

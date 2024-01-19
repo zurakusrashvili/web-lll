@@ -19,19 +19,25 @@ Transactions provide an all-or-nothing proposition, stating that each work-unit 
 
 ```xml
 <db:set entity="contacts" id="123" var_data="obj"/>
+
 <try>
-<db:transaction>
-<db:set entity="contacts" id="123">
-<db:data field="lastname">New</db:data>
-</db:set>
-<error/>
-</db:transaction>
-<catch/>
+	<db:transaction>
+		<db:set entity="contacts" id="123">
+			<db:data field="lastname">New</db:data>
+		</db:set>
+
+		<error/>
+	</db:transaction>
+
+	<catch/>
 </try>
+
 <db:get var="obj" entity="contacts" id="123">
-<db:field>lastname</db:field>
+	<db:field>lastname</db:field>
 </db:get>
+
 <output>$obj.lastname</output>
+
 <!-- Old -->
 ```
 

@@ -7,14 +7,14 @@ export default function FooterCopyright({ copyright }) {
   return (
     <div className={clsx(styles["footer__copyright"])}>
       <div className={clsx(styles['footer__copyright__left'])}>
-        {/* <img src='img/logo.svg'/> */}
-        <div>
+        <img className={clsx(styles['footer__copyright__left__img'])} src='/img/logo.svg'/>
+        <div className={clsx(styles['footer__copyright__left__textcontent'])}>
           <p>{copy[0]}</p>
           <p>{copy[1]}</p>
         </div>
       </div>
       <p className={clsx(styles['footer__copyright__right'])}>
-        Made with ❤ in <img src='img/germany.png' />
+        Made with <img src='/img/heart.png' />  in Germany <img src='/img/germany.png' />
       </p>
     </div>
   );

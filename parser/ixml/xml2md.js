@@ -33,16 +33,16 @@ async function convertNamespaceToMDX(namespace, namespaceTitle, baseDirPath) {
     commands.forEach(command => {
         const commandName = command.$.name;
         const commandTitle = command.$.title;
-        
+
         // Regular expression to match the exact substring "(ZeyOS)" including the parentheses
         const zeyosPattern = /\(ZeyOS\)/g;
-        
+
         // Replacing "(ZeyOS)" with an empty string, and then removing any other invalid filename characters
         const sanitizedTitle = commandTitle.replace(zeyosPattern, '').replace(/[<>:"/\\|?*]+/g, '-').trim();
-        
+
         const fileName = `${sanitizedTitle}.mdx`;
         const filePath = path.join(dirPath, fileName);
-        
+
         let mdxContent = `# ${commandTitle}\n\n`;
 
         // Generate and add the Anatomy section to the mdxContent
@@ -121,11 +121,11 @@ async function convertNamespaceToMDX(namespace, namespaceTitle, baseDirPath) {
             mdxContent += `## Children\n\n`;
             command.children[0].child.forEach(child => {
                 const childName = child.$ && child.$.name ? child.$.name : 'Unknown Child';
-                const childTitle = child.$ && child.$.title ? child.$.title : 'Unknown Title';
+                const childAnatomyName = child.$ && child.$.title ? `Anatomy of ${child.$.title}` : 'Unknown Anatomy';
 
                 mdxContent += `<details>\n`;
-                mdxContent += `<summary>${childTitle}</summary>\n\n`;
-                mdxContent += `### Anatomy\n`;
+                mdxContent += `<summary>${childName}</summary>\n\n`;
+                mdxContent += `### ${childAnatomyName}\n`;
                 mdxContent += '```xml\n';
                 mdxContent += `<${childName}`;
 
@@ -182,42 +182,48 @@ async function convertNamespaceToMDX(namespace, namespaceTitle, baseDirPath) {
             });
         }
 
-        delete command.children;
+        // ... rest of your script ...
+
 
         // Handle <examples>
         if (command.example) {
             mdxContent += `## Examples\n\n`;
 
             command.example.forEach(example => {
-                // Check if example.$ and example.$.title exist before trying to access them
                 const title = example.$ && example.$.title ? example.$.title : 'Example';
+                let exampleContent = example._ ? example._ : '';
 
-                // Removing leading/trailing whitespace and reducing consecutive newlines to a single newline
-                let exampleContent = example._ ?
-                    example._
-                    .trim() // Trim the whole string
-                    .replace(/\s*\n\s*/g, '\n') // Trim each line within the string
-                    :
-                    '';
+                // Detect the indentation of the first non-empty line
+                const firstNonEmptyLineIndent = exampleContent.split('\n')
+                    .find(line => line.trim() !== '')
+                    ?.match(/^(\s*)/)[0].length;
 
-                // Ensure consistent indentation by detecting the smallest indentation and removing it from each line
-                const lines = exampleContent.split('\n');
-                const indentLength = lines.reduce((min, line) => {
-                    const currentIndent = line.match(/^\s*/)[0].length;
-                    if (line.trim() === '') return min; // ignore empty lines
-                    return currentIndent < min ? currentIndent : min;
-                }, Infinity);
+                // Adjust indentation based on the first line's indentation
+                if (firstNonEmptyLineIndent !== undefined) {
+                    const lines = exampleContent.split('\n').map(line => {
+                        // For non-empty lines, remove the first line's indentation
+                        if (line.trim() !== '') {
+                            return line.substring(firstNonEmptyLineIndent);
+                        }
+                        // Keep empty lines as is
+                        return line;
+                    });
+                    exampleContent = lines.join('\n');
+                }
 
-                exampleContent = lines.map(line => line.substring(indentLength)).join('\n');
+                // Trim the content to remove extra empty lines at the start and end
+                exampleContent = exampleContent.trim();
 
                 mdxContent += `### Example: ${title}\n\n`;
                 mdxContent += '```xml\n';
-                mdxContent += `${exampleContent.trim()}\n`;
+                mdxContent += `${exampleContent}\n`;
                 mdxContent += '```\n\n';
             });
         }
 
-        delete command.example
+        delete command.example;
+
+
 
 
 

@@ -37,12 +37,15 @@ If the result variable 'var_result' is omitted, the resulting value will be stor
 
 ```xml
 <array var="original">
-<item>Bill Gates</item>
-<item>Steve Jobs</item>
+	<item>Bill Gates</item>
+	<item>Steve Jobs</item>
 </array>
+
 <clone var="original" var_result="new"/>
 <set var="new[1]">Larry Ellison</set>
+
 <output>$original[1] and $new[1] are friends!</output>
+
 <!-- Steve Jobs and Larry Ellison are friends! -->
 ```
 

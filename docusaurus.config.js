@@ -54,13 +54,13 @@ const config = {
           // editUrl:
           //   'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-        },
+        // blog: {
+        //   showReadingTime: true,
+        //   // Please change this to your repo.
+        //   // Remove this to remove the "edit this page" links.
+        //   editUrl:
+        //     'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+        // },
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -140,7 +140,7 @@ const config = {
               //ByStage
               {
                 label: 'Start-Up',
-                to: 'solutions/start-up',
+                to: 'solutions/startup',
                 icon: 'fa-duotone fa-rocket-launch',
                 category: 'BY STAGE',
               },
@@ -152,63 +152,63 @@ const config = {
               },
               {
                 label: 'Enterprise',
-                to: 'solutions/smb',
+                to: 'solutions/enterprise',
                 icon: 'fa-duotone fa-city',
                 category: 'BY STAGE',
               },
               //By Industry
               {
                 label: 'Medical',
-                to: 'solutions/start-up',
+                to: 'solutions/medical',
                 icon: 'fa-duotone fa-suitcase-medical',
                 category: 'BY INDUSTRY',
               },
               {
                 label: 'E-Commerce',
-                to: 'solutions/smb',
+                to: 'solutions/ecommerce',
                 icon: 'fa-duotone fa-shop',
                 category: 'BY INDUSTRY',
               },
               {
                 label: 'MSP-Providers',
-                to: 'solutions/smb',
+                to: 'solutions/msp',
                 icon: 'img/enterprise-icon.svg',
                 category: 'BY INDUSTRY',
               },
               {
                 label: 'SaaS',
-                to: 'solutions/smb',
+                to: 'solutions/saas',
                 icon: 'fa-duotone fa-arrow-turn-up',
                 category: 'BY INDUSTRY',
               },
               // BY USE CASE
               {
                 label: 'Shop-Backend',
-                to: 'solutions/start-up',
+                to: 'solutions/shop',
                 icon: 'fa-duotone fa-bags-shopping',
                 category: 'BY USE CASE',
               },
               {
                 label: 'Self-Service Portals',
-                to: 'solutions/smb',
+                to: 'solutions/ssp',
                 icon: 'fa-duotone fa-person-to-portal',
                 category: 'BY USE CASE',
               },
               {
                 label: 'Billing and Subscriptions',
-                to: 'solutions/smb',
+                to: 'solutions/billing',
                 icon: 'fa-duotone fa-file-invoice-dollar',
                 category: 'BY USE CASE',
               },
               {
                 label: 'Warehouse',
-                to: 'solutions/smb',
+                to: 'solutions/warehouse',
                 icon: 'fa-duotone fa-warehouse-full',
                 category: 'BY USE CASE',
               },
               {
                 label: 'Point-of-sales',
-                to: 'solutions/smb',
+                to: 'solutions/pos',
                 icon: 'fa-duotone fa-cash-register',
                 category: 'BY USE CASE',
               },

@@ -3,10 +3,50 @@
     align-items:center;
     justify-content:space-between;
     border-top: 1px solid white;
-    padding:10px 0px;
+    padding:7px 0px;
+    margin-top: 50px;
+    font-family: "IBM-Regular";
 }
 
 .footer__copyright__left{
     display:flex;
     align-items:center;
+    gap:15px;
+    line-height:1.1;
+}
+.footer__copyright__left__img{
+    width:50px;
+    filter:invert(100%);
+}
+.footer__copyright__left__textcontent{
+
+}
+
+.footer__copyright__left__textcontent p{
+    margin:0;
+    text-align:start;
+    font-size:11px;
+}
+
+.footer__copyright__right{
+    margin:0;
+    letter-spacing: 1px;
+}
+
+.footer__copyright__right img{
+    width:13px;
+
+}
+
+@media (max-width: 650px){
+    .footer__copyright{
+        flex-direction: column-reverse;
+        margin-top: 0px;
+    }
+}
+
+@media (max-width: 400px){
+    .footer__copyright__left{
+        margin-top: 20px;
+    }
 }

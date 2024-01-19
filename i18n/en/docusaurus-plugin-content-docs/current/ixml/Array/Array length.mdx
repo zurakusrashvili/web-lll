@@ -30,13 +30,16 @@
 
 ```xml
 <array var="names">
-<item>Bill Gates</item>
-<item>Steve Jobs</item>
+	<item>Bill Gates</item>
+	<item>Steve Jobs</item>
 </array>
+
 <array:length var="names" var_result="len"/>
+
 <if value1="$len" func="&gt;" value2="0">
-<output>There are names available!</output>
+	<output>There are names available!</output>
 </if>
+
 <!-- There are names available! -->
 ```
 

@@ -39,9 +39,11 @@ ARRAY:RANGE will implicitly generate a consecutive numeric key for each item of 
 
 ```xml
 <array:range var="range" from="6" to="10" step="2"/>
+
 <output>
-<array:join var="range" delimiter=", "/>
+	<array:join var="range" delimiter=", "/>
 </output>
+
 <!-- 6, 8, 10 -->
 ```
 
@@ -49,9 +51,11 @@ ARRAY:RANGE will implicitly generate a consecutive numeric key for each item of 
 
 ```xml
 <array:range var="range" from="10" to="6" step="2"/>
+
 <output>
-<array:join var="range" delimiter=", "/>
+	<array:join var="range" delimiter=", "/>
 </output>
+
 <!-- 10, 8, 6  -->
 ```
 

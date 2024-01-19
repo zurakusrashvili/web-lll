@@ -60,9 +60,9 @@ The METHOD construct defines a closed subroutine as a code sequence analog to th
 ## Children
 
 <details>
-<summary>Extends</summary>
+<summary>extends</summary>
 
-### Anatomy
+### Anatomy of Extends
 ```xml
 <extends class="var"></extends>
 ```
@@ -76,9 +76,9 @@ The METHOD construct defines a closed subroutine as a code sequence analog to th
 </details>
 
 <details>
-<summary>Property</summary>
+<summary>property</summary>
 
-### Anatomy
+### Anatomy of Property
 ```xml
 <property name="string" var="var">string</property>
 ```
@@ -99,9 +99,9 @@ The METHOD construct defines a closed subroutine as a code sequence analog to th
 </details>
 
 <details>
-<summary>Constructor</summary>
+<summary>constructor</summary>
 
-### Anatomy
+### Anatomy of Constructor
 ```xml
 <constructor>ixml</constructor>
 ```
@@ -115,9 +115,9 @@ The METHOD construct defines a closed subroutine as a code sequence analog to th
 </details>
 
 <details>
-<summary>Method</summary>
+<summary>method</summary>
 
-### Anatomy
+### Anatomy of Method
 ```xml
 <method name="string">ixml</method>
 ```
@@ -142,26 +142,33 @@ The METHOD construct defines a closed subroutine as a code sequence analog to th
 
 ```xml
 <class var="Human">
-<property name="gender">male</property>
+	<property name="gender">male</property>
 </class>
+
 <class var="Person">
-<extends class="Human"/>
-<property name="firstname"/>
-<property name="lastname"/>
-<constructor>
-<set var="this.firstname">$firstname</set>
-<set var="this.lastname">$lastname</set>
-</constructor>
-<method name="getName">
-<set var="return">$this.firstname $this.lastname</set>
-</method>
+	<extends class="Human"/>
+
+	<property name="firstname"/>
+	<property name="lastname"/>
+
+	<constructor>
+		<set var="this.firstname">$firstname</set>
+		<set var="this.lastname">$lastname</set>
+	</constructor>
+
+	<method name="getName">
+		<set var="return">$this.firstname $this.lastname</set>
+	</method>
 </class>
+
 <new class="Person" var="obj">
-<param name="firstname">Bill</param>
-<param name="lastname">Gates</param>
+	<param name="firstname">Bill</param>
+	<param name="lastname">Gates</param>
 </new>
+
 <call func="obj.getName" var="name"/>
 <output>$name is $obj.gender!</output>
+
 <!-- Bill Gates is male! -->
 ```
 

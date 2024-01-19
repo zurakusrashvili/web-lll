@@ -24,7 +24,7 @@ export default function NavbarMobileSidebarHeader() {
   return (
     <div className="navbar-sidebar__brand">
       <CloseButton />
-      <NavbarLogo />
+      {/* <NavbarLogo /> */}
       <NavbarColorModeToggle className="margin-right--md" />
     </div>
   );

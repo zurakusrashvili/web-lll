@@ -49,21 +49,28 @@
 
 ```xml
 <class var="Human"/>
+
 <class var="Person">
-<extends class="Human"/>
-<property name="name"/>
-<constructor>
-<set var="this.name">$name</set>
-</constructor>
+	<extends class="Human"/>
+
+	<property name="name"/>
+
+	<constructor>
+		<set var="this.name">$name</set>
+	</constructor>
 </class>
+
 <classinfo class="Person" var="info"/>
+
 <foreach var="info.parents" var_value="class">
-<equals var1="class" var2="Human" var_result="equals"/>
-<is var="equals" type="true">
-<output>A person is human!</output>
-<break/>
-</is>
+	<equals var1="class" var2="Human" var_result="equals"/>
+
+	<is var="equals" type="true">
+		<output>A person is human!</output>
+		<break/>
+	</is>
 </foreach>
+
 <!-- A person is human! -->
 ```
 
@@ -71,19 +78,25 @@
 
 ```xml
 <class var="Person">
-<property name="name"/>
-<constructor>
-<set var="this.name">$name</set>
-</constructor>
+	<property name="name"/>
+
+	<constructor>
+		<set var="this.name">$name</set>
+	</constructor>
 </class>
+
 <new class="Person" var="obj">
-<param name="name">Bill Gates</param>
+	<param name="name">Bill Gates</param>
 </new>
+
 <classinfo class="obj" var="info"/>
+
 <equals var1="info.class" var2="Person" var_result="equals"/>
+
 <is var="equals" type="true">
-<output>$obj.name is a person!</output>
+	<output>$obj.name is a person!</output>
 </is>
+
 <!-- Bill Gates is a person! -->
 ```
 

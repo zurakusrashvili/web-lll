@@ -37,16 +37,19 @@
 
 ```xml
 <array var="names">
-<item key="bg">Bill Gates</item>
-<item key="sj">Steve Jobs</item>
+	<item key="bg">Bill Gates</item>
+	<item key="sj">Steve Jobs</item>
 </array>
+
 <array var="intersect">
-<item key="sj">Steve Jobs</item>
-<item key="le">Larry Ellison</item>
-<item key="bg">Bill Gates</item>
+	<item key="sj">Steve Jobs</item>
+	<item key="le">Larry Ellison</item>
+	<item key="bg">Bill Gates</item>
 </array>
+
 <array:intersect var="names" var_set="intersect" type="keys"/>
 <output>$names.bg and $names.sj are competitors!</output>
+
 <!-- Bill Gates and Steve Jobs are competitors! -->
 ```
 
@@ -54,16 +57,19 @@
 
 ```xml
 <array var="names">
-<item>Bill Gates</item>
-<item>Steve Jobs</item>
+	<item>Bill Gates</item>
+	<item>Steve Jobs</item>
 </array>
+
 <array var="intersect">
-<item>Steve Jobs</item>
-<item>Larry Ellison</item>
-<item>Bill Gates</item>
+	<item>Steve Jobs</item>
+	<item>Larry Ellison</item>
+	<item>Bill Gates</item>
 </array>
+
 <array:intersect var="names" var_set="intersect" type="values"/>
 <output>$names[0] and $names[1] are competitors!</output>
+
 <!-- Bill Gates and Steve Jobs are competitors! -->
 ```
 

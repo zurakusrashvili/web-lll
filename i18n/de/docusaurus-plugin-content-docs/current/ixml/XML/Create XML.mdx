@@ -41,15 +41,18 @@
 
 ```xml
 <array var="root">
-<item key="name">html</item>
-<array key="attr">
-<item key="xmlns">http://www.w3.org/1999/xhtml</item>
-<item key="xml:lang">en</item>
+	<item key="name">html</item>
+
+	<array key="attr">
+		<item key="xmlns">http://www.w3.org/1999/xhtml</item>
+		<item key="xml:lang">en</item>
+	</array>
 </array>
-</array>
+
 <output>
-<xml:create var="root"/>
+	<xml:create var="root"/>
 </output>
+
 <!--
 <?xml version="1.0" encoding="UTF-8"?>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"/>

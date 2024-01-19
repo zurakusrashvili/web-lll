@@ -36,14 +36,17 @@
 
 ```xml
 <array var="names">
-<item>Bill Gates</item>
+	<item>Bill Gates</item>
 </array>
+
 <array var="addition">
-<item>Steve Jobs</item>
-<item>Larry Ellison</item>
+	<item>Steve Jobs</item>
+	<item>Larry Ellison</item>
 </array>
+
 <array:merge var="names" var_set="addition"/>
 <output>$names[0] and $names[1] are competitors!</output>
+
 <!-- Bill Gates and Steve Jobs are competitors! -->
 ```
 

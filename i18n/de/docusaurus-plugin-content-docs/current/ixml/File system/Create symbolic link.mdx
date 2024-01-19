@@ -23,9 +23,11 @@
 
 ```xml
 <file:exists var="exists" filename="./test/ixml_link.inc"/>
+
 <if value1="$exists" func="!=" value2="">
-<file:delete filename="./test/ixml_link.inc"/>
+	<file:delete filename="./test/ixml_link.inc"/>
 </if>
+
 <file:link linkname="./test/ixml_link.inc" targetname="./test/ixml.inc"/>
 ```
 

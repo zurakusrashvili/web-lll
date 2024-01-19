@@ -27,13 +27,16 @@
 
 ```xml
 <set var="count">0</set>
+
 <while>
-<output>$count</output>
-<math:inc var="count"/>
-<if value1="$count" func="=" value2="10">
-<break/>
-</if>
+	<output>$count</output>
+	<math:inc var="count"/>
+
+	<if value1="$count" func="=" value2="10">
+		<break/>
+	</if>
 </while>
+
 <!-- 0123456789 -->
 ```
 
@@ -41,15 +44,18 @@
 
 ```xml
 <array var="names">
-<item>Bill Gates</item>
-<item>Steve Jobs</item>
+	<item>Bill Gates</item>
+	<item>Steve Jobs</item>
 </array>
+
 <foreach var="names" var_value="name">
-<output>$name</output>
-<if value1="$name" func="=" value2="Bill Gates">
-<break/>
-</if>
+	<output>$name</output>
+
+	<if value1="$name" func="=" value2="Bill Gates">
+		<break/>
+	</if>
 </foreach>
+
 <!-- Bill Gates -->
 ```
 

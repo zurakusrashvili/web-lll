@@ -39,14 +39,17 @@ A given key may specify the column of a multidimensional array to distinguish by
 
 ```xml
 <array var="names">
-<item key="bg1">Bill Gates</item>
-<item key="sj">Steve Jobs</item>
-<item key="bg2">Bill Gates</item>
+	<item key="bg1">Bill Gates</item>
+	<item key="sj">Steve Jobs</item>
+	<item key="bg2">Bill Gates</item>
 </array>
+
 <array:unique var="names"/>
+
 <foreach var="names" var_key="key" var_value="name">
-<output>$key: $name&n;</output>
+	<output>$key: $name&n;</output>
 </foreach>
+
 <!--
 bg1: Bill Gates
 sj: Steve Jobs

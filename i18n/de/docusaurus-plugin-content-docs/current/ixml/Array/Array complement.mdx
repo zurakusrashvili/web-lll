@@ -37,15 +37,18 @@
 
 ```xml
 <array var="names">
-<item key="bg">Bill Gates</item>
-<item key="sj">Steve Jobs</item>
-<item key="le">Larry Ellison</item>
+	<item key="bg">Bill Gates</item>
+	<item key="sj">Steve Jobs</item>
+	<item key="le">Larry Ellison</item>
 </array>
+
 <array var="complement">
-<item key="bg">Bill Gates</item>
+	<item key="bg">Bill Gates</item>
 </array>
+
 <array:complement var="names" var_set="complement" type="keys"/>
 <output>$names.sj and $names.le are friends!</output>
+
 <!-- Steve Jobs and Larry Ellison are friends! -->
 ```
 
@@ -53,15 +56,18 @@
 
 ```xml
 <array var="names">
-<item>Bill Gates</item>
-<item>Steve Jobs</item>
-<item>Larry Ellison</item>
+	<item>Bill Gates</item>
+	<item>Steve Jobs</item>
+	<item>Larry Ellison</item>
 </array>
+
 <array var="complement">
-<item>Bill Gates</item>
+	<item>Bill Gates</item>
 </array>
+
 <array:complement var="names" var_set="complement" type="values"/>
 <output>$names[1] and $names[2] are friends!</output>
+
 <!-- Steve Jobs and Larry Ellison are friends! -->
 ```
 

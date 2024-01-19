@@ -51,9 +51,9 @@
 ## Children
 
 <details>
-<summary>HTTP header</summary>
+<summary>http:header</summary>
 
-### Anatomy
+### Anatomy of HTTP header
 ```xml
 <http:header>string</http:header>
 ```
@@ -67,9 +67,9 @@
 </details>
 
 <details>
-<summary>HTTP body</summary>
+<summary>http:body</summary>
 
-### Anatomy
+### Anatomy of HTTP body
 ```xml
 <http:body>string</http:body>
 ```
@@ -88,20 +88,25 @@
 
 ```xml
 <decode:json var="data">
-<http:request url="https://api.predic8.de/shop/products/" method="POST">
-<http:header>
-Content-Type: application/json
-</http:header>
-<http:body>
-{"name": "Wildberries", "price": 4.99}
-</http:body>
-</http:request>
+	<http:request url="https://api.predic8.de/shop/products/" method="POST">
+		<http:header>
+			Content-Type: application/json
+		</http:header>
+
+		<http:body>
+			{"name": "Wildberries", "price": 4.99}
+		</http:body>
+	</http:request>
 </decode:json>
+
 <set var="route">$data.product_url</set>
+
 <decode:json var="data">
-<http:request url="https://api.predic8.de$route" method="GET"/>
+	<http:request url="https://api.predic8.de$route" method="GET"/>
 </decode:json>
+
 <output>$data.name</output>
+
 <!-- Wildberries -->
 ```
 

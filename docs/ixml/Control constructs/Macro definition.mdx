@@ -46,10 +46,12 @@ A macro can be coded so that it may expand itself recursively. This technique al
 
 ```xml
 <macro var="outputName">
-<output>$name</output>
+	<output>$name</output>
 </macro>
+
 <set var="name">iXML</set>
 <expand macro="outputName"/>
+
 <!-- iXML -->
 ```
 
@@ -57,15 +59,18 @@ A macro can be coded so that it may expand itself recursively. This technique al
 
 ```xml
 <macro var="outputName">
-<output>$name&n;</output>
+	<output>$name&n;</output>
 </macro>
+
 <array var="names">
-<item>Bill Gates</item>
-<item>Steve Jobs</item>
+	<item>Bill Gates</item>
+	<item>Steve Jobs</item>
 </array>
+
 <foreach var="names" var_value="name">
-<expand macro="outputName"/>
+	<expand macro="outputName"/>
 </foreach>
+
 <!--
 Bill Gates
 Steve Jobs

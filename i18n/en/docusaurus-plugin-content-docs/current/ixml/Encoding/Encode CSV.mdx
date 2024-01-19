@@ -34,22 +34,26 @@ Comma-separated values represent tabular data. Each line corresponds to a row in
 
 ```xml
 <array var="names">
-<array>
-<item>First Name</item>
-<item>Last Name</item>
+	<array>
+		<item>First Name</item>
+		<item>Last Name</item>
+	</array>
+
+	<array>
+		<item>Bill</item>
+		<item>Gates</item>
+	</array>
+
+	<array>
+		<item>Steve</item>
+		<item>Jobs</item>
+	</array>
 </array>
-<array>
-<item>Bill</item>
-<item>Gates</item>
-</array>
-<array>
-<item>Steve</item>
-<item>Jobs</item>
-</array>
-</array>
+
 <output>
-<encode:csv var="names" delimiter=";"/>
+	<encode:csv var="names" delimiter=";"/>
 </output>
+
 <!--
 "First Name";"Last Name"
 Bill;Gates
